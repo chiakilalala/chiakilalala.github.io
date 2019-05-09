@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 無盡光芒</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 07 May 2019 07:43:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chiakilalala.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>welocome</title>
+      <link>https://chiakilalala.github.io/posts/theme-preview/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/theme-preview/</guid>
+      <description> hello </description>
+    </item>
     
     <item>
       <title>First Post</title>
@@ -17,7 +26,7 @@
       <pubDate>Tue, 07 May 2019 07:43:32 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/first-post/</guid>
-      <description>##dkjlskjldkjflsjldkjflksjlk</description>
+      <description>JS 30day Day2 JS and CSS Clock 筆記 demo 目的 學會 js Time 和 用js 操作css 還有基本的ES6語法 步驟 利用css 製作 分針 時針 秒針 取時間的函數 製作js 函數 setＤate 取出現在的時間 const now = new Date(); // const seconds = now.getSeconds(); const mins = now.getMinutes(); const hour = now.getHours(); 3.利用時間</description>
     </item>
     
     <item>
@@ -31,24 +40,12 @@ hello </description>
     </item>
     
     <item>
-      <title>药师灌顶真言</title>
-      <link>https://chiakilalala.github.io/posts/chinese-preview/</link>
+      <title>UI/UX 設計指南分享</title>
+      <link>https://chiakilalala.github.io/posts/ui/ux/</link>
       <pubDate>Thu, 11 Apr 2019 14:26:00 +0800</pubDate>
       
-      <guid>https://chiakilalala.github.io/posts/chinese-preview/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;修学药师灌顶真言是药师法门的一部分，读诵修持有着极大的功德利益&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&#34;内容&#34;&gt;内容&lt;/h1&gt;
-
-&lt;p&gt;南无薄伽伐帝鞞杀社&lt;/p&gt;
-
-&lt;p&gt;窭噜薜琉璃&lt;/p&gt;
-
-&lt;p&gt;跋喇婆&lt;/p&gt;
-
-&lt;p&gt;喝啰阇也&lt;/p&gt;</description>
+      <guid>https://chiakilalala.github.io/posts/ui/ux/</guid>
+      <description>UI/UX 設計指南分享 在這邊整理一些網路上整理下來的UI設計的一些小知識，在設計介面與流程時可以參考。 關於UI Element的使用建議參考看看即可，因為UI的世界瞬息萬變，大家使用的方法也不盡相同，不過我覺得</description>
     </item>
     
     <item>
