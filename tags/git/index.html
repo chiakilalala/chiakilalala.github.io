@@ -10,7 +10,7 @@
         content="Zeuk"/>
 
   
-  <meta name="description" content="JS 30day Day2 JS and CSS Clock 筆記 demo 目的 學會 js Time 和 用js 操作css 還有基本的ES6語法 步驟 利用css 製作 分針 時針 秒針 取時間的函數 製作js 函數 setＤate 取出現在的時間 const now = new Date(); // const seconds = now.getSeconds(); const mins = now.getMinutes(); const hour = now.getHours(); 3.利用時間"/>
+  <meta name="description" content="Hugo theme zozo example site."/>
   
 
   
@@ -19,11 +19,13 @@
   
 
   
-  <link rel="canonical" href="https://chiakilalala.github.io/posts/first-post/"/>
+  <link rel="canonical" href="https://chiakilalala.github.io/tags/git/"/>
 
   
+  <link rel="alternate" type="application/rss&#43;xml" href="https://chiakilalala.github.io/tags/git/index.xml">
+  
 
-  <title>JS 30day Day2  JS and CSS Clock 筆記 &middot; 無盡光芒</title>
+  <title>git &middot; 無盡光芒</title>
 
   <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
@@ -105,117 +107,22 @@
 </div>
 
   <div class="content">
-    <div class="post_page">
-      <div class="post animated fadeInDown">
-        <div class="post_title post_detail_title">
-          <h2><a href='/posts/first-post/'>JS 30day Day2  JS and CSS Clock 筆記</a></h2>
-          <span class="date">2019.05.07</span>
+    <div class="list_with_title">
+      
+      <div class="listing_title">2019</div>
+      <div class="listing">
+        
+        <div class="listing_item">
+          <div class="listing_post">
+            <a href="/posts/git/">GIT 指令</a>
+            <div class="post_time"><span class="date">05-07</span></div>
+          </div>
         </div>
-        <div class="post_content markdown">
-
-<h1 id="js-30day-day2-js-and-css-clock-筆記">JS 30day Day2  JS and CSS Clock 筆記</h1>
-
-<p><a href="https://codepen.io/chiakilalala/pen/weXRBN">demo</a></p>
-
-<h2 id="目的"><strong>目的</strong></h2>
-
-<p>學會 js Time 和 用js 操作css
-還有基本的ES6語法</p>
-
-<h2 id="步驟"><strong>步驟</strong></h2>
-
-<ol>
-<li>利用css 製作 分針 時針 秒針</li>
-<li>取時間的函數
-製作js 函數 setＤate 取出現在的時間</li>
-</ol>
-
-<pre><code class="language-javascript">const now = new Date(); //
-const seconds = now.getSeconds();
-const mins = now.getMinutes();
-const hour = now.getHours();
-</code></pre>
-
-<p>3.利用時間取得對應角度</p>
-
-<pre><code>const secondsDegrees = ((seconds / 60) * 360) + 90;
-</code></pre>
-
-<p>零點角度 rotate。秒針轉一圈 60s，每一秒對應角度為
-(...s / 60s) * 360°。</p>
-
-<p>4.用得到角度 給值html在style的transform屬性上</p>
-
-<pre><code class="language-javascript">const seconds = now.getSeconds();
-const secondsDegrees = ((seconds / 60) * 360) + 90;
-secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
-</code></pre>
-
-<p>5.放上js 計時器</p>
-
-<pre><code> setInterval(setDate, 1000); //每一1000毫秒 觸發函式
-</code></pre>
-
-<h2 id="挑戰"><em>挑戰</em></h2>
-
-<p>影片有提出
-若指針在354度切到0度時，
-會使指針往前彈回去，這是因為有使用transtion，在角度做切換時會加上的動畫效果，
-354→0度會認為是往前，而非轉一圈回到起點，所以動畫先往前轉到0。
-解法有：
-* 修改transition 秒數
-* 角度增加</p>
-
-<h2 id="css-js-補充"><strong>css&amp;js 補充</strong></h2>
-
-<h3 id="es6-基本">es6 基本</h3>
-
-<p>const 常數
-不允許之後做改變
-不允許重複宣告 不允許宣告前使用</p>
-
-<hr />
-
-<p>let 變數
-* let 禁止在同一活動範圍中再次宣告相同名稱的變數。var 會無視第二次宣告，只管指派變數值。但 let 視為重複宣告的語法錯誤。
-* let 禁止在宣告變數之前就使用它。
-* 在全域範圍以 let 宣告的變數，不會成為全域個體(global object)的屬性。但以 var 宣告的變數同時也會是全域個體的屬性。因此 let 變數是真正的區域變數，你用 module 或其他方式載入的程式碼看不到那些 let 變數。註: 在瀏覽器中運行的 JavaScript 之全域個體一律是 window 。</p>
-
-<hr />
-
-<blockquote>
-<p><a href="http://rocksaying.tw/archives/2015/ES6_var,let,const.html">補充link</a></p>
-</blockquote>
-
-<hr />
-
-<p>Template strings</p>
-
-<pre><code class="language-javascript">secondHand.style.transform = `rotate(${secondsDegrees}deg)`;`
-</code></pre>
-
-<p>反括號裡面可以帶變數
-<a href="http://www.infoq.com/cn/articles/es6-in-depth-template-string">補充link</a>
-<a href="http://bubkoo.com/2015/06/23/es6-in-depth-template-strings">補充link02</a></p>
-
-<h2 id="css-transform">css transform</h2>
-
-<p>一個很複雜要常搞混的地方
- transform-oragin  時鐘的軸點和軸心的初始位置
- trsition :指針跳動時的轉場動畫
-<img src="https://i.imgur.com/vOUEy5M.png" alt="" /></p>
-
-<h2 id="js-語法">js 語法</h2>
-
-<p><img src="https://i.imgur.com/mkaYASe.png" alt="" /></p>
-</div>
-        <div class="post_footer">
-          
-        </div>
+        
       </div>
       
-      
     </div>
+    <div class="pagination"></div>
   </div>
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
 </div>
