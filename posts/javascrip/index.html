@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="Javascript ES6 ES6 繼承 學會定義子類別。(extends 關鍵字) 學會使用 super 關鍵字呼叫父類別建構式。 學會利用已經定義好的子類別物件。 class 子類別名稱 extends 父類別名稱 建立子類別物件: new 子類別名稱() 定義子類別建構式: constructor{ super(); //呼"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, zozo"/>
+  
+
+  
+  <link rel="canonical" href="https://chiakilalala.github.io/posts/javascrip/"/>
+
+  
+
+  <title>Javascript ES6 繼承 &middot; 無盡光芒</title>
+
+  <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首頁</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">歸檔</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">標籤</a>
+      </li>
+      
+      <li>
+        <a href="/about/">關於</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://chiakilalala.github.io/">
+          <span>無盡光芒</span>
+          <img src="https://chiakilalala.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">前端技術私房筆記</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        
+        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
+        
+        
+        <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/javascrip/'>Javascript ES6 繼承</a></h2>
+          <span class="date">2019.05.11</span>
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="javascript-es6">Javascript ES6</h1>
+
+<h2 id="es6-繼承">ES6 繼承</h2>
+
+<ol>
+<li>學會定義子類別。(extends 關鍵字)</li>
+<li>學會使用 super 關鍵字呼叫父類別建構式。</li>
+<li>學會利用已經定義好的子類別物件。</li>
+</ol>
+
+<p>class 子類別名稱 extends 父類別名稱</p>
+
+<p>建立子類別物件: new 子類別名稱()</p>
+
+<p>定義子類別建構式:
+constructor{
+super(); //呼叫父類別建構式
+}</p>
+
+<p>子類別物件 同樣擁有 父類別 中定義的屬性和方法</p>
+
+<p>在 子類別 中定義方法，會覆蓋 / 取代 父類別 中的同名方法
+car.run(); 子類別物件可以呼叫父類別的方法</p>
+
+<p>定義靜態方法: 在 類別 中定義</p>
+
+<ul>
+<li>static 方法名稱(參數) { 程式碼 }</li>
+</ul>
+
+<p>呼叫靜態方法: 使用 類別名稱 呼叫</p>
+
+<ul>
+<li>類別名稱.方法名稱(參數)</li>
+</ul>
+
+<p>取得原型物件: Object.getPrototypeOf(物件)</p>
+
+<p>null是Object的原型物件</p>
+
+<p>class Car{
+constructor(color){this.color=color;}
+run(){}
+}
+//
+let car =new Car(&quot;green&quot;);</p>
+
+<p>let carProto=Object.getPrototype(car);
+console.log(carProto);//Car 原型物件
+let objProto=Object.getPrototype(carProto); //Object  原型物件
+console.log(objProto);
+let lastOne=Object.getPrototype(objProto);
+console.log(lastOne);//原形練的終點 null</p>
+
+<h3 id="練習">練習</h3>
+
+<pre><code>// 定義子類別
+class 子類別 extends 父類別{
+   constructor(參數){
+      super(參數); // 呼叫父類別的建構式
+   }
+   sleep(){
+    
+   }// 子類別的其他方法定義
+}
+
+
+// 這是 Animal 類別，請不要更動
+class Animal{
+    constructor(name){
+        this.name=name;
+    }
+    sleep(){ //定義sleep 方法
+        console.log(this.name+&quot;睡覺&quot;);
+    }
+}
+/* 
+練習一：
+    定義一個 Cat 子類別，繼承 Animal 類別。
+    並滿足下方程式碼的操作需求
+*/
+class Cat extends Animal{
+    constructor(name);
+    super(name);
+ 
+}
+  speak(){
+      console.log(&quot;喵!喵!&quot;);
+    }
+// 以下 Cat 子類別的操作
+let cat=new Cat(&quot;小花&quot;);
+cat.sleep(); // 印出：&quot;小花睡覺&quot;
+cat.speak(); // 印出：&quot;喵!喵!&quot;
+
+/*
+練習二：
+    定義一個 Dog 子類別，繼承 Animal 類別。
+    並滿足下方程式碼的操作需求
+*/
+class Dog extends Animal{
+     constructor(name);
+      super(name);// 請在這裡完成 Dog 子類別的定義
+}
+sleep(hours){
+  console.log(this.name+&quot;睡了&quot;+hours+&quot;小時&quot;)
+}
+// 以下 Dog 子類別的操作
+let dog=new Dog(&quot;小黑&quot;);
+dog.sleep(3); // 印出：&quot;小黑睡了3小時&quot;
+</code></pre>
+
+<p>// 定義靜態方法
+class 類別名稱{
+    static 靜態方法名稱(參數列表){
+        靜態方法中的程式碼
+    }
+}
+// 使用靜態方法
+類別名稱.靜態方法名稱(參數資料);</p>
+
+<pre><code>// Geometry 類別提供平面座標系統的數學運算功能
+class Geometry{
+    // 在這裡定義靜態方法
+    static distance(x1,y1,x2,y2){
+    let length=Math.sqrt(Math.pow(x2-x1, 2)+Math.pow(y2-y1, 2));
+        console.log(length);
+    }
+}
+// 計算座標 (1,1) 和 (4,4) 的直線距離：大約 4.24
+Geometry.distance(1,1,4,4);
+// 計算線段 (1,2) ~ (3,4) 的斜率：1
+Geometry.slope(1,2,3,4);
+
+/*
+    以上簡易的幾何計算，使用 JS 內建的 Math 物件，以及公式：
+        直線距離：開根號(平方(x2-x1)+平方(y2-y1))
+        斜率：(y2-y1)/(x2-x1)
+
+    由於這是程式課程，非數學課程
+    若只能寫出靜態方法的骨架，印出訊息，也算過關
+*/
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://chiakilalala.github.io/tags/tjavascript/">tJavascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/es6/">es6</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="https://chiakilalala.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://chiakilalala.github.io/js/zozo.js"></script>
+<script src="https://chiakilalala.github.io/js/highlight.pack.js"></script>
+<link  href="https://chiakilalala.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://chiakilalala.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

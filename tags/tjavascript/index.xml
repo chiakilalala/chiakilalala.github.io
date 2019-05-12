@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tJavascript on 無盡光芒</title>
+    <link>https://chiakilalala.github.io/tags/tjavascript/</link>
+    <description>Recent content in tJavascript on 無盡光芒</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chiakilalala.github.io/tags/tjavascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Javascript ES6 繼承</title>
+      <link>https://chiakilalala.github.io/posts/javascrip/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascrip/</guid>
+      <description>Javascript ES6 ES6 繼承 學會定義子類別。(extends 關鍵字) 學會使用 super 關鍵字呼叫父類別建構式。 學會利用已經定義好的子類別物件。 class 子類別名稱 extends 父類別名稱 建立子類別物件: new 子類別名稱() 定義子類別建構式: constructor{ super(); //呼</description>
+    </item>
+    
+  </channel>
+</rss>

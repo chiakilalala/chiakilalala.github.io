@@ -6,17 +6,26 @@
     <description>Recent content in Tags on 無盡光芒</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 07 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://chiakilalala.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>git</title>
-      <link>https://chiakilalala.github.io/tags/git/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      <title>es6</title>
+      <link>https://chiakilalala.github.io/tags/es6/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://chiakilalala.github.io/tags/git/</guid>
+      <guid>https://chiakilalala.github.io/tags/es6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tJavascript</title>
+      <link>https://chiakilalala.github.io/tags/tjavascript/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/tags/tjavascript/</guid>
       <description></description>
     </item>
     
