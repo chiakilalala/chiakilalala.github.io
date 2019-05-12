@@ -10,7 +10,7 @@
         content="Zeuk"/>
 
   
-  <meta name="description" content="Hugo theme zozo example site."/>
+  <meta name="description" content="Whack A Mole Game JS 30day 步驟 function randomTime(min, max) { return Math.round(Math.random() * (max - min) &#43; min); } //隨機老鼠上洞的時間 2 隨機決定哪個洞有老鼠跳來跳去 function randomHole(holes) { const idx = Math.floor(Math.random() * holes.length); //亂數洞 const hole = holes[idx]; if (hole === lastHole) { console.log(&amp;quot;Ah that is the same one bud&amp;quot;); return randomHole(holes); } lastHole = hole; return hole; } 3.因為要避免亂數洞裏同時出"/>
   
 
   
@@ -19,13 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://chiakilalala.github.io/tags/javascript/"/>
+  <link rel="canonical" href="https://chiakilalala.github.io/posts/javascript/"/>
 
   
-  <link rel="alternate" type="application/rss&#43;xml" href="https://chiakilalala.github.io/tags/javascript/index.xml">
-  
 
-  <title>Javascript &middot; 無盡光芒</title>
+  <title>Whack A Mole Game JS 30day &middot; 無盡光芒</title>
 
   <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
@@ -107,29 +105,138 @@
 </div>
 
   <div class="content">
-    <div class="list_with_title">
-      
-      <div class="listing_title">2019</div>
-      <div class="listing">
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/javascrip/">Javascript ES6 繼承</a>
-            <div class="post_time"><span class="date">05-11</span></div>
-          </div>
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/javascript/'>Whack A Mole Game JS 30day</a></h2>
+          <span class="date">2019.04.10</span>
         </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/javascript/">Whack A Mole Game JS 30day</a>
-            <div class="post_time"><span class="date">04-10</span></div>
+        <div class="post_content markdown">
+
+<h1 id="whack-a-mole-game-js-30day">Whack A Mole Game  JS 30day</h1>
+
+<hr />
+
+<p>步驟</p>
+
+<pre><code class="language-javascript=">function randomTime(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+</code></pre>
+
+<h2 id="隨機老鼠上洞的時間">//隨機老鼠上洞的時間</h2>
+
+<p>2 隨機決定哪個洞有老鼠跳來跳去</p>
+
+<pre><code class="language-javascript=">function randomHole(holes) {
+  const idx = Math.floor(Math.random() * holes.length);
+  //亂數洞
+  const hole = holes[idx];
+  if (hole === lastHole) {
+    console.log(&quot;Ah that is the same one bud&quot;);
+    return randomHole(holes);
+  }
+
+  lastHole = hole;
+  return hole;
+}
+</code></pre>
+
+<hr />
+
+<p>3.因為要避免亂數洞裏同時出現老鼠兩次</p>
+
+<pre><code class="language-javascript=">if (hole === lastHole) {
+  console.log(&quot;Ah that is the same one bud&quot;);
+  return randomHole(holes);
+}
+
+lastHole = hole;
+</code></pre>
+
+<hr />
+
+<p>4.設定時間到了  就要移除讓老鼠從洞跳到上面的動作</p>
+
+<pre><code class="language-javascript=">function peep() {
+  const time = randomTime(200, 1000);
+  const hole = randomHole(holes);
+  hole.classList.add('up');
+
+  setTimeout(() =&gt; {
+    hole.classList.remove('up');
+    if(!timeUp) peep();
+  }, time);
+}
+</code></pre>
+
+<hr />
+
+<p>5.做一個開始按鈕</p>
+
+<pre><code class="language-htmlmixed=">&lt;button onClick=&quot;startGame()&quot;&gt;START&lt;/button&gt;
+</code></pre>
+
+<pre><code class="language-javascript=">function startGame() {
+  scoreBoard.textContent = 0;
+  timeUp = false; // in case page reload 
+  score = 0;
+  peep();
+
+  setTimeout(() =&gt; timeUp = true, 10000);
+}
+//定義遊戲時間動作是10sec 設定時間 timeUp = true
+</code></pre>
+
+<hr />
+
+<pre><code class="language-javascript=">The bonk(e) function
+
+function bonk(e) {
+  if(!e.isTrusted) return; // cheater
+  score ++;
+  this.classList.remove('up');
+  scoreBoard.textContent = score;
+}
+
+moles.forEach(mole =&gt; mole.addEventListener('click', bonk));
+</code></pre>
+
+<p>//e.isTrusted 這個特性是當我們沒點到洞產生的js屬性  他是點擊產生的</p>
+
+<hr />
+
+<h3 id="javascript">javascript</h3>
+
+<p>Math.round()  四捨五入
+Math.random() 隨機產生0與1 不包含之間的數值
+Math.floor() 向下取整數 或小於 等於指定數值的整數
+Math.ceil() 向上取整數 或大於 等於指定數值的整數
+<a href="http://liaosankai.pixnet.net/blog/post/19382531-%E4%BA%82%E6%95%B8-javascript-math.random%28%29">亂數介紹</a>
+setTimeout() 本身可以在執行功能時工作</p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://chiakilalala.github.io/tags/javascript/">Javascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/js30/">JS30</a>
+                
+                <a href="https://chiakilalala.github.io/tags/js/">JS</a>
+                
+              </span>
+            </div>
           </div>
+          
         </div>
-        
       </div>
       
+      
     </div>
-    <div class="pagination"></div>
   </div>
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
 </div>
