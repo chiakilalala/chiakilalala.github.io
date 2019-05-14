@@ -10,7 +10,7 @@
         content="Zeuk"/>
 
   
-  <meta name="description" content="Headings # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 "/>
+  <meta name="description" content="how to build  a blog"/>
   
 
   
@@ -23,7 +23,7 @@
 
   
 
-  <title>Theme Preview &middot; 無盡光芒</title>
+  <title>Hugo &#43; github 個人blog 建立 &middot; 無盡光芒</title>
 
   <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
@@ -79,23 +79,15 @@
       <div class="my_socials">
         
         
-        <a href="%20" title="facebook" target="_blank"><i class="remixicon-facebook-fill"></i></a>
-        
-        
-        
         <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
         
         
         
-        <a href="%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        <a href="https://www.instagram.com/satsukajiyoi/%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
         
         
         
         <a href="%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
-        
-        
-        
-        <a href="%20" title="weibo" target="_blank"><i class="remixicon-weibo-fill"></i></a>
         
         
         <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
@@ -108,193 +100,62 @@
     <div class="post_page">
       <div class="post animated fadeInDown">
         <div class="post_title post_detail_title">
-          <h2><a href='/posts/theme-preview/'>Theme Preview</a></h2>
-          <span class="date">2019.03.31</span>
+          <h2><a href='/posts/theme-preview/'>Hugo &#43; github 個人blog 建立</a></h2>
+          <span class="date">2019.05.14</span>
         </div>
-        <div class="post_content markdown"><h1 id="headings">Headings</h1>
+        <div class="post_content markdown">
 
-<pre><code class="language-markdown"># H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+<h2 id="hugo-github-個人blog-建立">Hugo + github 個人blog 建立</h2>
+
+<p>之前是使用免費的網域 用wordpress 建立blog
+想找個容易的模板 建立blog</p>
+
+<hr />
+
+<h3 id="mac-安装-hugo">Mac 安装 Hugo</h3>
+
+<p>可以使用 HomeBrew 安裝 <a href="https://brew.sh/">https://brew.sh/</a> 下載</p>
+
+<pre><code>brew install hugo 
 </code></pre>
 
-<h1 id="h1">H1</h1>
+<p>一個 Hugo 項目就是一個網站，創建命令如下</p>
 
-<h2 id="h2">H2</h2>
-
-<h3 id="h3">H3</h3>
-
-<h4 id="h4">H4</h4>
-
-<h5 id="h5">H5</h5>
-
-<h6 id="h6">H6</h6>
-
-<h1 id="paragraphs">Paragraphs</h1>
-
-<pre><code class="language-markdown">This is a paragraph.
-I am still part of the paragraph.
-
-New paragraph.
+<pre><code>hugo new site [project-name]
 </code></pre>
 
-<p>This is a paragraph.
-I am still part of the paragraph.</p>
+<p>例如我的網站名稱是 blog,創建命令如下：</p>
 
-<p>New paragraph.</p>
-
-<h1 id="image">Image</h1>
-
-<pre><code class="language-markdown">Web Image
-
-![Web Image](https://i.loli.net/2019/04/13/5cb1d33cf0ee6.jpg)
-
-Local Image
-
-![Local Image](100.jpg)
+<pre><code>hugo new site blog
 
 </code></pre>
 
-<p>Web Image</p>
+<p>創建完成後，在 blog 資料夾下會生成以下檔結構：</p>
 
-<p><img src="https://i.loli.net/2019/04/13/5cb1d33cf0ee6.jpg" alt="Web Image" /></p>
+<pre><code>
+├── archetypes 
+├── assets 
+├── config
+├── content 
+├── data 
+├── layouts 
+├── static 
+└── themes 
 
-<p>Local Image</p>
 
-<p><img src="/100.jpg" alt="Local Image" /></p>
-
-<h1 id="block-quotes">Block Quotes</h1>
-
-<pre><code class="language-markdown">&gt; This is a block quote
 </code></pre>
 
-<blockquote>
-<p>This is a block quote</p>
-</blockquote>
+<h3 id="添加主題-theme-此處以-zozo-為例">添加主題 (theme) 此處以 zozo 為例</h3>
 
-<h1 id="code-blocks">Code Blocks</h1>
+<p>為了快速搭建博客，可以使用主題。使用主題後，只需要向 content 資料夾添加 Markdown 檔即可。</p>
 
-<pre><code class="language-markdown">```javascript
-// Fenced **with** highlighting
-function doIt() {
-    for (var i = 1; i &lt;= slen ; i^^) {
-        setTimeout(&quot;document.z.textdisplay.value = newMake()&quot;, i*300);
-        setTimeout(&quot;window.status = newMake()&quot;, i*300);
-    }
-}
-```
+<pre><code>cd blog
+git clone https://github.com/olOwOlo/hugo-theme-even themes/zozo
+
 </code></pre>
 
-<pre><code class="language-javascript">function doIt() {
-    for (var i = 1; i &lt;= slen ; i^^) {
-        setTimeout(&quot;document.z.textdisplay.value = newMake()&quot;, i*300);
-        setTimeout(&quot;window.status = newMake()&quot;, i*300);
-    }
-}
-</code></pre>
-
-<h1 id="tables">Tables</h1>
-
-<pre><code class="language-markdown">| Colors        | Fruits          | Vegetable         |
-| ------------- |:---------------:| -----------------:|
-| Red           | *Apple*         | [Pepper](#Tables) |
-| ~~Orange~~    | Oranges         | **Carrot**        |
-| Green         | ~~***Pears***~~ | Spinach           |
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>Colors</th>
-<th align="center">Fruits</th>
-<th align="right">Vegetable</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Red</td>
-<td align="center"><em>Apple</em></td>
-<td align="right"><a href="#Tables">Pepper</a></td>
-</tr>
-
-<tr>
-<td><del>Orange</del></td>
-<td align="center">Oranges</td>
-<td align="right"><strong>Carrot</strong></td>
-</tr>
-
-<tr>
-<td>Green</td>
-<td align="center"><del><strong><em>Pears</em></strong></del></td>
-<td align="right">Spinach</td>
-</tr>
-</tbody>
-</table>
-
-<h1 id="list-types">List Types</h1>
-
-<h4 id="ordered-list">Ordered List</h4>
-
-<pre><code class="language-markdown">1. First item
-2. Second item
-3. Third item
-</code></pre>
-
-<ol>
-<li>First item</li>
-<li>Second item</li>
-<li>Third item</li>
-</ol>
-
-<h4 id="unordered-list">Unordered List</h4>
-
-<pre><code class="language-markdown">- First item
-- Second item
-- Third item
-</code></pre>
-
-<ul>
-<li>First item</li>
-<li>Second item</li>
-<li>Third item</li>
-</ul>
-
-<h1 id="math">Math</h1>
-
-<pre><code>$$
-evidence\_{i}=\sum\_{j}W\_{ij}x\_{j}+b\_{i}
-$$
-
-$$
-AveP = \int_0^1 p(r) dr
-$$
-
-When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-</code></pre>
-
-<p>$$
-evidence_{i}=\sum_{j}W_{ij}x_{j}+b_{i}
-$$</p>
-
-<p>$$
-AveP = \int_0^1 p(r) dr
-$$</p>
-
-<p>When $a \ne 0$, there are two solutions to (ax^2 + bx + c = 0) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-
-<h4 id="emoji">Emoji</h4>
-
-<p>This is a test for emoji.
-😄
-🙈
-😸
-🍉</p></div>
+<p>你也可以選其他主題，進到該主題的 GitHub repo，將上面的網址改成 repo的網址、themes/zozo 改成 themes/你的主題名稱。</p>
+</div>
         <div class="post_footer">
           
           <div class="meta">
@@ -302,7 +163,9 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
               <span class="field tags">
                 <i class="remixicon-stack-line"></i>
                 
-                <a href="https://chiakilalala.github.io/tags/theme/">theme</a>
+                <a href="https://chiakilalala.github.io/tags/hugo/">hugo</a>
+                
+                <a href="https://chiakilalala.github.io/tags/markdown/">markdown</a>
                 
               </span>
             </div>
