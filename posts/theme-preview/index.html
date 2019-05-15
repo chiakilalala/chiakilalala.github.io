@@ -155,6 +155,31 @@ git clone https://github.com/olOwOlo/hugo-theme-even themes/zozo
 </code></pre>
 
 <p>你也可以選其他主題，進到該主題的 GitHub repo，將上面的網址改成 repo的網址、themes/zozo 改成 themes/你的主題名稱。</p>
+
+<p>將 /themes/zozo 中的 static 和 layouts 資料夾複製，取代根目錄中的 static 和 layouts 資料夾</p>
+
+<p>或是會有一些theme 供了頁面的 sample 給你，有個 exampleSite 資料夾，首先進入到 exampleSite 把 content 資料夾以及 config.toml 複製出來到根目錄下。</p>
+
+<h3 id="建立新文章">建立新文章</h3>
+
+<pre><code>hugo new posts/my-first-post.md
+</code></pre>
+
+<p>此指令會在 /content/posts 資料夾中建立 my-first-post.md。使用任意文字編輯器打開此 markdown 文件，將 draft 改成 false，文件內容任意。以後建立文章都是以此方式。</p>
+
+<h3 id="編輯-config-toml">編輯 config.toml</h3>
+
+<pre><code>baseURL = &quot;https://chswei.github.io/&quot;    #改成你的GitHub帳號名稱
+languageCode = &quot;zh-tw&quot;
+title = &quot; Blog&quot;    #自由命名
+</code></pre>
+
+<h3 id="本地測試">本地測試</h3>
+
+<p>hugo server -D
+執行完後，在瀏覽器中輸入網址 <a href="http://localhost:1313，就可以看到網站的雛形。">http://localhost:1313，就可以看到網站的雛形。</a></p>
+
+<h1 id="部署到-github">部署到 GitHub</h1>
 </div>
         <div class="post_footer">
           
