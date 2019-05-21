@@ -6,10 +6,19 @@
     <description>Recent content on 無盡光芒</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2019 14:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://chiakilalala.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ajax api 串接</title>
+      <link>https://chiakilalala.github.io/posts/api-/</link>
+      <pubDate>Tue, 21 May 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/api-/</guid>
+      <description>Ajax api 串接 API 基本概念 將 Client 與 Server 分開。 每個 Request 間都不應該保持 State (狀態)，意指 Request 不會攜帶 State、Data 使用 HTTP 方法 主要的 HTTP 動作 GET POST PUT DELETE HTTP Status Code 對 Server 請求成功的 Request，Server 會用 Response 回覆你結果。 Response 主要</description>
+    </item>
     
     <item>
       <title>Hugo &#43; github 個人blog 建立</title>
@@ -63,17 +72,6 @@
       
       <guid>https://chiakilalala.github.io/posts/javascript/</guid>
       <description>Whack A Mole Game JS 30day 步驟 function randomTime(min, max) { return Math.round(Math.random() * (max - min) + min); } //隨機老鼠上洞的時間 2 隨機決定哪個洞有老鼠跳來跳去 function randomHole(holes) { const idx = Math.floor(Math.random() * holes.length); //亂數洞 const hole = holes[idx]; if (hole === lastHole) { console.log(&amp;quot;Ah that is the same one bud&amp;quot;); return randomHole(holes); } lastHole = hole; return hole; } 3.因為要避免亂數洞裏同時出</description>
-    </item>
-    
-    <item>
-      <title>Creating a New Theme</title>
-      <link>https://chiakilalala.github.io/posts/english-preview/</link>
-      <pubDate>Mon, 01 Apr 2019 14:26:00 +0800</pubDate>
-      
-      <guid>https://chiakilalala.github.io/posts/english-preview/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&#39;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&#39;t cover using CSS to style your theme.&lt;/p&gt;</description>
     </item>
     
     <item>

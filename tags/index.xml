@@ -6,10 +6,28 @@
     <description>Recent content in Tags on 無盡光芒</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2019 14:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://chiakilalala.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ajax</title>
+      <link>https://chiakilalala.github.io/tags/ajax/</link>
+      <pubDate>Tue, 21 May 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/tags/ajax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api </title>
+      <link>https://chiakilalala.github.io/tags/api/</link>
+      <pubDate>Tue, 21 May 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/tags/api/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>
@@ -80,24 +98,6 @@
       <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/tags/js30/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>https://chiakilalala.github.io/tags/english/</link>
-      <pubDate>Mon, 01 Apr 2019 14:26:00 +0800</pubDate>
-      
-      <guid>https://chiakilalala.github.io/tags/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Theme</title>
-      <link>https://chiakilalala.github.io/tags/theme/</link>
-      <pubDate>Mon, 01 Apr 2019 14:26:00 +0800</pubDate>
-      
-      <guid>https://chiakilalala.github.io/tags/theme/</guid>
       <description></description>
     </item>
     

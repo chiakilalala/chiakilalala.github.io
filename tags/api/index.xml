@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>api  on 無盡光芒</title>
+    <link>https://chiakilalala.github.io/tags/api/</link>
+    <description>Recent content in api  on 無盡光芒</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 21 May 2019 14:26:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://chiakilalala.github.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ajax api 串接</title>
+      <link>https://chiakilalala.github.io/posts/api-/</link>
+      <pubDate>Tue, 21 May 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/api-/</guid>
+      <description>Ajax api 串接 API 基本概念 將 Client 與 Server 分開。 每個 Request 間都不應該保持 State (狀態)，意指 Request 不會攜帶 State、Data 使用 HTTP 方法 主要的 HTTP 動作 GET POST PUT DELETE HTTP Status Code 對 Server 請求成功的 Request，Server 會用 Response 回覆你結果。 Response 主要</description>
+    </item>
+    
+  </channel>
+</rss>
