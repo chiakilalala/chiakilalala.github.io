@@ -6,10 +6,19 @@
     <description>Recent content on 無盡光芒</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 21 May 2019 14:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jun 2019 14:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://chiakilalala.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>關於電子商務網站 ＵＩＵＸ 二三事</title>
+      <link>https://chiakilalala.github.io/posts/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/</link>
+      <pubDate>Sat, 29 Jun 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/</guid>
+      <description>以行動裝置為第一優先 無論工程師或是設計師 千萬不能陷入專家陷阱，因為每個人的心智模式不一樣， 只須記住一件事情，以使用者意見為中心，來評估優化事項 主要點擊區範圍應擴大 手機menu可以滿版 商品照片一定要用清</description>
+    </item>
     
     <item>
       <title>Ajax api 串接</title>
