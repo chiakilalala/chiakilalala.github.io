@@ -6,19 +6,10 @@
     <description>Recent content on 無盡光芒</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 12 Jul 2019 22:53:34 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jun 2019 14:26:00 +0800</lastBuildDate>
     
 	<atom:link href="https://chiakilalala.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯中)</title>
-      <link>https://chiakilalala.github.io/posts/0712-post/</link>
-      <pubDate>Fri, 12 Jul 2019 22:53:34 +0800</pubDate>
-      
-      <guid>https://chiakilalala.github.io/posts/0712-post/</guid>
-      <description>12 Awkward Web Design Problems and How to Fix Them 12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯) (Web design has evolved tremendously from what it used to be, shedding off ineffective practices and replacing them with more efficient methods. Often what is currently known as a best practice or most revered design style, will shift out of vogue or be replaced with a more suitable approach. What’s left behind can quickly become out of place and</description>
-    </item>
     
     <item>
       <title>關於電子商務網站 ＵＩＵＸ 二三事</title>
@@ -99,6 +90,18 @@
       
       <guid>https://chiakilalala.github.io/about/</guid>
       <description>Hugo 官方主页: https://gohugo.io/ Hugo的安装方式有两种，一种是直接下载编译好的Hugo二进制文件。如果只是使用Hugo推荐用这种方式。另一种方式是获取Hugo的源码，自己编译。由于各种不可预料的网络问题，第二种方式不</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chiakilalala.github.io/posts/0712-post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/0712-post/</guid>
+      <description>12 Awkward Web Design Problems and How to Fix Them 12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17)
+(Web design has evolved tremendously from what it used to be, shedding off ineffective practices and replacing them with more efficient methods. Often what is currently known as a best practice or most revered design style, will shift out of vogue or be replaced with a more suitable approach. What’s left behind can quickly become out of place and leave an awkward feeling with your users.
+網頁設計 已經從過去使用產生極大發展 ，擺脫無效的做法，並用更有效的方法來取代,通常被稱為最佳做法或最受尊崇的設計風格,將脫離流行或被更合適的方法取代。留下的東西很快就會變得不合適，給用戶留下尷尬的感覺。
+Websites need to evolve and adapt to better serve its own goals and the goals of its users. This doesn’t mean that web designs should be restricted to only what is in style at that moment, but that web designers need to take into account what lessons have been learned by decades of use.</description>
     </item>
     
   </channel>
