@@ -10,7 +10,7 @@
         content="Zeuk"/>
 
   
-  <meta name="description" content="Hugo theme zozo example site."/>
+  <meta name="description" content="前端基礎面試題(HTML&#43;CSS部分&#43;JS) 1.行內元素和塊級元素?img算什麼?行內元素怎麼轉化為塊級元素? 行內元素：和有他元素都在一行上，高度、行高及外邊距和內邊距都不可改變，文字圖片的寬度不可改"/>
   
 
   
@@ -19,13 +19,11 @@
   
 
   
-  <link rel="canonical" href="https://chiakilalala.github.io/posts/"/>
+  <link rel="canonical" href="https://chiakilalala.github.io/posts/f2e/"/>
 
   
-  <link rel="alternate" type="application/rss&#43;xml" href="https://chiakilalala.github.io/posts/index.xml">
-  
 
-  <title>Posts &middot; 無盡光芒</title>
+  <title>前端基礎面試題(HTML&#43;CSS部分&#43;JS) &middot; 無盡光芒</title>
 
   <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
   <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
@@ -99,85 +97,86 @@
 </div>
 
   <div class="content">
-    <div class="list_with_title">
-      
-      <div class="listing_title">2019</div>
-      <div class="listing">
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/-/">12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17)</a>
-            <div class="post_time"><span class="date">07-18</span></div>
-          </div>
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/f2e/'>前端基礎面試題(HTML&#43;CSS部分&#43;JS)</a></h2>
+          <span class="date">2019.07.17</span>
         </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/f2e/">前端基礎面試題(HTML&#43;CSS部分&#43;JS)</a>
-            <div class="post_time"><span class="date">07-17</span></div>
+        <div class="post_content markdown">
+
+<h1 id="前端基礎面試題-html-css部分-js">前端基礎面試題(HTML+CSS部分+JS)</h1>
+
+<h2 id="1-行內元素和塊級元素-img算什麼-行內元素怎麼轉化為塊級元素">1.行內元素和塊級元素?img算什麼?行內元素怎麼轉化為塊級元素?</h2>
+
+<p>行內元素：和有他元素都在一行上，高度、行高及外邊距和內邊距都不可改變，文字圖片的寬度不可改變，只能容納文本或者其他行內元素；其中img是行元素
+塊級元素：總是在新行上開始，高度、行高及外邊距和內邊距都可控制，可以容納內斂元素和其他元素；
+行元素轉換為塊級元素方式：display：block；</p>
+
+<h2 id="2-將多個元素設置為同一行-清除浮動有幾種方式">2.將多個元素設置為同一行?清除浮動有幾種方式?</h2>
+
+<p>將多個元素設置為同一行：float，inline-block
+清除浮動的方式：
+* 方法一：添加新的元素、應用clear：both；
+* 方法二：父級div定義overflow: hidden；
+* 方法三：利用:after和:before來在元素內部插入兩個元素塊，從面達到清除浮動的效果。</p>
+
+<pre><code>.clear{zoom:1;} 
+.clear:after
+{content:””;clear:both;
+display:block;
+height:0;
+overflow:hidden;
+visibility:hidden;
+}
+</code></pre>
+
+<h2 id="3-css-hack">3.CSS hack</h2>
+
+<p>[](https://)
+* (1)圖片間隙
+在div中插入圖片，圖片會將div下方撐大3px。hack1：將<div>與<img>寫在同一行。hack2：給<img>添加display：block；
+dt li中的圖片間隙。hack：給<img>添加display：block；</p>
+
+<ul>
+<li><p>默認高度，IE6以下版本中，部分塊元素，擁有默認高度（低於18px）
+hack1：給元素添加：font-size：0；
+hack2：聲明： overflow：hidden；</p></li>
+
+<li><p>表單行高不一致
+hack1：給表單添加聲明：float：left；height： ；border： 0；</p></li>
+
+<li><p>鼠標指針
+hack：若統一某一元素鼠標指針為手型：cursor：pointer；
+當li內的a轉化塊元素時，給a設置float，IE裡面會出現階梯狀
+hack1：給a加display：inline-block；
+hack2：給li加float：left；```</p></li>
+</ul>
+
+<p>```</p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://chiakilalala.github.io/tags/f2e/">f2e</a>
+                
+                <a href="https://chiakilalala.github.io/tags/html/css/">HTML/CSS</a>
+                
+                <a href="https://chiakilalala.github.io/tags/js/">JS</a>
+                
+              </span>
+            </div>
           </div>
+          
         </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/">關於電子商務網站 ＵＩＵＸ 二三事</a>
-            <div class="post_time"><span class="date">06-29</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/api-/">Ajax api 串接</a>
-            <div class="post_time"><span class="date">05-21</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/theme-preview/">Hugo &#43; github 個人blog 建立</a>
-            <div class="post_time"><span class="date">05-14</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/javascrip/">Javascript ES6 繼承</a>
-            <div class="post_time"><span class="date">05-11</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/my-first-post/">Javascript  常數 ES6 筆記</a>
-            <div class="post_time"><span class="date">05-10</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/first-post/">JS 30day Day2  JS and CSS Clock 筆記</a>
-            <div class="post_time"><span class="date">05-07</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/ui/ux/">UI/UX 設計指南分享</a>
-            <div class="post_time"><span class="date">04-11</span></div>
-          </div>
-        </div>
-        
-        <div class="listing_item">
-          <div class="listing_post">
-            <a href="/posts/javascript/">Whack A Mole Game JS 30day</a>
-            <div class="post_time"><span class="date">04-10</span></div>
-          </div>
-        </div>
-        
       </div>
       
+      
     </div>
-    <div class="pagination"></div>
   </div>
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
 </div>
