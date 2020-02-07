@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>w3hexschool on 無盡光芒</title>
+    <link>https://chiakilalala.github.io/tags/w3hexschool/</link>
+    <description>Recent content in w3hexschool on 無盡光芒</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 07 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chiakilalala.github.io/tags/w3hexschool/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用原生 Javascript 寫 tab 切換效果</title>
+      <link>https://chiakilalala.github.io/posts/javascrip/</link>
+      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascrip/</guid>
+      <description>思考流程 資料 (model) &amp;gt; 事件 (event) &amp;gt; 介面 (View) demo 網址 使用之前該理解的 Jacascript for(迴圈) / function （函式）/ this / if...else / classList.remove /classList.add 來源： JavaScript 教學 畫面效果如下： 點擊一個按鈕（電子發票） 另外一個按鈕的畫面 不會出現。 tab 點擊 面板 HTML 畫面 &amp;lt;div class=&amp;quot;btn-group checkout-btn&amp;quot; role=&amp;quot;group&amp;quot; id=&amp;quot;tabs&amp;quot;&amp;gt; &amp;lt;a</description>
+    </item>
+    
+  </channel>
+</rss>
