@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 無盡光芒</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2020 23:00:25 +0800</lastBuildDate>
     
 	<atom:link href="https://chiakilalala.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用原生 Javascript 製作一個簡單的 BMI 計算機</title>
+      <link>https://chiakilalala.github.io/posts/javascript002/</link>
+      <pubDate>Sat, 08 Feb 2020 23:00:25 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascript002/</guid>
+      <description>使用原生 Javascript 製作一個簡單的 BMI 計算機： BMI = 體重(公斤) / (身高(公尺) x 身高(公尺)) BMI計算網站 思考流程： 1.取出 按鈕 input 關於身高和體重的值，然後再利用 公式 算出 BMI 在畫面上印出結果。 2.根據 BMI 數值 判斷 BMI 標</description>
+    </item>
     
     <item>
       <title>使用原生 Javascript 寫 tab 切換效果</title>
@@ -27,15 +36,6 @@
       
       <guid>https://chiakilalala.github.io/posts/-/</guid>
       <description>12 Awkward Web Design Problems and How to Fix Them 12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17) (Web design has evolved tremendously from what it used to be, shedding off ineffective practices and replacing them with more efficient methods. Often what is currently known as a best practice or most revered design style, will shift out of vogue or be replaced with a more suitable approach. What’s left behind can quickly become</description>
-    </item>
-    
-    <item>
-      <title>前端基礎面試題(HTML&#43;CSS部分&#43;JS)</title>
-      <link>https://chiakilalala.github.io/posts/f2e/</link>
-      <pubDate>Wed, 17 Jul 2019 14:26:00 +0800</pubDate>
-      
-      <guid>https://chiakilalala.github.io/posts/f2e/</guid>
-      <description>前端基礎面試題(HTML+CSS部分+JS) 1.行內元素和塊級元素?img算什麼?行內元素怎麼轉化為塊級元素? 行內元素：和有他元素都在一行上，高度、行高及外邊距和內邊距都不可改變，文字圖片的寬度不可改</description>
     </item>
     
     <item>
