@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>f2e on 無盡光芒</title>
+    <link>https://chiakilalala.github.io/tags/f2e/</link>
+    <description>Recent content in f2e on 無盡光芒</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 17 Jul 2019 14:26:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://chiakilalala.github.io/tags/f2e/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>前端基礎面試題(HTML&#43;CSS部分&#43;JS)</title>
+      <link>https://chiakilalala.github.io/posts/f2e/</link>
+      <pubDate>Wed, 17 Jul 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/f2e/</guid>
+      <description>前端基礎面試題(HTML+CSS部分+JS) 1.行內元素和塊級元素?img算什麼?行內元素怎麼轉化為塊級元素? 行內元素：和有他元素都在一行上，高度、行高及外邊距和內邊距都不可改變，文字圖片的寬度不可改</description>
+    </item>
+    
+  </channel>
+</rss>

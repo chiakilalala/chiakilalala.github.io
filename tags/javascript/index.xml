@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on 無盡光芒</title>
+    <link>https://chiakilalala.github.io/tags/javascript/</link>
+    <description>Recent content in Javascript on 無盡光芒</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 07 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chiakilalala.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用原生 Javascript 寫 tab 切換效果</title>
+      <link>https://chiakilalala.github.io/posts/javascript-001/</link>
+      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascript-001/</guid>
+      <description>思考流程 資料 (model) &amp;gt; 事件 (event) &amp;gt; 介面 (View) demo 網址 使用之前該理解的 Jacascript for(迴圈) / function （函式）/ this / if...else / classList.remove /classList.add 來源： JavaScript 教學 畫面效果如下： 點擊一個按鈕（電子發票） 另外一個按鈕的畫面 不會出現。 tab 點擊 面板 HTML 畫面 &amp;lt;div class=&amp;quot;btn-group checkout-btn&amp;quot; role=&amp;quot;group&amp;quot; id=&amp;quot;tabs&amp;quot;&amp;gt; &amp;lt;a</description>
+    </item>
+    
+    <item>
+      <title>使用原生 Javascript 寫 tab 切換效果</title>
+      <link>https://chiakilalala.github.io/posts/javascript-001/</link>
+      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascript-001/</guid>
+      <description>思考流程 資料 (model) &amp;gt; 事件 (event) &amp;gt; 介面 (View) demo 網址 使用之前該理解的 Jacascript for(迴圈) / function （函式）/ this / if...else / classList.remove /classList.add 來源： JavaScript 教學 畫面效果如下： 點擊一個按鈕（電子發票） 另外一個按鈕的畫面 不會出現。 tab 點擊 面板 HTML 畫面 &amp;lt;div class=&amp;quot;btn-group checkout-btn&amp;quot; role=&amp;quot;group&amp;quot; id=&amp;quot;tabs&amp;quot;&amp;gt; &amp;lt;a</description>
+    </item>
+    
+    <item>
+      <title>Javascript ES6 繼承</title>
+      <link>https://chiakilalala.github.io/posts/javascrip/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascrip/</guid>
+      <description>Javascript ES6 ES6 繼承 學會定義子類別。(extends 關鍵字) 學會使用 super 關鍵字呼叫父類別建構式。 學會利用已經定義好的子類別物件。 class 子類別名稱 extends 父類別名稱 建立子類別物件: new 子類別名稱() 定義子類別建構式: constructor{ super(); //呼</description>
+    </item>
+    
+    <item>
+      <title>Whack A Mole Game JS 30day</title>
+      <link>https://chiakilalala.github.io/posts/javascript/</link>
+      <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascript/</guid>
+      <description>Whack A Mole Game JS 30day 步驟 function randomTime(min, max) { return Math.round(Math.random() * (max - min) + min); } //隨機老鼠上洞的時間 2 隨機決定哪個洞有老鼠跳來跳去 function randomHole(holes) { const idx = Math.floor(Math.random() * holes.length); //亂數洞 const hole = holes[idx]; if (hole === lastHole) { console.log(&amp;quot;Ah that is the same one bud&amp;quot;); return randomHole(holes); } lastHole = hole; return hole; } 3.因為要避免亂數洞裏同時出</description>
+    </item>
+    
+  </channel>
+</rss>

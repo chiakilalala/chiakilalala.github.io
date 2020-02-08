@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>無盡光芒</title>
+    <link>https://chiakilalala.github.io/</link>
+    <description>Recent content on 無盡光芒</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 07 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chiakilalala.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用原生 Javascript 寫 tab 切換效果</title>
+      <link>https://chiakilalala.github.io/posts/javascript-001/</link>
+      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascript-001/</guid>
+      <description>思考流程 資料 (model) &amp;gt; 事件 (event) &amp;gt; 介面 (View) demo 網址 使用之前該理解的 Jacascript for(迴圈) / function （函式）/ this / if...else / classList.remove /classList.add 來源： JavaScript 教學 畫面效果如下： 點擊一個按鈕（電子發票） 另外一個按鈕的畫面 不會出現。 tab 點擊 面板 HTML 畫面 &amp;lt;div class=&amp;quot;btn-group checkout-btn&amp;quot; role=&amp;quot;group&amp;quot; id=&amp;quot;tabs&amp;quot;&amp;gt; &amp;lt;a</description>
+    </item>
+    
+    <item>
+      <title>12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17)</title>
+      <link>https://chiakilalala.github.io/posts/-/</link>
+      <pubDate>Thu, 18 Jul 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/-/</guid>
+      <description>12 Awkward Web Design Problems and How to Fix Them 12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17) (Web design has evolved tremendously from what it used to be, shedding off ineffective practices and replacing them with more efficient methods. Often what is currently known as a best practice or most revered design style, will shift out of vogue or be replaced with a more suitable approach. What’s left behind can quickly become</description>
+    </item>
+    
+    <item>
+      <title>前端基礎面試題(HTML&#43;CSS部分&#43;JS)</title>
+      <link>https://chiakilalala.github.io/posts/f2e/</link>
+      <pubDate>Wed, 17 Jul 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/f2e/</guid>
+      <description>前端基礎面試題(HTML+CSS部分+JS) 1.行內元素和塊級元素?img算什麼?行內元素怎麼轉化為塊級元素? 行內元素：和有他元素都在一行上，高度、行高及外邊距和內邊距都不可改變，文字圖片的寬度不可改</description>
+    </item>
+    
+    <item>
+      <title>關於電子商務網站 ＵＩＵＸ 二三事</title>
+      <link>https://chiakilalala.github.io/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/</link>
+      <pubDate>Sat, 29 Jun 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/</guid>
+      <description>以行動裝置為第一優先 無論工程師或是設計師 千萬不能陷入專家陷阱，因為每個人的心智模式不一樣， 只須記住一件事情，以使用者意見為中心，來評估優化事項 主要點擊區範圍應擴大 手機menu可以滿版 商品照片一定要用清</description>
+    </item>
+    
+    <item>
+      <title>關於電子商務網站 ＵＩＵＸ 二三事</title>
+      <link>https://chiakilalala.github.io/posts/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/</link>
+      <pubDate>Sat, 29 Jun 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/</guid>
+      <description>以行動裝置為第一優先 無論工程師或是設計師 千萬不能陷入專家陷阱，因為每個人的心智模式不一樣， 只須記住一件事情，以使用者意見為中心，來評估優化事項 主要點擊區範圍應擴大 手機menu可以滿版 商品照片一定要用清</description>
+    </item>
+    
+    <item>
+      <title>Ajax api 串接</title>
+      <link>https://chiakilalala.github.io/posts/api-/</link>
+      <pubDate>Tue, 21 May 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/api-/</guid>
+      <description>Ajax api 串接 API 基本概念 將 Client 與 Server 分開。 每個 Request 間都不應該保持 State (狀態)，意指 Request 不會攜帶 State、Data 使用 HTTP 方法 主要的 HTTP 動作 GET POST PUT DELETE HTTP Status Code 對 Server 請求成功的 Request，Server 會用 Response 回覆你結果。 Response 主要</description>
+    </item>
+    
+    <item>
+      <title>Hugo &#43; github 個人blog 建立</title>
+      <link>https://chiakilalala.github.io/posts/theme-preview/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/theme-preview/</guid>
+      <description>Hugo + github 個人blog 建立 之前是使用免費的網域 用wordpress 建立blog 想找個容易的模板 建立blog Mac 安装 Hugo 可以使用 HomeBrew 安裝 https://brew.sh/ 下載 brew install hugo 一個 Hugo 項目就是一個網站，創建命令如下 hugo new site [project-name] 例如我的網站名稱是 b</description>
+    </item>
+    
+    <item>
+      <title>Javascript ES6 繼承</title>
+      <link>https://chiakilalala.github.io/posts/javascrip/</link>
+      <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascrip/</guid>
+      <description>Javascript ES6 ES6 繼承 學會定義子類別。(extends 關鍵字) 學會使用 super 關鍵字呼叫父類別建構式。 學會利用已經定義好的子類別物件。 class 子類別名稱 extends 父類別名稱 建立子類別物件: new 子類別名稱() 定義子類別建構式: constructor{ super(); //呼</description>
+    </item>
+    
+    <item>
+      <title>Javascript  常數 ES6 筆記</title>
+      <link>https://chiakilalala.github.io/posts/my-first-post/</link>
+      <pubDate>Fri, 10 May 2019 06:53:46 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/my-first-post/</guid>
+      <description>#Javascript ES6 常數 筆記 const 常數名稱 let 宣告變數 // var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope for(var i=0;i&amp;lt;3;i++){ console.log(&amp;quot;i:&amp;quot;+i); } console.log(&amp;quot;outside i:&amp;quot;+i); // 請將上方的變數 i 換用 let 宣告，比較輸出的差異。 // var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope for(let i=0;i&amp;lt;3;i++){ console.log(&amp;quot;i:&amp;quot;+i); } console.log(&amp;quot;outside i:&amp;quot;+i); let const var</description>
+    </item>
+    
+    <item>
+      <title>JS 30day Day2  JS and CSS Clock 筆記</title>
+      <link>https://chiakilalala.github.io/posts/first-post/</link>
+      <pubDate>Tue, 07 May 2019 07:43:32 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/first-post/</guid>
+      <description>JS 30day Day2 JS and CSS Clock 筆記 demo 目的 學會 js Time 和 用js 操作css 還有基本的ES6語法 步驟 利用css 製作 分針 時針 秒針 取時間的函數 製作js 函數 setＤate 取出現在的時間 const now = new Date(); // const seconds = now.getSeconds(); const mins = now.getMinutes(); const hour = now.getHours(); 3.利用時間</description>
+    </item>
+    
+    <item>
+      <title>UI/UX 設計指南分享</title>
+      <link>https://chiakilalala.github.io/posts/ui/ux/</link>
+      <pubDate>Thu, 11 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/ui/ux/</guid>
+      <description>UI/UX 設計指南分享 在這邊整理一些網路上整理下來的UI設計的一些小知識，在設計介面與流程時可以參考。 關於UI Element的使用建議參考看看即可，因為UI的世界瞬息萬變，大家使用的方法也不盡相同，不過我覺得</description>
+    </item>
+    
+    <item>
+      <title>Whack A Mole Game JS 30day</title>
+      <link>https://chiakilalala.github.io/posts/javascript/</link>
+      <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascript/</guid>
+      <description>Whack A Mole Game JS 30day 步驟 function randomTime(min, max) { return Math.round(Math.random() * (max - min) + min); } //隨機老鼠上洞的時間 2 隨機決定哪個洞有老鼠跳來跳去 function randomHole(holes) { const idx = Math.floor(Math.random() * holes.length); //亂數洞 const hole = holes[idx]; if (hole === lastHole) { console.log(&amp;quot;Ah that is the same one bud&amp;quot;); return randomHole(holes); } lastHole = hole; return hole; } 3.因為要避免亂數洞裏同時出</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://chiakilalala.github.io/about/</link>
+      <pubDate>Sat, 29 Dec 2018 20:24:28 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/about/</guid>
+      <description>Hugo 官方主页: https://gohugo.io/ Hugo的安装方式有两种，一种是直接下载编译好的Hugo二进制文件。如果只是使用Hugo推荐用这种方式。另一种方式是获取Hugo的源码，自己编译。由于各种不可预料的网络问题，第二种方式不</description>
+    </item>
+    
+  </channel>
+</rss>

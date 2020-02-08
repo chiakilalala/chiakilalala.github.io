@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="前端基礎面試題(HTML&#43;CSS部分&#43;JS) 1.行內元素和塊級元素?img算什麼?行內元素怎麼轉化為塊級元素? 行內元素：和有他元素都在一行上，高度、行高及外邊距和內邊距都不可改變，文字圖片的寬度不可改"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, zozo, UIUX, F2E"/>
+  
+
+  
+  <link rel="canonical" href="https://chiakilalala.github.io/posts/f2e/"/>
+
+  
+
+  <title>前端基礎面試題(HTML&#43;CSS部分&#43;JS) &middot; 無盡光芒</title>
+
+  <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首頁</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">歸檔</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">標籤</a>
+      </li>
+      
+      <li>
+        <a href="/about/">關於</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://chiakilalala.github.io/">
+          <span>無盡光芒</span>
+          <img src="https://chiakilalala.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">前端UIUX 使用驚見私房筆記</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="https://www.instagram.com/satsukajiyoi/%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="https://twitter.com/chiaki205102%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/f2e/'>前端基礎面試題(HTML&#43;CSS部分&#43;JS)</a></h2>
+          <span class="date">2019.07.17</span>
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="前端基礎面試題-html-css部分-js">前端基礎面試題(HTML+CSS部分+JS)</h1>
+
+<h2 id="1-行內元素和塊級元素-img算什麼-行內元素怎麼轉化為塊級元素">1.行內元素和塊級元素?img算什麼?行內元素怎麼轉化為塊級元素?</h2>
+
+<p>行內元素：和有他元素都在一行上，高度、行高及外邊距和內邊距都不可改變，文字圖片的寬度不可改變，只能容納文本或者其他行內元素；其中img是行元素
+塊級元素：總是在新行上開始，高度、行高及外邊距和內邊距都可控制，可以容納內斂元素和其他元素；
+行元素轉換為塊級元素方式：display：block；</p>
+
+<h2 id="2-將多個元素設置為同一行-清除浮動有幾種方式">2.將多個元素設置為同一行?清除浮動有幾種方式?</h2>
+
+<p>將多個元素設置為同一行：float，inline-block
+清除浮動的方式：
+* 方法一：添加新的元素、應用clear：both；
+* 方法二：父級div定義overflow: hidden；
+* 方法三：利用:after和:before來在元素內部插入兩個元素塊，從面達到清除浮動的效果。</p>
+
+<pre><code>.clear{zoom:1;} 
+.clear:after
+{content:””;clear:both;
+display:block;
+height:0;
+overflow:hidden;
+visibility:hidden;
+}
+</code></pre>
+
+<h2 id="3-css-hack">3.CSS hack</h2>
+
+<p>[](https://)
+* (1)圖片間隙
+在div中插入圖片，圖片會將div下方撐大3px。hack1：將<div>與<img>寫在同一行。hack2：給<img>添加display：block；
+dt li中的圖片間隙。hack：給<img>添加display：block；</p>
+
+<ul>
+<li><p>默認高度，IE6以下版本中，部分塊元素，擁有默認高度（低於18px）
+hack1：給元素添加：font-size：0；
+hack2：聲明： overflow：hidden；</p></li>
+
+<li><p>表單行高不一致
+hack1：給表單添加聲明：float：left；height： ；border： 0；</p></li>
+
+<li><p>鼠標指針
+hack：若統一某一元素鼠標指針為手型：cursor：pointer；
+當li內的a轉化塊元素時，給a設置float，IE裡面會出現階梯狀
+hack1：給a加display：inline-block；
+hack2：給li加float：left；```</p></li>
+</ul>
+
+<p>```</p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://chiakilalala.github.io/tags/f2e/">f2e</a>
+                
+                <a href="https://chiakilalala.github.io/tags/html/css/">HTML/CSS</a>
+                
+                <a href="https://chiakilalala.github.io/tags/js/">JS</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="https://chiakilalala.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://chiakilalala.github.io/js/zozo.js"></script>
+<script src="https://chiakilalala.github.io/js/highlight.pack.js"></script>
+<link  href="https://chiakilalala.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://chiakilalala.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>
