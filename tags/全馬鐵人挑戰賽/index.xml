@@ -6,10 +6,19 @@
     <description>Recent content in 全馬鐵人挑戰賽 on 無盡光芒</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 08 Feb 2020 23:00:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2020 10:54:00 +0800</lastBuildDate>
     
 	<atom:link href="https://chiakilalala.github.io/tags/%E5%85%A8%E9%A6%AC%E9%90%B5%E4%BA%BA%E6%8C%91%E6%88%B0%E8%B3%BD/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>關於 localStorage 使用說明</title>
+      <link>https://chiakilalala.github.io/posts/javascript003/</link>
+      <pubDate>Sun, 16 Feb 2020 10:54:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascript003/</guid>
+      <description>關於 localStorage 使用說明 為什麼要學 localStorage，原因大概如下面所說一樣： 將資料從頁面中的程式碼儲存到 Web瀏覽器的儲存空間當中。如此一來，本來存入程式碼當中的資料，就不會因重新整理頁面或者關閉瀏覽器</description>
+    </item>
     
     <item>
       <title>使用原生 Javascript 製作一個簡單的 BMI 計算機</title>
