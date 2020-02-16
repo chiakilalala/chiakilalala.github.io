@@ -17,7 +17,7 @@
       <pubDate>Sun, 16 Feb 2020 10:54:00 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/javascript003/</guid>
-      <description>關於 localStorage 使用說明 為什麼要學 localStorage，原因大概如下面所說一樣： 將資料從頁面中的程式碼儲存到 Web瀏覽器的儲存空間當中。如此一來，本來存入程式碼當中的資料，就不會因重新整理頁面或者關閉瀏覽器</description>
+      <description>為什麼要學 localStorage，原因大概如下面所說一樣： 將資料從頁面中的程式碼儲存到 Web瀏覽器的儲存空間當中。如此一來，本來存入程式碼當中的資料，就不會因重新整理頁面或者關閉瀏覽器而消失 最近想要</description>
     </item>
     
   </channel>
