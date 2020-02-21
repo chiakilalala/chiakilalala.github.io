@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="關於 todolist"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, zozo, UIUX, F2E"/>
+  
+
+  
+  <link rel="canonical" href="https://chiakilalala.github.io/posts/javascript004/"/>
+
+  
+
+  <title>使用原生 Javascript 做一個 todolist &middot; 無盡光芒</title>
+
+  <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首頁</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">歸檔</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">標籤</a>
+      </li>
+      
+      <li>
+        <a href="/about/">關於</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://chiakilalala.github.io/">
+          <span>無盡光芒</span>
+          <img src="https://chiakilalala.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">前端UIUX 使用驚見私房筆記</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="https://www.instagram.com/satsukajiyoi/%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="https://twitter.com/chiaki205102%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/javascript004/'>使用原生 Javascript 做一個 todolist</a></h2>
+          <span class="date">2020.02.22</span>
+        </div>
+        <div class="post_content markdown">
+
+<p>前言：為了更加熟悉 LocalStorage 所以來製作一個 todolist</p>
+
+<p><strong>重點提醒</strong> :把資料放進去 localStorage 是用 setItem()，把資料取出來是</p>
+
+<p>getItem()。</p>
+
+<p>複習觀念可以看我之前的文章 <a href="https://ithelp.ithome.com.tw/articles/10230042">關於 localStorage 使用說明</a></p>
+
+<p><a href="https://codepen.io/chiakilalala/pen/abObpJX?editors=1011">範例網址</a></p>
+
+<h2 id="畫面">畫面</h2>
+
+<p><img src="https://i.imgur.com/LiduuE6.png" alt="image" /></p>
+
+<p>透過使用 localStorage 存取你所輸入的資料，在你關閉頁面標籤或瀏覽器再重新開啟時，你原本製作的清單和內容，將被呈現出來。</p>
+
+<p>接下來先有 HTML 我們要先有骨架，再加上css 包裝他的外表：</p>
+
+<p>HTML</p>
+
+<pre><code class="language-htmlmixed=">     &lt;div class=&quot;content&quot;&gt;
+        &lt;div class=&quot;addList&quot;&gt;
+          &lt;input type=&quot;text&quot; class=&quot;text&quot;  placeholder=&quot;&quot; required &gt;
+          &lt;input type=&quot;button&quot; class=&quot;send&quot; value=&quot;加入代辦&quot;&gt;
+        &lt;/div&gt;
+        &lt;ul class=&quot;list&quot;&gt;&lt;/ul&gt;   
+     &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<p>我們必須要宣告 三個東西：
+1. 輸入按鈕
+2. 呈現input 值
+3. 印出畫面</p>
+
+<h3 id="指定-dom">指定 DOM</h3>
+
+<pre><code class="language-javascript=">let send = document.querySelector('.send');
+let text = document.querySelector('.text');
+
+let list = document.querySelector('.list');
+
+</code></pre>
+
+<p>每次在頁面讀取時，使用 getItem() 方法從 localStorage 取出資料，並透過 JSON.parse() 方法將資料轉換成原本的格式。然而第一次在提取資料會取不到資料，因此需要建立一個新的空陣列：</p>
+
+<pre><code class="language-javascript=">let data =  JSON.parse(localStorage.getItem(&quot;todolist&quot;))||[];
+</code></pre>
+
+<p>使用者點擊畫面 使用監聽事件</p>
+
+<pre><code class="language-javascript=">send.addEventListener('click', addTodo);
+</code></pre>
+
+<p>製作一個 名為 addData 的 function 我們要製作一個物件，讓把物件存進localStorage。
+hint : localStorage setItem() 裡面的東西 我要把它轉字串喔</p>
+
+<blockquote>
+<p>JSON.stringify 將陣列轉換為 JSON 字串</p>
+</blockquote>
+
+<pre><code class="language-javascript=">function addData(e){
+ e.preventDefault;
+ // 找到localStorage 存入 裡面的值 使用setItem()
+ // 撈出輸入鍵的值
+let text =document.querySelector('.text').value;
+ // 因為要把輸入的值變成 陣列 所以製作一個空物件 
+ let todo ={
+   myItem: text
+ }
+ //在一開始的資料宣告let data （array） 塞進東西
+ // 建立一個物件，之後新增的檔案會存放在此
+ data.push(todo);
+ // 這是更新畫面的function
+ updateList(data);
+ // 存在Localstoreage
+ localStorage.setItem('myItem', JSON.stringify(data));
+};
+ 
+</code></pre>
+
+<p>把接受來的畫面渲染出畫面，製作一個updateList 的 function</p>
+
+<pre><code class="language-javascript=">function updateList(data){
+  let str ='';
+  let len =data.length;
+  for(let i =0;i&lt;len;i++){
+     str += `&lt;li&gt; &lt;a href=&quot;#&quot;&gt; 刪除&lt;/a&gt;
+             &lt;span&gt; ${data[i].myItem} &lt;/span&gt; &lt;/li&gt;  &lt;/li&gt;`
+  }
+  list.innerHTML =str;
+
+}
+</code></pre>
+
+<p> 接下來是呈現像這樣的畫面：</p>
+
+<ul>
+<li>確認是否可以新增 list</li>
+<li>從檢查者工具看是否 application 看是否有存進資料。</li>
+</ul>
+
+<p><img src="https://i.imgur.com/lCV1UHi.png" alt="image" /></p>
+
+<p>接下來做刪除功能喔，使用 dataset 及  data-* 屬性來做刪除。</p>
+
+<p>製作一個 function 叫做 toggleData 可以刪除功能喔。</p>
+
+<pre><code class="language-javascript=">
+function toggleData(e) {
+   
+    // 使用dataset 取得屬性資料
+    var num = e.target.dataset.num;
+    console.log(num);
+    if (e.target.nodeName !== 'A') {
+        return;
+    }
+    //找到a連節以外的節點就中斷
+     // 利用js的splice()刪除array 功能
+    data.splice(num, 1);
+    //刪除資料、讓?在重新更新
+    localStorage.setItem('myItem',JSON.stringify(data));
+   
+    update(data);
+
+}
+
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://chiakilalala.github.io/tags/javascript/">Javascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/%E5%85%A8%E9%A6%AC%E9%90%B5%E4%BA%BA%E6%8C%91%E6%88%B0%E8%B3%BD/">全馬鐵人挑戰賽</a>
+                
+                <a href="https://chiakilalala.github.io/tags/w3hexschool/">w3hexschool</a>
+                
+                <a href="https://chiakilalala.github.io/tags/localstorage/">localStorage</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="https://chiakilalala.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://chiakilalala.github.io/js/zozo.js"></script>
+<script src="https://chiakilalala.github.io/js/highlight.pack.js"></script>
+<link  href="https://chiakilalala.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://chiakilalala.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>
