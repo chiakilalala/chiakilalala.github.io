@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content=" 使用香草 js,製作一個簡單的 tab"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, zozo, UIUX, F2E"/>
+  
+
+  
+  <link rel="canonical" href="https://chiakilalala.github.io/posts/javascript-001/"/>
+
+  
+
+  <title>使用原生 Javascript 寫 tab 切換效果 &middot; 無盡光芒</title>
+
+  <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首頁</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">歸檔</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">標籤</a>
+      </li>
+      
+      <li>
+        <a href="/about/">關於</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://chiakilalala.github.io/">
+          <span>無盡光芒</span>
+          <img src="https://chiakilalala.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">前端UIUX 使用驚見私房筆記</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="https://www.instagram.com/satsukajiyoi/%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="https://twitter.com/chiaki205102%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/javascript-001/'>使用原生 Javascript 寫 tab 切換效果</a></h2>
+          <span class="date">2020.02.07</span>
+        </div>
+        <div class="post_content markdown"><p>思考流程</p>
+
+<p>資料 (model) &gt; 事件 (event) &gt; 介面 (View)</p>
+
+<p><a href="https://codepen.io/chiakilalala/pen/OJPKvbx">demo 網址</a></p>
+
+<p><em>使用之前該理解的 Jacascript</em></p>
+
+<p>for(迴圈) /  function （函式）/ this / if...else
+  / classList.remove /classList.add</p>
+
+<p>來源：</p>
+
+<p><a href="https://www.fooish.com/javascript/">JavaScript 教學</a></p>
+
+<p>畫面效果如下：
+<img src="https://i.imgur.com/t1NmrCO.png" alt="" /></p>
+
+<p>點擊一個按鈕（電子發票） 另外一個按鈕的畫面
+不會出現。</p>
+
+<ul>
+<li><p>tab 點擊
+<img src="https://i.imgur.com/PNI4sbZ.png" alt="image" /></p></li>
+
+<li><p>面板</p></li>
+</ul>
+
+<p><img src="https://i.imgur.com/WAFgQK3.png" alt="image" /></p>
+
+<ul>
+<li>HTML 畫面</li>
+</ul>
+
+<pre><code>&lt;div class=&quot;btn-group checkout-btn&quot; role=&quot;group&quot; id=&quot;tabs&quot;&gt;
+     &lt;a href=&quot;#&quot; class=&quot;btn active&quot; &gt;電子發票&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn&quot; &gt;郵寄發票&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-javascript=">window.onload = function (){
+ // do something
+}
+</code></pre>
+
+<p>在網頁中的所有的元素(包括元素的所有關聯檔案：圖片、音視訊、flash等)都完全載入到瀏覽器之後才執行。</p>
+
+<p>指定dom</p>
+
+<pre><code class="language-javascript=">let tabLink = document.getElementById(&quot;tabs&quot;).querySelectorAll(&quot;a&quot;);
+
+let tabContents = document.getElementById(&quot;tab-inner&quot;).querySelectorAll('.form-content');
+</code></pre>
+
+<p>let tabLink ==&gt; 宣告按鈕 a tabContents
+let tabContents ==&gt; 宣告面板內容為 tabContents</p>
+
+<p>事件操作：進行事件監聽 click 在跑 for 迴圈（在找每個 a 連結中
+）執行 函式 panelDisplay</p>
+
+<pre><code class="language-javascript=">   for(let i = 0; i &lt; tabLink.length; i++){
+       tabLink[i].addEventListener('click',function(e){
+        e.preventDefault();
+         panelDisplay(this);
+       
+       });
+       
+   };
+</code></pre>
+
+<p>建立一個 function 名稱為 panelDisplay
+賦予判斷條件為 class 有 active  時下面的面板會顯示，反之其他會隱藏內容</p>
+
+<pre><code class="language-javascript=">   function panelDisplay(activePanel){
+          // Do something...
+          for(let i =0;i&lt;tabLink.length;i++){
+                
+            //設定條件tabLink ==activePanel 
+            //將tablink代入for循環中並利用 if ...else 進行條件 classList.add增加class=&quot;active&quot; ，就是每執行一次function的時候就進行全部tablinks增加class
+           
+              if(tabLink[i] == activePanel)
+               // 假設目前的 tabLink 等於 activate, 改變他的class .active
+              {
+                tabLink[i].classList.add(&quot;active&quot;);
+     // 顯示面板的display:block 
+                tabContents[i].style.display=&quot;block&quot;;
+                
+              }else{
+     // 假設目前的 ablink 不等於 activate, 刪除他的class .active
+                tabLink[i].classList.remove(&quot;active&quot;);
+                //隱藏 面板
+                tabContents[i].style.display=&quot;none&quot;;
+              }
+          }
+       }
+  
+     };
+</code></pre>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://chiakilalala.github.io/tags/javascript/">Javascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/%E5%85%A8%E9%A6%AC%E9%90%B5%E4%BA%BA%E6%8C%91%E6%88%B0%E8%B3%BD/">全馬鐵人挑戰賽</a>
+                
+                <a href="https://chiakilalala.github.io/tags/javascript/">javascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/w3hexschool/">w3hexschool</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="https://chiakilalala.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://chiakilalala.github.io/js/zozo.js"></script>
+<script src="https://chiakilalala.github.io/js/highlight.pack.js"></script>
+<link  href="https://chiakilalala.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://chiakilalala.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

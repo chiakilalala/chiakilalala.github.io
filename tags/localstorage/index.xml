@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>localStorage on 無盡光芒</title>
+    <link>https://chiakilalala.github.io/tags/localstorage/</link>
+    <description>Recent content in localStorage on 無盡光芒</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 22 Feb 2020 00:29:30 +0800</lastBuildDate>
+    
+	<atom:link href="https://chiakilalala.github.io/tags/localstorage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用原生 Javascript 做一個 todolist</title>
+      <link>https://chiakilalala.github.io/posts/javascript004/</link>
+      <pubDate>Sat, 22 Feb 2020 00:29:30 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascript004/</guid>
+      <description>前言：為了更加熟悉 LocalStorage 所以來製作一個 todolist 重點提醒 :把資料放進去 localStorage 是用 setItem()，把資料取出來是 getItem()。 複習觀念可以看我之前的文章 關於 localStorage 使用說明 範例網址 畫面 透過使用 localStorage 存取你所輸入的資料，</description>
+    </item>
+    
+    <item>
+      <title>關於 localStorage 使用說明</title>
+      <link>https://chiakilalala.github.io/posts/javascript003/</link>
+      <pubDate>Sun, 16 Feb 2020 10:54:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascript003/</guid>
+      <description>為什麼要學 localStorage，原因大概如下面所說一樣： 將資料從頁面中的程式碼儲存到 Web瀏覽器的儲存空間當中。如此一來，本來存入程式碼當中的資料，就不會因重新整理頁面或者關閉瀏覽器而消失 最近想要</description>
+    </item>
+    
+  </channel>
+</rss>

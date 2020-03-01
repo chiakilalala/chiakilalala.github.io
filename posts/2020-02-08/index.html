@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="寫一個 簡單的 BMI 計算機"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, zozo, UIUX, F2E"/>
+  
+
+  
+  <link rel="canonical" href="https://chiakilalala.github.io/posts/2020-02-08/"/>
+
+  
+
+  <title>利用 原生 的 funciotn 觀念寫一個 BMI 計算機 &middot; 無盡光芒</title>
+
+  <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首頁</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">歸檔</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">標籤</a>
+      </li>
+      
+      <li>
+        <a href="/about/">關於</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://chiakilalala.github.io/">
+          <span>無盡光芒</span>
+          <img src="https://chiakilalala.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">前端UIUX 使用驚見私房筆記</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="https://www.instagram.com/satsukajiyoi/%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="https://twitter.com/chiaki205102%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/2020-02-08/'>利用 原生 的 funciotn 觀念寫一個 BMI 計算機</a></h2>
+          <span class="date">2020.02.08</span>
+        </div>
+        <div class="post_content markdown">
+
+<p>使用原生 Javascript 製作一個簡單的 BMI 計算機：</p>
+
+<p>BMI = 體重(公斤) / (身高(公尺) x 身高(公尺))</p>
+
+<p><a href="https://depart.femh.org.tw/dietary/3OPD/BMI.htm">BMI計算網站</a></p>
+
+<h2 id="思考流程">思考流程：</h2>
+
+<p>1.取出 按鈕 input 關於身高和體重的值，然後再利用 公式 算出 BMI</p>
+
+<p>在畫面上印出結果。</p>
+
+<p>2.根據 BMI 數值 判斷 BMI 標準 在畫面上印出結果。</p>
+
+<p>3.製作一個按鈕可以清空輸入值</p>
+
+<p>4.當輸入值是空白時，按下計算時會跑出 視窗提醒要輸入身高體重（防呆機制）</p>
+
+<p><strong>model (資料)&gt; event (事件) &gt; view (介面)</strong></p>
+
+<p><strong><a href="https://codepen.io/chiakilalala/pen/dEzQZW">demo 網址</a></strong></p>
+
+<h2 id="javascript-概念">javascript 概念</h2>
+
+<p>function / if...else / scope / dom / event</p>
+
+<pre><code>函式
+「函式」指的是將一或多段程式指令包裝起來，可以重複使用，也方便維護。
+宣告函式的方法有好幾種，但不管是什麼方式，通常一個函式會包含三個部分：
+在括號 ( ) 中的部分，稱為「參數 (arguments) 」，參數與參數之間會用逗號 , 隔開
+在大括號 { } 內的部分，內含需要重複執行的內容，是函式功能的主要區塊。
+
+</code></pre>
+
+<p>畫面：<img src="https://i.imgur.com/Bj9PKXe.png" alt="image" /></p>
+
+<hr />
+
+<h2 id="html-畫面">HTML 畫面</h2>
+
+<pre><code class="language-htmlmixed="> 
+&lt;section class=&quot;calculator&quot;&gt;
+    &lt;section class=&quot;fields&quot;&gt;
+      &lt;h1 &gt;BMI 計算機&lt;/h1&gt;
+     
+      &lt;div class=&quot;bmi_calcu&quot;&gt;
+        &lt;label for=&quot;bodyHeight&quot;&gt;身高 :&lt;/label&gt;
+        &lt;input type=&quot;number&quot; class=&quot;bodyHeight&quot; min=&quot;0&quot;&gt;CM
+      
+      
+        &lt;label for=&quot;bodyWeight&quot;&gt;體重:&lt;/label&gt;
+        &lt;input type=&quot;number&quot; class=&quot;bodyWeight&quot; min=&quot;0&quot;&gt;Kg
+      &lt;/div&gt;
+      &lt;div class=&quot;btn_block&quot;&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;計算&quot;  class=&quot;calcualteBMI&quot;&gt; 
+      &lt;i class=&quot;fas fa-undo reset&quot; title=&quot;重新整理&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+      
+   
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;result&quot;&gt;
+      &lt;h2 class=&quot;result_txt&quot;&gt;你的BMI：&lt;/h2&gt;
+       
+      &lt;p id=&quot;bmiText&quot;&gt;&lt;/p&gt;
+      &lt;p id=&quot;resultText&quot;&gt;0&lt;/p&gt;
+     
+    &lt;/section&gt;
+  &lt;section class=&quot;bottom&quot;&gt;
+    
+    
+  &lt;/section&gt;
+  
+
+  &lt;/section&gt;
+
+
+
+</code></pre>
+
+<h2 id="宣告dom">宣告DOM</h2>
+
+<ol>
+<li>找出計算和清空按鈕</li>
+<li>印出文字的 DOM</li>
+<li>印出文字的 DOM 先隱藏 display:none;</li>
+</ol>
+
+<pre><code class="language-javascript=">// 宣告 DOM
+let bmiText =document.querySelector('#bmiText');
+bmiText.style.display=&quot;none&quot;;
+//事件點擊按鈕 
+let btn =document.querySelector('.calcualteBMI');
+let reset =document.querySelector('.reset');
+</code></pre>
+
+<p>因為使用者點擊了計算 取出了 身高和體重的值 並把它印出來。
+利用事件監聽 <code>addEventListener</code></p>
+
+<pre><code class="language-javascript=">//事件監聽
+btn.addEventListener('click',calculateBMI);
+</code></pre>
+
+<h2 id="把-input-取出值-來做一個-function-calculatebmi">把 input 取出值，來做一個 function calculateBMI(){</h2>
+
+<p>}</p>
+
+<pre><code class="language-javascript=">function calculateBMI(){
+  let bodyWeight =document.querySelector('.bodyWeight').value;
+  //體重值
+  let bodyHeight =document.querySelector('.bodyHeight').value;
+   //身高值
+  let resultText =document.querySelector('#resultText');
+   //計算出BMI值
+  let bmiText =document.querySelector('#bmiText');
+  //  印出BMI標準
+ 
+
+ 
+ 
+}
+</code></pre>
+
+<h2 id="計算bmi">計算BMI</h2>
+
+<p>因為抓出來的值都是 value 是文字，我們需要把它變成數字
+使用 <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/parseInt">parseInt()</a> 變成整數，因為公分要轉公尺，記得身高要除以100
+因為得出來的值，產生很多小數，使用toFixed(2) 讓小數點4捨5入只有2位。</p>
+
+<pre><code class="language-javascript=">
+function bmi(weight,height){
+ let w = parseInt(weight);
+ let h = parseInt(height)/100;//因為公分要轉公尺所以除以100
+ let bmi = (w/(h*h)).toFixed(2);//toFixed讓小數點4捨5入只有2位
+ return bmi; //回傳結果
+ 
+}
+</code></pre>
+
+<h2 id="防呆機制">防呆機制</h2>
+
+<p>當使用者沒有輸入數字時會跳出視窗提示，並不會在介面印出畫面
+把他放入在 calculateBMI()。</p>
+
+<pre><code class="language-javascript="> if((bodyWeight !=&quot;&quot; ) &amp;&amp; (bodyHeight != &quot;&quot;))
+  {  
+     //bmi標準可 畫面顯示
+     bmiText.style.display=&quot;block&quot;;
+     //計算結果
+     resultText.innerHTML = bmi(bodyWeight,bodyHeight);
+     //BMI標準計算結果
+     bmiText.innerHTML =   checkBMI(bmi(bodyWeight,bodyHeight));    
+    
+  }else{
+    bmiText.style.display=&quot;none&quot;;
+    alert(&quot;請輸入身高體重！&quot;)
+    return
+  }
+</code></pre>
+
+<h2 id="判斷bmi標準">判斷BMI標準</h2>
+
+<p>建立一個 叫做 checkBMI 的 funciton ，使用 <code>if...else</code> 來做判斷，裡面要放入參數才能判斷。這個參數就是變數的意思，由前面的計算 BMI 公式 <code>bmi(bodyWeight,bodyHeight）</code>取得。</p>
+
+<pre><code class="language-javascript=">function checkBMI(bmi){
+ 
+    if( bmi &lt; 18.5){
+    return &quot;太輕了&quot;
+    }else if( bmi &gt;=18.5 &amp;&amp;  bmi &lt; 24){
+    return &quot;體重正常 &quot;
+    }else if( bmi &gt;=24 &amp;&amp;  bmi &lt; 27){
+    return &quot;過重 &quot;
+    }else if( bmi &gt;=27 &amp;&amp;  bmi &lt; 30){
+    return &quot;輕度肥胖 &quot;
+    }else if( bmi &gt;=30 &amp;&amp;  bmi &lt; 35){
+    return &quot;中度肥胖 &quot;
+    }else if( bmi  &gt;=35){
+    return &quot;重度肥胖 &quot;
+    }
+ 
+}
+</code></pre>
+
+<h2 id="清空值">清空值</h2>
+
+<p>製作一個按鈕 reset 可以使輸入值都變歸零，並不會影響到畫面
+把他放入一個叫做 undo 的 function。</p>
+
+<pre><code class="language-javascript=">
+function undo(e){
+ document.querySelector('.bodyWeight').value ='';
+ document.querySelector('.bodyHeight').value ='';
+ bmiText.style.display=&quot;none&quot;;
+ resultText.innerHTML = 0;
+ return
+}
+// 事件監聽
+
+reset.addEventListener('click',undo);
+</code></pre>
+
+<h2 id="javascript-程式碼">Javascript 程式碼</h2>
+
+<pre><code class="language-javascript=">//BMI = 體重(公斤) / (身高(公尺) x 身高(公尺)) 
+// 計算功能寫在外面，另外的功能應另外寫出來。
+
+// 宣告 DOM
+let bmiText =document.querySelector('#bmiText');
+bmiText.style.display=&quot;none&quot;;
+//事件點擊按鈕 
+let btn =document.querySelector('.calcualteBMI');
+let reset =document.querySelector('.reset');
+
+//計算BMI
+
+function bmi(weight,height){
+ let w = parseInt(weight);
+ let h = parseInt(height)/100;//因為公分要轉公尺所以除以100
+ let bmi = (w/(h*h)).toFixed(2);//toFixed讓小數點4捨5入只有2位
+ return bmi;
+ 
+}
+
+
+// 取出輸入值寫入畫面
+function calculateBMI(){
+  let bodyWeight =document.querySelector('.bodyWeight').value;
+  let bodyHeight =document.querySelector('.bodyHeight').value;
+  let resultText =document.querySelector('#resultText');
+  let bmiText =document.querySelector('#bmiText');
+  //  印出值來
+  if((bodyWeight !=&quot;&quot; ) &amp;&amp; (bodyHeight != &quot;&quot;)){
+  
+     bmiText.style.display=&quot;block&quot;;
+     resultText.innerHTML = bmi(bodyWeight,bodyHeight);
+     bmiText.innerHTML =  checkBMI(bmi(bodyWeight,bodyHeight));
+    
+  }else{
+      bmiText.style.display=&quot;none&quot;;
+      alert(&quot;請輸入身高體重！&quot;)
+      return
+  }
+      resultText.innerHTML = bmi(bodyWeight,bodyHeight);
+ 
+}
+//  bmi 範圍
+function checkBMI(bmi){
+ 
+    if( bmi &lt; 18.5){
+    return &quot;太輕了&quot;
+    }else if( bmi &gt;=18.5 &amp;&amp;  bmi &lt; 24){
+    return &quot;體重正常 &quot;
+    }else if( bmi &gt;=24 &amp;&amp;  bmi &lt; 27){
+    return &quot;過重 &quot;
+    }else if( bmi &gt;=27 &amp;&amp;  bmi &lt; 30){
+    return &quot;輕度肥胖 &quot;
+    }else if( bmi &gt;=30 &amp;&amp;  bmi &lt; 35){
+    return &quot;中度肥胖 &quot;
+    }else if( bmi  &gt;=35){
+    return &quot;重度肥胖 &quot;
+    }
+  
+ 
+}
+//清空值
+function undo(e){
+ document.querySelector('.bodyWeight').value ='';
+ document.querySelector('.bodyHeight').value ='';
+ bmiText.style.display=&quot;none&quot;;
+ resultText.innerHTML = 0;
+ return
+}
+
+//事件監聽
+btn.addEventListener('click',calculateBMI);
+reset.addEventListener('click',undo);
+
+
+
+</code></pre>
+
+<p>資料來源：<a href="https://javascript.ruanyifeng.com/grammar/basic.html">《JavaScript標準參考教程》</a>、<a href="https://ithelp.ithome.com.tw/articles/10191549">重新認識 JavaScript</a></p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://chiakilalala.github.io/tags/javascript/">Javascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/%E5%85%A8%E9%A6%AC%E9%90%B5%E4%BA%BA%E6%8C%91%E6%88%B0%E8%B3%BD/">全馬鐵人挑戰賽</a>
+                
+                <a href="https://chiakilalala.github.io/tags/javascript/">javascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/w3hexschool/">w3hexschool</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="https://chiakilalala.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://chiakilalala.github.io/js/zozo.js"></script>
+<script src="https://chiakilalala.github.io/js/highlight.pack.js"></script>
+<link  href="https://chiakilalala.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://chiakilalala.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

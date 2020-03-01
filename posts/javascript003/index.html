@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content=" 關於 localStorage"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, zozo, UIUX, F2E"/>
+  
+
+  
+  <link rel="canonical" href="https://chiakilalala.github.io/posts/javascript003/"/>
+
+  
+
+  <title>關於 localStorage 使用說明 &middot; 無盡光芒</title>
+
+  <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首頁</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">歸檔</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">標籤</a>
+      </li>
+      
+      <li>
+        <a href="/about/">關於</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://chiakilalala.github.io/">
+          <span>無盡光芒</span>
+          <img src="https://chiakilalala.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">前端UIUX 使用驚見私房筆記</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="https://www.instagram.com/satsukajiyoi/%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="https://twitter.com/chiaki205102%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/javascript003/'>關於 localStorage 使用說明</a></h2>
+          <span class="date">2020.02.16</span>
+        </div>
+        <div class="post_content markdown">
+
+<p>為什麼要學 localStorage，原因大概如下面所說一樣：</p>
+
+<blockquote>
+<p>將資料從頁面中的程式碼儲存到 Web瀏覽器的儲存空間當中。如此一來，本來存入程式碼當中的資料，就不會因重新整理頁面或者關閉瀏覽器而消失</p>
+</blockquote>
+
+<p>最近想要好好串接個 api，針對喜歡的文章果想要收藏要怎麼辦？
+雖然之前有做個，但有些部分感覺不是很清楚，我對於事情是否很清楚的理解為，你是否能夠自己說明，最近最大的學習障礙就是有時知道原理，但就是做不到ＸＤ。</p>
+
+<h2 id="定義">定義：</h2>
+
+<blockquote>
+<p>localStorage ：可以跨瀏覽器分頁做使用、使用者關掉分頁或瀏覽器再打開資料仍不會消失，且資料無期效限制，資料將永久被保留。</p>
+</blockquote>
+
+<h2 id="在做之前你必須要懂的事">在做之前你必須要懂的事：</h2>
+
+<p>我想要做個todolist 之前</p>
+
+<p>loaclStorage / 事件監聽 / Dom / JSON parse() / JSON stringify()</p>
+
+<h2 id="如何操作">如何操作</h2>
+
+<h3 id="1-如何存值到-localstorage">1.如何存值到 localStorage</h3>
+
+<p>**setItem() **</p>
+
+<p><code>localStorage.setItem(key, value)</code></p>
+
+<p>透過在 setItem() 方法中指定物件屬性的 key 以及 value ，
+我們可以在 storage 物件中加入屬性或修改原本的屬性內容。</p>
+
+<p>setItem() 存入資料 — key 值是 myname；  value 是 tom ：</p>
+
+<p>在 DevTools Application 中查看 local storage
+ 框起來的 tom</p>
+
+<pre><code class="language-javascript=">var name = &quot;Tom&quot;;
+localStorage.setItem(&quot;myname&quot;name);
+</code></pre>
+
+<p><img src="https://i.imgur.com/fXaDNfr.png" alt="" /></p>
+
+<hr />
+
+<p>範例:<a href="https://codepen.io/chiakilalala/pen/zYGOLbO">https://codepen.io/chiakilalala/pen/zYGOLbO</a></p>
+
+<h3 id="2-如何撈值到-localstorage">2.如何撈值到 localStorage</h3>
+
+<p>取出資料：getItem()</p>
+
+<pre><code>localStorage.getItem(key)
+</code></pre>
+
+<p>透過在 getItem() 方法中輸入屬性的 key ，我們可以得到 storage 物件對應的屬性 value 。
+<strong>getItem</strong></p>
+
+<pre><code class="language-javascript=">console.log(localStorage.getItem(&quot;myname&quot;);)
+
+</code></pre>
+
+<p>console.log 出現 Tom</p>
+
+<hr />
+
+<h3 id="3-移除資料-removeitem">3.移除資料：removeItem()</h3>
+
+<p>透過在 removeItem() 方法，我們可以把指定的屬性從 storage 物件中移除。</p>
+
+<pre><code class="language-javascript=">//清空localStorage
+
+localStorage.removeItem(key)
+
+localStorage.clear()  // undefined   
+localStorage      //清除全部資料 Storage {length: 0} 儲存資料
+</code></pre>
+
+<h3 id="案例基本操作">案例基本操作</h3>
+
+<p>利用 localstorage 呼叫和操作 ，點擊按鈕存入網路儲存空間，然後</p>
+
+<p>先試著用一個輸入鍵，把值存入 localstorage 使用 setItem（）存入資料 即使用 getItem 取出資料</p>
+
+<p>畫面如下：
+<img src="https://i.imgur.com/nu10rDp.png" alt="" /></p>
+
+<pre><code class="language-javascript=">let btn = document.querySelector('.btnClass');
+
+function savename(e){
+  // 撈出輸入鍵的值
+let text =document.querySelector('.textClass').value;
+  // 存在Localstoreage
+   localStorage.setItem('mylove', text);
+
+}
+btn.addEventListener('click',savename);
+</code></pre>
+
+<p>再用之前存入的 localstorage，把它取出來</p>
+
+<p>使用 <code>getItem()</code></p>
+
+<pre><code class="language-javascript=">let btn = document.querySelector('.btnClass');
+let call = document.querySelector('.callClass');
+function savename(e){
+  // 撈出輸入鍵的值
+ var text =document.querySelector('.textClass').value;
+  // 存在Localstoreage
+   localStorage.setItem('mylove', text);
+
+}
+btn.addEventListener('click',savename);
+call.addEventListener('click',function(){
+  // 撈出Localstoreage的值
+var str = localStorage.getItem('mylove');
+  alert(`my farovite is ${str}`);
+});
+</code></pre>
+
+<h2 id="localstorage-需要注意的地方">localStorage 需要注意的地方</h2>
+
+<p>我們可以透過 Storage 方法，輕鬆的將資料儲存在本地端，但是實際應用之後，我們會發現我們要儲存的資料 value，全部被轉成字串格式</p>
+
+<p>非常重要非常重要！！！！</p>
+
+<blockquote>
+<p>資料儲存的格式 key 和 value 都只能接受「字串 」，若
+儲存的資料非字串 — 陣列或物件 — 在儲存時會被轉成字串格式</p>
+</blockquote>
+
+<h2 id="1-將-array-轉為-string">1.將 array 轉為 string</h2>
+
+<p>將資料轉為 JSON 格式的字串。</p>
+
+<pre><code class="language-javascript=">JSON.stringify()
+</code></pre>
+
+<h2 id="2-將-sring-轉為-array">2.將 sring 轉為 array</h2>
+
+<p>將資料由 JSON 格式字串轉回原本的資料內容及型別。</p>
+
+<pre><code class="language-javascript=">JSON.parse( )
+</code></pre>
+
+<p>學以上兩點是因為 localstorage 只會保存 string 資料</p>
+
+<p>原因如下：</p>
+
+<pre><code class="language-json=">var country = [
+  {farmer :'卡四伯'}
+];
+
+localStorage.setItem('mynume', country);
+var getDate = localStorage.getItem('mynume')
+console.log(getDate[0].farmer);
+</code></pre>
+
+<p>console.log 結果會出現 <strong>undefined</strong>
+ 使用 typeof() 查值 會發現 是 string 而不是 array
+ 因為 localStorage 只會自動轉成 string 內容</p>
+
+<h3 id="該如何變成陣列"><strong>該如何變成陣列？</strong></h3>
+
+<p>解決方法：將資料轉換成 JOSN 格式的字串</p>
+
+<p>透過 <strong>JSON.stringify()</strong> 方法，將要儲存的資料轉換為 JSON 格式的字串</p>
+
+<pre><code class="language-javascript=">var country = [
+  {farmer :'卡四伯'}
+];
+var countryString = JSON.stringify(country);
+console.log(countryString);
+localStorage.setItem('mynume',countryString);
+
+</code></pre>
+
+<p>到 Application Panel 查看儲存的資料內容，可以發現這次的格式和預期的相同：</p>
+
+<p><img src="https://i.imgur.com/KtDFZIZ.png" alt="image" /></p>
+
+<p>當我們要取出資料時，使用 JSON.parse() 方法，將資料轉換回原本的格式：</p>
+
+<pre><code class="language-javascript=">var country = [
+  {farmer :'卡四伯'}
+];
+var countryString = JSON.stringify(country);
+console.log(countryString);
+localStorage.setItem('mynume',countryString);
+
+var getData = localStorage.getItem('mynume');
+var getDataAry = JSON.parse(getData); 
+console.log(getDataAry[0].farmer);
+
+</code></pre>
+
+<p>範例網址:<a href="https://codepen.io/chiakilalala/pen/NWPLxpQ">https://codepen.io/chiakilalala/pen/NWPLxpQ</a></p>
+
+<h2 id="3-dataset-array-運用">3. dataset、array 運用</h2>
+
+<p><a href="https://codepen.io/chiakilalala/pen/ZEGzVzd">範例網址</a></p>
+
+<ul>
+<li>第一步驟:因為使用 queryselector 綁定,所以只能得到一個 li 回應</li>
+<li>. 該如何在 JS 中動態的去綁定 HTML 標籤元素(以去綁定a、li等等)
+             但如果使用太多 queryselector 各別綁定會導致效能很差</li>
+<li>. 針對鎖定的 li 部分下此指令 <code>if(num !==&quot;LI&quot;){return}</code>  ,以作為一個中斷點</li>
+</ul>
+
+<h2 id="4-splice-刪除-array-資料">4.splice - 刪除 array 資料</h2>
+
+<p><code>splice(</code>) <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">MDN介紹</a></p>
+
+<p><a href="https://codepen.io/chiakilalala/pen/ZEGzVzd?editors=1111">範例網址</a></p>
+
+<p>定義:</p>
+
+<p>從 Array 中添加/刪除項目，回傳被刪除的項目。
+ 這裡我們先專注 刪除項目</p>
+
+<p>對象：</p>
+
+<p>可操控 Array</p>
+
+<pre><code class="language-javascript=">array.splice(start)
+array.splice(start, deleteCount)
+array.splice(start, deleteCount, item1, item2, ...)
+</code></pre>
+
+<p>例子</p>
+
+<pre><code class="language-javascript=">var array=[1,2,3,4,5];
+    array.splice(3,2);
+    console.log(array);
+    //結果： 1 2 3
+</code></pre>
+
+<p>這些知識，為接下來要做的 todolist 有很大的關係，
+為了資料格式的轉換能更上手，特此說明紀錄。</p>
+
+<p>資料來源：
+<a href="https://blog.csdn.net/baidu_25343343/article/details/54908519">Array數組的 splice()方法之刪除、插入、替換</a>
+<a href="https://pjchender.blogspot.com/2017/01/html-5-data-attribute.html">什麼是 HTML 5 中的資料屬性（data-* attribute）</a>
+<a href="https://www.udemy.com/course/javascript-learning/learn/lecture">JavaScript 入門篇 - 學徒的試煉 -關於 localStorage</a></p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://chiakilalala.github.io/tags/javascript/">Javascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/%E5%85%A8%E9%A6%AC%E9%90%B5%E4%BA%BA%E6%8C%91%E6%88%B0%E8%B3%BD/">全馬鐵人挑戰賽</a>
+                
+                <a href="https://chiakilalala.github.io/tags/w3hexschool/">w3hexschool</a>
+                
+                <a href="https://chiakilalala.github.io/tags/localstorage/">localStorage</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="https://chiakilalala.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://chiakilalala.github.io/js/zozo.js"></script>
+<script src="https://chiakilalala.github.io/js/highlight.pack.js"></script>
+<link  href="https://chiakilalala.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://chiakilalala.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>
