@@ -6,10 +6,19 @@
     <description>Recent content in “全馬鐵人挑戰賽” on 無盡光芒</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Mar 2020 09:55:38 +0800</lastBuildDate>
     
 	<atom:link href="https://chiakilalala.github.io/tags/%E5%85%A8%E9%A6%AC%E9%90%B5%E4%BA%BA%E6%8C%91%E6%88%B0%E8%B3%BD/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用淺顯方式說明 Javascript 的 Promise</title>
+      <link>https://chiakilalala.github.io/posts/javascript005h/</link>
+      <pubDate>Sun, 01 Mar 2020 09:55:38 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/javascript005h/</guid>
+      <description>前言：最近在研究串接資料，剛好學習到了一個ES6的新用法，先來記錄說明一下。 在此之前我們還要了解什麼是同步與非同步 同步（synchronous）：發一個請求，就要等待服務器的響應結束，然後才能發第二請</description>
+    </item>
     
     <item>
       <title>使用原生 Javascript 寫 tab 切換效果</title>

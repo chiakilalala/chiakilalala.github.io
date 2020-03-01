@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content=" Javascript 的 Promise "/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, zozo, UIUX, F2E"/>
+  
+
+  
+  <link rel="canonical" href="https://chiakilalala.github.io/posts/javascript005h/"/>
+
+  
+
+  <title>用淺顯方式說明 Javascript 的 Promise &middot; 無盡光芒</title>
+
+  <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首頁</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">歸檔</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">標籤</a>
+      </li>
+      
+      <li>
+        <a href="/about/">關於</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://chiakilalala.github.io/">
+          <span>無盡光芒</span>
+          <img src="https://chiakilalala.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">前端UIUX 使用驚見私房筆記</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="https://www.instagram.com/satsukajiyoi/%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="https://twitter.com/chiaki205102%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/javascript005h/'>用淺顯方式說明 Javascript 的 Promise</a></h2>
+          <span class="date">2020.03.01</span>
+        </div>
+        <div class="post_content markdown">
+
+<p>前言：最近在研究串接資料，剛好學習到了一個ES6的新用法，先來記錄說明一下。</p>
+
+<p>在此之前我們還要了解什麼是同步與非同步</p>
+
+<p>同步（synchronous）：發一個請求，就要等待服務器的響應結束，然後才能發第二請求！中間這段時間就是 londing ；刷新的是整個頁面。</p>
+
+<p>異步（asynchronous）：發一個請求後，無需等待服務器的響應，然後就可以發第二個請求！可以使用 Javascript 接受服務器的響應，然後使用 Javascript 來局部刷新。</p>
+
+<p>來個比較如下：</p>
+
+<p>| Async | sync |
+ | -------- | -------- |
+| one at a time    | more one at a time    |
+| 執行了就馬上換下一個指令    | 第一個執行完才執行下一個    |</p>
+
+<h2 id="async-actions">Async Actions</h2>
+
+<ul>
+<li>click, AJAX, SetInterval</li>
+<li>解決方法， callback , promises, async await (這一次不討論，因為他是promises 的簡寫)</li>
+</ul>
+
+<p>先說說callback，就是在function裡面再執行一個function
+這是目前傳統用法來解決同步非同步的事情。</p>
+
+<pre><code class="language-javascript=">var btn ＝document.querySelector('#btn');
+var doIt = function() {
+  alert(&quot;you triggered &quot; + this.id);
+};
+
+btn.addEventListener(&quot;click&quot;, doIt);
+</code></pre>
+
+<p>我們可以說  doIt 就是一個 callback 函式，</p>
+
+<p>回到今天想要講的 Promise 💯</p>
+
+<ul>
+<li>ES6新語法</li>
+<li>Promise 物件代表一個即將完成、或失敗的非同步操作，
+以及它所產生的值。</li>
+<li>return resolve or reject （用到了兩個參數）</li>
+<li>ES6 Promise的實作中，會確保Promise物件一實體化後就會固定住狀態，要不就是&quot;已實現&quot;，要不就是&quot;已拒絕&quot;</li>
+</ul>
+
+<p>附註：resolve 和 reject 是參數
+大概會是長像下面一樣：</p>
+
+<pre><code class="language-javascript=">const promise = new   Promise(function(resolve, reject) { 
+    // 成功時 
+    resolve(value) 
+    // 失敗時 
+    reject(reason) }); 
+
+promise.then(function(value) { 
+    // on fulfillment(已實現時) 
+}, function(reason) { 
+    // on rejection(已拒絕時) 
+})
+//http://eddychang.me/blog/javascript/88-promise-basic-usage.html
+</code></pre>
+
+<p>記住我們為什麼要把 Promise 用在 Ajax 上面：</p>
+
+<blockquote>
+<p>Ajax 是屬於一個透過 JavaScript 技術名稱，用於取得遠端資料；而 Promise 則是一個語法，專門用來處理非同步行為，並不是專門用來處理 Ajax 使用，所以兩者是不同的。</p>
+</blockquote>
+
+<p>中文翻譯意思：</p>
+
+<blockquote>
+<p>如果想等 A 結束之後再進行 B..?</p>
+</blockquote>
+
+<p>用一個生活化例子就是，我們去百貨公司美食街吃東西，點完餐店員會給你一個小圓盤，等那圓盤動了，就可以去拿吃的。
+ 結果成功就是 resolve ，失敗了就是rejected</p>
+
+<p>Promise:</p>
+
+<p>如果成功的話... 如果失敗的話...
+(resolve)&lt;--&gt; (reject)</p>
+
+<p>先備知識：
+函式建構式要先了解比較好喔！
+<a href="https://wcc723.github.io/javascript/2017/12/18/javascript-constructor/">JavaScript 建構式</a></p>
+
+<blockquote>
+<p><code>new Promise</code> 代表的是建立一個 Promise 物件，<code>function(resolve, reject){}</code> 代表的是建構式裡面包含的執行函式( executor function )，執行函式包含，<code>resolve、reject</code>，這兩個函式作為參數，當事件成功時便會回傳 <code>resolve</code> 裡面的值，反之當事件失敗便會回傳 <code>reject</code> 裡面的值。</p>
+</blockquote>
+
+<p>接下來說個例子，
+我們先設定攻擊的大絕招，成功之後（resolve） 會發生什麼事</p>
+
+<pre><code class="language-javascript=">let Bigtrick =  new Promise( (resolve,reject)=&gt;{
+  // 可能是⼀個需要花時間的動作..
+  setTimeout(()=&gt; resolve('火之呼吸'),3000);
+  // setTimeout(function resolve(){
+  //     resolve('火之呼吸');
+  //   },3000)
+  
+});
+</code></pre>
+
+<pre><code class="language-javascript=">Bigtrick
+  .then((skill)=&gt;console.log(`使用招式：${skill}`)) //promise成功
+  .catch((err)=&gt;console.log(`${err}無法使用`))//promise失敗
+</code></pre>
+
+<p>而 <code>Bigtrick().then</code> 的 then 代表了可以接收 <code>Bigtrick()</code> 這個 Promise 完成時，可以接受到回傳的值，如果回傳的值為錯誤時，則可以用 .catch 去做錯誤的值接收，.then 是可以一直串接下去的。這個行為叫做 <strong>Promise Chain</strong></p>
+
+<h2 id="settimeout-用法">setTimeout（）用法</h2>
+
+<blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setTimeout"> MDN 定義</a> setTimeout() 的作用 是在延遲了某段時間 (單位為毫秒) 之後，才去執行「一次」指定的程式碼</p>
+</blockquote>
+
+<p>接下來製作一個小遊戲，
+<a href="https://codepen.io/chiakilalala/pen/xxGOQLV?editors=1111">範例網址</a>
+點擊一個按鈕連擊 5次以上在三秒之內，成功執行後會產生招式名稱。</p>
+
+<p>我們先找到 按鈕和印出畫面的 dom，然後做出點擊時會發生的事件：數字chi變數=點擊次數出現在畫面</p>
+
+<pre><code class="language-javascript=">let chi =0;
+let i =0;
+let hitButton =document.getElementById('hitButton');
+let result =document.getElementById('result');
+
+hitButton.onclick=function(e){
+  e.preventDefault();
+  chi +=1;
+  hitButton.innerHTML =`集氣 ${chi}次 `;
+   
+}
+
+</code></pre>
+
+<p>那我們利用 new Promise()實作，要在三秒以內，點擊數超過5次才會出現 水之呼吸（利用 setTimeout 方法）</p>
+
+<pre><code class="language-javascript=">  let bigSkill =new Promise((resolve,reject)=&gt;{
+    setTimeout(()=&gt;{
+
+      if(chi&gt;=5){
+      resolve('水之呼吸！！');
+      }else{
+      reject('水之呼吸！！');
+      
+      };
+ 
+   },3000);
+ });
+</code></pre>
+
+<p>成功達成條件後（點擊超過五次）resolve
+就連上.then， 失敗 reject 就是被 catch 接到</p>
+
+<pre><code class="language-javascript="> bigSkill
+     .then( skill =&gt; result.innerHTML =`發動招式：${skill}`)
+     .catch( err =&gt; result.innerHTML =`${err} 無法使用`)
+</code></pre>
+
+<p>畫面如下：
+<img src="https://i.imgur.com/UENe6Dn.png" alt="image" /></p>
+
+<p>其實 promise 不是必要，在以前沒有 promise 的時候也是可以做到非同步的事。在 promise 之前，可以用 callback 的方式來處理，但如果連續的處理的事情多，callback 就容易一層包一層，程式碼會變得不容易閱讀，俗稱「callback hell」</p>
+
+<p>這樣是我真的對 callback function 怕怕的原因，函式包函式
+，腦袋都要昏了。</p>
+
+<p>而 promise 的出現，可以簡化 callback 的流程，用 then .. then ..  的方式來解決 callback hell 的狀況喔。</p>
+
+<p>資料來源：</p>
+
+<p><a href="https://wcc723.github.io/javascript/2017/12/29/javascript-proimse/">使用 Promise 處理非同步</a>
+<a href="https://es6.ruanyifeng.com/#docs/promise#Promise-%E7%9A%84%E5%90%AB%E4%B9%89">Promise 對象</a>
+<a href="https://campus.5xruby.tw/">五倍速紅寶石</a></p>
+
+<hr />
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://chiakilalala.github.io/tags/javascript/">Javascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/%E5%85%A8%E9%A6%AC%E9%90%B5%E4%BA%BA%E6%8C%91%E6%88%B0%E8%B3%BD/">“全馬鐵人挑戰賽”</a>
+                
+                <a href="https://chiakilalala.github.io/tags/javascript/">javascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/w3hexschool/">w3hexschool</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="https://chiakilalala.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://chiakilalala.github.io/js/zozo.js"></script>
+<script src="https://chiakilalala.github.io/js/highlight.pack.js"></script>
+<link  href="https://chiakilalala.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://chiakilalala.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>
