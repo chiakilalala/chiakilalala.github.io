@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+  <meta name="author"
+        content="Zeuk"/>
+
+  
+  <meta name="description" content="how to use TweenMax"/>
+  
+
+  
+  
+  <meta name="keywords" content="Hugo, theme, zozo, UIUX, F2E"/>
+  
+
+  
+  <link rel="canonical" href="https://chiakilalala.github.io/posts/-preview202008/"/>
+
+  
+
+  <title>TweenMax 入門筆記 &middot; 無盡光芒</title>
+
+  <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/remixicon.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/zozo.css"/>
+  <link rel="stylesheet" href="https://chiakilalala.github.io/css/highlight.css"/>
+
+  
+  
+</head>
+
+<body>
+<div class="main animated">
+  <div class="nav_container animated fadeInDown">
+  <div class="site_nav" id="site_nav">
+    <ul>
+      
+      <li>
+        <a href="/">首頁</a>
+      </li>
+      
+      <li>
+        <a href="/posts/">歸檔</a>
+      </li>
+      
+      <li>
+        <a href="/tags/">標籤</a>
+      </li>
+      
+      <li>
+        <a href="/about/">關於</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="menu_icon">
+    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
+  </div>
+</div>
+
+  <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a href="https://chiakilalala.github.io/">
+          <span>無盡光芒</span>
+          <img src="https://chiakilalala.github.io/images/logo.svg"/>
+        </a>
+      </h1>
+    </div>
+    <div class="description">
+      <p class="sub_title">前端UIUX 使用驚見私房筆記</p>
+      <div class="my_socials">
+        
+        
+        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        
+        
+        
+        <a href="https://www.instagram.com/satsukajiyoi/%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+        
+        
+        
+        <a href="https://twitter.com/chiaki205102%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+        
+        <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <div class="post_page">
+      <div class="post animated fadeInDown">
+        <div class="post_title post_detail_title">
+          <h2><a href='/posts/-preview202008/'>TweenMax 入門筆記</a></h2>
+          <span class="date">2020.08.26</span>
+        </div>
+        <div class="post_content markdown">
+
+<h1 id="tweenmax-gasp入門介紹">TweenMax  GASP入門介紹</h1>
+
+<p>TweenMax是一個好用的動畫工具，
+我覺得比jQuery更直覺，這系列筆記是根據 mike 成智遠老師 的TweenMax動態特效課程</p>
+
+<h3 id="先備知識">先備知識：</h3>
+
+<p>css animation 概念</p>
+
+<p>javascript 基本概念 如：else if / Function / for</p>
+
+<p><img src="https://i.imgur.com/CKqbiAs.png" alt="" /></p>
+
+<p>1.物件id ＝&gt;#box移動的物件</p>
+
+<p>2.多少秒數執行完成 =&gt;動作的屬性</p>
+
+<p>3.x:&quot;700px&quot; 屬性 ＝&gt; 水平位移 700px</p>
+
+<pre><code class="language-javascript=">
+TweenMax.to(&quot;#box&quot;,1,{x:&quot;500px&quot;})
+
+
+
+</code></pre>
+
+<h3 id="注意點">注意點</h3>
+
+<ul>
+<li>似jQuery 的id命名方式</li>
+<li></li>
+<li>在網頁的世界裡面，(x,y) 起點是從左上角開始</li>
+<li></li>
+<li>第三個參數 是用物件包著{}</li>
+</ul>
+
+<p><a href="https://codepen.io/chiakilalala/pen/MWypJjV"> demo</a></p>
+
+<p>由左向右移動的車子（圖片為已完成行動時）
+<img src="https://i.imgur.com/MKnlC87.png" alt="" /></p>
+
+<h2 id="scale-比例縮放">Scale 比例縮放</h2>
+
+<p>效果出現對話框</p>
+
+<p><img src="https://i.imgur.com/laCjmdm.png" alt="" /></p>
+
+<p>目的：如何使用 TweenMax 把東西縮放？</p>
+
+<h3 id="第一步">第一步</h3>
+
+<p>針對物件對話 做變化</p>
+
+<p>transftom:scale(0,0) 是縮到最小到看不到</p>
+
+<pre><code class="language-javascript=">    #dialogBox{
+        position: absolute;
+        top: -20px;
+        left: -30px;
+        width: 259px;
+        height: 196px;
+        transform: scale(0, 0);//對話框縮到做小
+        background-image: url(&quot;https://upload.cc/i1/2020/08/25/rBMF6j.png&quot;)
+
+    }
+</code></pre>
+
+<p>我們就針對這個來做變化</p>
+
+<blockquote>
+<p>在很多程式的概念裡面，0是為小，1為最大。</p>
+
+<pre><code class="language-javascript=">TweenMax.to(&quot;#dialogBox&quot;,1,
+            {
+  scaleX:1 ,//控制x方向大小
+  scaleY:1 ,//控制Y方向大小
+
+})
+</code></pre>
+</blockquote>
+
+<h3 id="第二步-動畫物件位置">第二步 動畫物件位置</h3>
+
+<p>我們希望對話框可以從右下角跳出來，所以從
+transform-Origin 變動位置，那記得一開始所說的物件最開始都是（0,0）左上角</p>
+
+<p><img src="https://i.imgur.com/L3DXYSb.png" alt="" /></p>
+
+<p>中間為（50,50） 右下方為（100,100）</p>
+
+<pre><code class="language-javascript=">TweenMax.to(&quot;#dialogBox&quot;,1,
+            {
+  scaleX:1 ,//控制x方向大小
+  scaleY:1 ,//控制Y方向大小
+  transformOrigin:&quot;100% 100%&quot;,//動畫縮放中心點位置,希望從右下角開始
+
+})
+</code></pre>
+
+<h3 id="第三步-速率變化">第三步 速率變化</h3>
+
+<p><a href="https://greensock.com/ease-visualizer">https://greensock.com/ease-visualizer</a></p>
+
+<p>ease 是 TweenMax 針對動畫速率的屬性，我們可以根據上面網址知道各個效果是如何的？</p>
+
+<p><img src="https://i.imgur.com/OX2ltEN.png" alt="" /></p>
+
+<p>根據面板下面紅色框起來 複製下來放到 ease:&quot;bounce.inOut&quot;
+測試你想要的動畫速率屬性。</p>
+
+<pre><code class="language-javascript=">TweenMax.to(&quot;#dialogBox&quot;,1,
+            {
+  scaleX:1 ,//控制x方向大小
+  scaleY:1 ,//控制Y方向大小
+  transformOrigin:&quot;100% 100%&quot;,//動畫縮放中心點位置 印為希望從右下角開始
+  ease: &quot;bounce.inOut&quot;//控制動畫速率的部分  https://greensock.com/ease-visualizer
+})
+</code></pre>
+
+<p><a href="https://codepen.io/chiakilalala/pen/qBZrrRa?editors=0110">demo</a></p>
+
+<h2 id="css-屬性控制">CSS 屬性控制</h2>
+
+<p>用TweenMax 來操作css部分來產生動畫</p>
+
+<p>效果：頁面載入時，畫面由左到右 畫面寬度由 0% 到100%</p>
+
+<pre><code class="language-javascript="> #box{
+    width: 0%; /*畫面設定為寬度0%*/
+    height: 100%;
+    background-color: cadetblue;
+    background-size:cover;
+    background-image: url(&quot;https://upload.cc/i1/2020/08/25/cz9MS1.jpg&quot;);
+}
+</code></pre>
+
+<pre><code class="language-javascript="> TweenMax.to(&quot;#box&quot;, 3,
+    {
+        width:&quot;100%&quot;,
+        ease: Bounce.easeOut//加上動畫速率使為生動
+    }
+);
+</code></pre>
+
+<p><a href="https://codepen.io/chiakilalala/pen/dyMvWRq?editors=1010">demo</a></p>
+</div>
+        <div class="post_footer">
+          
+          <div class="meta">
+            <div class="info">
+              <span class="field tags">
+                <i class="remixicon-stack-line"></i>
+                
+                <a href="https://chiakilalala.github.io/tags/tweenmax/">TweenMax</a>
+                
+                <a href="https://chiakilalala.github.io/tags/javascript/">javascript</a>
+                
+                <a href="https://chiakilalala.github.io/tags/animation/">animation</a>
+                
+              </span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+<footer class="footer">
+  <div class="powered_by">
+    <a href="https://zeuk.me">Designed by Zeuk,</a>
+    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
+
+  <div class="footer_slogan">
+    <span></span>
+  </div>
+</footer>
+
+
+
+<script src="https://chiakilalala.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://chiakilalala.github.io/js/zozo.js"></script>
+<script src="https://chiakilalala.github.io/js/highlight.pack.js"></script>
+<link  href="https://chiakilalala.github.io/css/fancybox.min.css" rel="stylesheet">
+<script src="https://chiakilalala.github.io/js/fancybox.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad()</script>
+
+
+  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+
+
+
+
+</body>
+</html>

@@ -6,10 +6,19 @@
     <description>Recent content in Javascript on 無盡光芒</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 01 Mar 2020 10:40:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2020 00:14:56 +0800</lastBuildDate>
     
 	<atom:link href="https://chiakilalala.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TweenMax 入門筆記</title>
+      <link>https://chiakilalala.github.io/posts/-preview202008/</link>
+      <pubDate>Wed, 26 Aug 2020 00:14:56 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/posts/-preview202008/</guid>
+      <description>TweenMax GASP入門介紹 TweenMax是一個好用的動畫工具， 我覺得比jQuery更直覺，這系列筆記是根據 mike 成智遠老師 的TweenMax動態特效課程 先備知識： css animation 概念 javascript 基本概念 如：else if / Function / for 1.物件</description>
+    </item>
     
     <item>
       <title>用淺顯方式說明 Javascript 的 Promise</title>
