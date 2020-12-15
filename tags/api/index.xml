@@ -9,6 +9,16 @@
     <lastBuildDate>Tue, 21 May 2019 14:26:00 +0800</lastBuildDate><atom:link href="https://chiakilalala.github.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ajax api 串接</title>
+      <link>https://chiakilalala.github.io/p/api/</link>
+      <pubDate>Tue, 21 May 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/p/api/</guid>
+      <description>Ajax api 串接 API 基本概念  將 Client 與 Server 分開。 每個 Request 間都不應該保持 State (狀態)，意指 Request 不會攜帶 State、Data 使用 HTTP 方法  主要的 HTTP 動作  GET POST PUT DELETE  HTTP Status Code 對 Server 請求成功的 Request，Server 會用 Response 回覆你結果。 Response 主要會由三個數字組成，通常都是 1、2、3、4、5 開頭：
+ 1xx：Server 正在處理你的請求 2xx：Okay 3xx：Server 能完成你想要他做的事情，但是他必須先做其他事 4xx：代表可能你可能發生錯誤 5xx：Server 發生錯誤，無法成功回覆你  </description>
+    </item>
+    
+    <item>
+      <title>Ajax api 串接</title>
       <link>https://chiakilalala.github.io/posts/api-/</link>
       <pubDate>Tue, 21 May 2019 14:26:00 +0800</pubDate>
       

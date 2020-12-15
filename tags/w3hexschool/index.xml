@@ -9,6 +9,21 @@
     <lastBuildDate>Sun, 01 Mar 2020 10:40:16 +0800</lastBuildDate><atom:link href="https://chiakilalala.github.io/tags/w3hexschool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用淺顯方式說明 Javascript 的 Promise</title>
+      <link>https://chiakilalala.github.io/p/javascrip006/</link>
+      <pubDate>Sun, 01 Mar 2020 10:40:16 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/p/javascrip006/</guid>
+      <description>前言： 最近在研究串接資料，剛好學習到了一個ES6的新用法，先來記錄說明一下。
+在此之前我們還要了解什麼是同步與非同步
+同步（synchronous）：發一個請求，就要等待服務器的響應結束，然後才能發第二請求！中間這段時間就是 londing ；刷新的是整個頁面。
+異步（asynchronous）：發一個請求後，無需等待服務器的響應，然後就可以發第二個請求！可以使用 Javascript 接受服務器的響應，然後使用 Javascript 來局部刷新。
+來個比較如下：
+   Async sync     one at a time more one at a time   執行了就馬上換下一個指令 第一個執行完才執行下一個    Async Actions  click, AJAX, SetInterval 解決方法， callback , promises, async await (這一次不討論，因為他是promises 的簡寫)  先說說callback，就是在function裡面再執行一個function 這是目前傳統用法來解決同步非同步的事情。
+var btn ＝document.querySelector(&#39;#btn&#39;); var doIt = function() { alert(&amp;quot;you triggered &amp;quot; + this.id); }; btn.addEventListener(&amp;quot;click&amp;quot;, doIt); 我們可以說 doIt 就是一個 callback 函式，</description>
+    </item>
+    
+    <item>
+      <title>用淺顯方式說明 Javascript 的 Promise</title>
       <link>https://chiakilalala.github.io/posts/javascrip006/</link>
       <pubDate>Sun, 01 Mar 2020 10:40:16 +0800</pubDate>
       
@@ -20,6 +35,26 @@
 來個比較如下：
    Async sync     one at a time more one at a time   執行了就馬上換下一個指令 第一個執行完才執行下一個    Async Actions  click, AJAX, SetInterval 解決方法， callback , promises, async await (這一次不討論，因為他是promises 的簡寫)  先說說callback，就是在function裡面再執行一個function 這是目前傳統用法來解決同步非同步的事情。
 var btn ＝document.querySelector(&#39;#btn&#39;); var doIt = function() { alert(&amp;quot;you triggered &amp;quot; + this.id); }; btn.addEventListener(&amp;quot;click&amp;quot;, doIt); 我們可以說 doIt 就是一個 callback 函式，</description>
+    </item>
+    
+    <item>
+      <title>使用原生 Javascript 寫 tab 切換效果</title>
+      <link>https://chiakilalala.github.io/p/javascrip/</link>
+      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/p/javascrip/</guid>
+      <description>思考流程
+資料 (model) &amp;gt; 事件 (event) &amp;gt; 介面 (View)
+demo 網址
+使用之前該理解的 Jacascript
+for(迴圈) / function （函式）/ this / if&amp;hellip;else / classList.remove /classList.add
+來源：
+JavaScript 教學
+畫面效果如下： 點擊一個按鈕（電子發票） 另外一個按鈕的畫面 不會出現。
+  tab 點擊   面板
+   HTML 畫面  &amp;lt;div class=&amp;quot;btn-group checkout-btn&amp;quot; role=&amp;quot;group&amp;quot; id=&amp;quot;tabs&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;btn active&amp;quot; &amp;gt;電子發票&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;btn&amp;quot; &amp;gt;郵寄發票&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; window.onload = function (){ // do something } 在網頁中的所有的元素(包括元素的所有關聯檔案：圖片、音視訊、flash等)都完全載入到瀏覽器之後才執行。
+指定dom
+let tabLink = document.</description>
     </item>
     
     <item>

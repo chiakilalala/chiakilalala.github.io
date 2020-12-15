@@ -9,6 +9,21 @@
     <lastBuildDate>Tue, 14 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://chiakilalala.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo &#43; github 個人blog 建立</title>
+      <link>https://chiakilalala.github.io/p/theme-preview/</link>
+      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiakilalala.github.io/p/theme-preview/</guid>
+      <description>Hugo + github 個人blog 建立 之前是使用免費的網域 用wordpress 建立blog 想找個容易的模板 建立blog
+ Mac 安装 Hugo 可以使用 HomeBrew 安裝 https://brew.sh/ 下載
+brew install hugo 一個 Hugo 項目就是一個網站，創建命令如下
+hugo new site [project-name] 例如我的網站名稱是 blog,創建命令如下：
+hugo new site blog 創建完成後，在 blog 資料夾下會生成以下檔結構：
+ ├── archetypes ├── assets ├── config ├── content ├── data ├── layouts ├── static └── themes 添加主題 (theme) 此處以 zozo 為例 為了快速搭建博客，可以使用主題。使用主題後，只需要向 content 資料夾添加 Markdown 檔即可。
+cd blog git clone https://github.com/olOwOlo/hugo-theme-even themes/zozo 你也可以選其他主題，進到該主題的 GitHub repo，將上面的網址改成 repo的網址、themes/zozo 改成 themes/你的主題名稱。</description>
+    </item>
+    
+    <item>
+      <title>Hugo &#43; github 個人blog 建立</title>
       <link>https://chiakilalala.github.io/posts/theme-preview/</link>
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       

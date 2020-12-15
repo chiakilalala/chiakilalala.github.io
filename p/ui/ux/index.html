@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='UI/UX 設計指南分享 在這邊整理一些網路上整理下來的UI設計的一些小知識，在設計介面與流程時可以參考。
+關於UI Element的使用建議參考看看即可，因為UI的世界瞬息萬變，大家使用的方法也不盡相同，不過我覺得比較重要，也希望大家可以放在心上的概念是Microcopy，我認為這是不管在什麼地方都受用的觀念。
+文件大綱：
+ Dropdowns(下拉式選單) Switch/Toggle(開關按鈕) Placeholder Microcopy(小提示) - 一段簡短的文字，但能幫助使用者操作系統時更流暢 Label Placement - 表單中的Label到底要放在Field上面還是左邊啊？ Form(表單)   Dropdowns(下拉式選單)  下拉選單使用時機是選項介於 7 ~ 15 項 少於 7 項的話，建議使用Radio button，可以直接看到所有的選項 超過 15 個選項的話，建議搭配文字搜尋欄位，如下圖   但是當選項中有預設選項，像是字體大小選擇一般“適中”，使用Dropdowns即可  列出所有選項會造成使用者分心 並不鼓勵使用者去更改預設選項.     參考資料：
+ 7 Rules of Using Radio Buttons vs Drop-Down Menus   In case you have less than 7 options you should consider using radio buttons.'><title>UI/UX 設計指南分享</title>
+
+<link rel='canonical' href='https://chiakilalala.github.io/p/ui/ux/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='UI/UX 設計指南分享'>
+<meta property='og:description' content='UI/UX 設計指南分享 在這邊整理一些網路上整理下來的UI設計的一些小知識，在設計介面與流程時可以參考。
+關於UI Element的使用建議參考看看即可，因為UI的世界瞬息萬變，大家使用的方法也不盡相同，不過我覺得比較重要，也希望大家可以放在心上的概念是Microcopy，我認為這是不管在什麼地方都受用的觀念。
+文件大綱：
+ Dropdowns(下拉式選單) Switch/Toggle(開關按鈕) Placeholder Microcopy(小提示) - 一段簡短的文字，但能幫助使用者操作系統時更流暢 Label Placement - 表單中的Label到底要放在Field上面還是左邊啊？ Form(表單)   Dropdowns(下拉式選單)  下拉選單使用時機是選項介於 7 ~ 15 項 少於 7 項的話，建議使用Radio button，可以直接看到所有的選項 超過 15 個選項的話，建議搭配文字搜尋欄位，如下圖   但是當選項中有預設選項，像是字體大小選擇一般“適中”，使用Dropdowns即可  列出所有選項會造成使用者分心 並不鼓勵使用者去更改預設選項.     參考資料：
+ 7 Rules of Using Radio Buttons vs Drop-Down Menus   In case you have less than 7 options you should consider using radio buttons.'>
+<meta property='og:url' content='https://chiakilalala.github.io/p/ui/ux/'>
+<meta property='og:site_name' content='流光隨烒'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='UI/UX' /><meta property='article:tag' content='筆記' /><meta property='article:published_time' content='2019-04-11T14:26:00&#43;08:00'/><meta property='article:modified_time' content='2019-04-11T14:26:00&#43;08:00'/>
+<meta name="twitter:title" content="UI/UX 設計指南分享">
+<meta name="twitter:description" content="UI/UX 設計指南分享 在這邊整理一些網路上整理下來的UI設計的一些小知識，在設計介面與流程時可以參考。
+關於UI Element的使用建議參考看看即可，因為UI的世界瞬息萬變，大家使用的方法也不盡相同，不過我覺得比較重要，也希望大家可以放在心上的概念是Microcopy，我認為這是不管在什麼地方都受用的觀念。
+文件大綱：
+ Dropdowns(下拉式選單) Switch/Toggle(開關按鈕) Placeholder Microcopy(小提示) - 一段簡短的文字，但能幫助使用者操作系統時更流暢 Label Placement - 表單中的Label到底要放在Field上面還是左邊啊？ Form(表單)   Dropdowns(下拉式選單)  下拉選單使用時機是選項介於 7 ~ 15 項 少於 7 項的話，建議使用Radio button，可以直接看到所有的選項 超過 15 個選項的話，建議搭配文字搜尋欄位，如下圖   但是當選項中有預設選項，像是字體大小選擇一般“適中”，使用Dropdowns即可  列出所有選項會造成使用者分心 並不鼓勵使用者去更改預設選項.     參考資料：
+ 7 Rules of Using Radio Buttons vs Drop-Down Menus   In case you have less than 7 options you should consider using radio buttons.">
+    </head>
+    <body class="">
+        <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+
+                
+                    
+                    <img src="/img/avatar_hu975e4e1b0bb33c9135cf06fb13c55fd2_150253_300x300_resize_box_2.png" width="300"
+                        height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                <span class="emoji">🍥</span>
+            </figure>
+        
+        <h1 class="site-name"><a href="https://chiakilalala.github.io/">流光隨烒</a></h1>
+        <h2 class="site-description">是個宅宅</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/link'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Link</span>
+            </a>
+        </li>
+        
+    </ol>
+</aside>
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://chiakilalala.github.io/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/ui/ux/">UI/UX 設計指南分享</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Nov 411, 11110</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="uiux-設計指南分享">UI/UX 設計指南分享</h1>
+<p>在這邊整理一些網路上整理下來的UI設計的一些小知識，在設計介面與流程時可以參考。</p>
+<p>關於UI Element的使用建議參考看看即可，因為UI的世界瞬息萬變，大家使用的方法也不盡相同，不過我覺得比較重要，也希望大家可以放在心上的概念是<a class="link" href="#microcopy" >Microcopy</a>，我認為這是不管在什麼地方都受用的觀念。</p>
+<p>文件大綱：</p>
+<ul>
+<li><a class="link" href="#dropdowns" >Dropdowns(下拉式選單)</a></li>
+<li><a class="link" href="#toggle" >Switch/Toggle(開關按鈕)</a></li>
+<li><a class="link" href="#placeholder" >Placeholder</a></li>
+<li><a class="link" href="#microcopy" >Microcopy(小提示)</a> - 一段簡短的文字，但能幫助使用者操作系統時更流暢</li>
+<li><a class="link" href="#label-placement" >Label Placement</a> - 表單中的Label到底要放在Field上面還是左邊啊？</li>
+<li><a class="link" href="#form" >Form(表單)</a></li>
+</ul>
+<hr>
+<h1 id="a-iddropdownsdropdowns下拉式選單a"><!-- raw HTML omitted -->Dropdowns(下拉式選單)<!-- raw HTML omitted --></h1>
+<ul>
+<li>下拉選單使用時機是選項介於 7 ~ 15 項</li>
+<li>少於 7 項的話，建議使用Radio button，可以直接看到所有的選項</li>
+<li>超過 15 個選項的話，建議搭配文字搜尋欄位，如下圖</li>
+</ul>
+<p><img src="http://conversionlab.co/wp-content/uploads/2015/07/dropdown.gif" alt=""  /></p>
+<ul>
+<li>但是當選項中有預設選項，像是字體大小選擇一般“適中”，使用Dropdowns即可
+<ul>
+<li>列出所有選項會造成使用者分心</li>
+<li>並不鼓勵使用者去更改預設選項.
+<img src="https://cdn-images-1.medium.com/max/1000/1*iz4ILVvO4Hv46gz2I5Zpdg.png" alt=""  /></li>
+</ul>
+</li>
+</ul>
+<p>參考資料：</p>
+<ul>
+<li><a class="link" href="https://blog.prototypr.io/7-rules-of-using-radio-buttons-vs-drop-down-menus-fddf50d312d1"  target="_blank" rel="noopener"
+    >7 Rules of Using Radio Buttons vs Drop-Down Menus</a></li>
+</ul>
+<blockquote>
+<p>In case you have less than 7 options you should consider using radio buttons. Your users will be able immediately scan how many options they have and what each of those options are, without clicking (or typing) anything to reveal this information.</p>
+</blockquote>
+<blockquote>
+<p>Use Radio Buttons Rather Than Drop-downs
+If possible, use radio buttons rather than drop-down menus. Radio buttons have lower cognitive load because they make all options visible so that users can easily compare them.</p>
+</blockquote>
+<hr>
+<h1 id="a-idtoggleswitchtoggle開關按鈕a"><!-- raw HTML omitted -->Switch/Toggle(開關按鈕)<!-- raw HTML omitted --></h1>
+<p><img src="https://cdn0.iconfinder.com/data/icons/superuser-web-kit/512/680460-button_switch_power_option_control_lever_on-128.png" alt=""  /></p>
+<p>單個Switch與CheckBox看起來功用一模一樣，但有一個地方不同，先看看下圖。</p>
+<p><img src="https://i.imgur.com/WAPdrbQ.png" alt=""  /></p>
+<p>當Switch Button按下時同時也會馬上儲存現在的設定，但如果需要按下儲存確認鍵才會更改設定，就要使用Checkbox了。</p>
+<p>參考資料：</p>
+<ul>
+<li><a class="link" href="http://uxmovement.com/buttons/when-to-use-a-switch-or-checkbox/"  target="_blank" rel="noopener"
+    >when-to-use-a-switch-or-checkbox</a></li>
+<li><a class="link" href="https://medium.com/@chunchuanlin/%E9%81%B8%E5%8F%96%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%99%82%E6%A9%9F%E8%88%87%E9%99%90%E5%88%B6-fd0114c8ce12"  target="_blank" rel="noopener"
+    >選取控件的使用時機與限制</a></li>
+</ul>
+<hr>
+<h1 id="a-idplaceholderplaceholdera"><!-- raw HTML omitted -->Placeholder<!-- raw HTML omitted --></h1>
+<p>很多人常常拿Placeholder主要是在輸入欄位中提示「輸入範例」與「輸入限制」，有些人不太喜歡這種方式，在這邊提出另一種對Placeholder的看法</p>
+<blockquote>
+<p>Rather than risk having users stumble while filling out forms or waste valuable time figuring out how they work, the best solution is to have clear, visible labels that are placed outside empty form fields.</p>
+</blockquote>
+<p>Placeholder as an example ↓</p>
+<p><!-- raw HTML omitted --></p>
+<p>Placeholder as help text ↓</p>
+<p><!-- raw HTML omitted --></p>
+<p>Placeholder as secondary label(s) ↓</p>
+<p><!-- raw HTML omitted --></p>
+<p>補充的文字直接放在placholder內的話，使用者在開始打字的時候如果忘記補充文字的內容，必須刪掉輸入內容後才能看到，考驗使用者的短期記憶力，所以像上面提到的，把說明文字放在欄位旁邊是個不錯的做法。</p>
+<p>不過placeholder並沒有絕對的限制，如果整體使用情境不錯，還是可以打破上述規則，像是登入頁面的帳號密碼，因為大眾早已習慣兩個輸入框，上方是帳號，下方是密碼，所以就算直接把「帳號」、「密碼」寫在placeholder裡應該也不影響使用。</p>
+<p>Nielsen Norman Group曾做過的一項眼球追蹤研究就說明，空的輸入框比有提示文字的輸入框更能引起用戶的關注，而且與空的輸入框相比，用戶更容易忽略有提示文字的輸入框，因為用戶乍看會覺得像已經填寫過的樣子。換句話說，被認為是有用的表單提示文字其實弊大於利，尤其是對習慣大致瀏覽的用戶，但我在瀏覽其他網站的時候，只要placeholder的顏色夠淡，感覺不太會有不順暢的感覺。</p>
+<p>現在的Material Design的Adaptive Placeholders可以讓placeholder在輸入時轉換成標題，不過那沒有達到補充說明欄位的效果，所以在此不討論。</p>
+<p>Adaptive Placeholders ↓</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*4UgDH_9_McIJBQmWrqixGg.gif" alt=""  /></p>
+<p>參考資料：</p>
+<ul>
+<li><a class="link" href="https://kknews.cc/tech/z6kgakp.html"  target="_blank" rel="noopener"
+    >新規則！5個表單經典原則</a></li>
+<li><a class="link" href="https://uxdesign.cc/alternatives-to-placeholder-text-13f430abc56f"  target="_blank" rel="noopener"
+    >Alternatives to Placeholder Text - Improve form usability by addressing the perils of placeholders</a></li>
+<li><a class="link" href="https://medium.theuxblog.com/4-reasons-to-avoid-using-placeholder-text-in-forms-8fc33e724e4f"  target="_blank" rel="noopener"
+    >4 reasons to avoid using placeholder text in forms</a></li>
+<li><a class="link" href="https://medium.com/as-a-product-designer/%E8%A1%A8%E5%96%AE%E4%B8%8D%E5%96%AE%E7%B4%94-%E6%B7%B1%E7%A9%B6button-input-form-f88b505eebf3"  target="_blank" rel="noopener"
+    >表單不單純—深究button&amp;input&amp;form</a></li>
+<li><a class="link" href="http://conversionlab.co/2015/07/14/%E4%BD%A0%E7%9A%84%E8%A1%A8%E5%96%AE%E5%AE%B3%E4%BD%A0%E6%B2%92%E8%A8%82%E5%96%AE%EF%BC%9F9%E5%80%8B%E5%B8%B8%E8%A6%8B%E7%9A%84%E8%A1%A8%E5%96%AE%E8%A8%AD%E8%A8%88%E5%95%8F%E9%A1%8C/"  target="_blank" rel="noopener"
+    >你的表單害你沒訂單？9 個常見的表單設計問題</a></li>
+<li><a class="link" href="https://kknews.cc/tech/z6kgakp.html"  target="_blank" rel="noopener"
+    >新規則！5個表單經典原則</a></li>
+</ul>
+<hr>
+<h1 id="a-idmicrocopymicrocopy小提示a"><!-- raw HTML omitted -->Microcopy(小提示)<!-- raw HTML omitted --></h1>
+<p>Microcopy是幾句簡短的文字，幫助使用者了解該做什麼或是舒緩對系統感到的困惑，達到的功效如下。以下依照功用分類進行介紹。</p>
+<h2 id="1-消弭使用者的擔憂">1. 消弭使用者的擔憂</h2>
+<p>對使用者進行承諾，讓使用者安心。</p>
+<p>承諾使用者不會濫用他的資料去twitter自動發文，或是對他的朋友發送垃圾信以及和自動關注帳戶 ↓</p>
+<p><!-- raw HTML omitted --></p>
+<p>告知使用者取得他們資料的原因 ↓</p>
+<p><!-- raw HTML omitted --></p>
+<h2 id="2-提供訊息補充說明">2. 提供訊息補充說明</h2>
+<p>提到這個就必須説說Information Icon了，因為有些資料輸入欄位很難從欄位名稱看出該輸入的什麼樣的資訊，所以通常會在輸入欄位的Label旁加上information icon，icon上會有是 ? 或 i 的樣式。按下icon的時候會跳出tooltip，詳細解說這欄位的用意或該輸入什麼。</p>
+<p>Information Icon 的用處</p>
+<blockquote>
+<p>Contrary to help hints, tooltips at first hide the information and then display it on demand. They are usually fuelled by an icon with a question mark. Help information is given by keeping on help icon or selecting it. Once the mouse goes far from the icon, the tooltips vanishes. These can effectively help in reducing clutter especially when the help text is lengthy.</p>
+</blockquote>
+<p>Facebook 的 info icon ↓</p>
+<p><!-- raw HTML omitted --></p>
+<p>Walmart 的 info icon ↓</p>
+<p><img src="https://s3.amazonaws.com/blog.invisionapp.com/uploads/2017/11/accessible-microcopy-3.jpg" alt=""  /></p>
+<p>Line Creator 的 info icon ↓</p>
+<p><img src="https://i.imgur.com/CsIPBdI.png" alt=""  /></p>
+<p>如果這個資訊相當重要，那就可以直接顯示文字資訊，而不要用info icon</p>
+<blockquote>
+<p>If the information is extremely salient, consider displaying it at all times rather than as a tooltip.</p>
+</blockquote>
+<p>參考資料：</p>
+<ul>
+<li><a class="link" href="https://www.invisionapp.com/blog/writing-accessible-microcopy/"  target="_blank" rel="noopener"
+    >7 guidelines for writing accessible microcopy</a></li>
+</ul>
+<h2 id="3-有用的錯誤訊息">3. 有用的錯誤訊息</h2>
+<p>當事情出錯時，知道發生什麼狀況有益解決它。如果你對錯誤的說明很模糊，想解決這些錯誤的使用者會很痛苦，如錯誤訊息的範例下圖。</p>
+<p><!-- raw HTML omitted --></p>
+<ol>
+<li>Error message should be clear</li>
+</ol>
+<p>錯誤訊息不要只寫「發生錯誤，請再試一次」這樣含糊的字句，你要想像你正在跟使用者說話，使用更好懂更具體的描述吧！</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*2RdNRoDJmqfArWaViXal-g.png" alt=""  /></p>
+<ol start="2">
+<li>Error message should be helpful</li>
+</ol>
+<p>除了給予錯誤原因，最好給予解決方法，在下圖中，當登入失敗時，系統不只告知錯誤狀況，還提供了2個解決方法，後者的方法還提供了連結幫助使用者解決問題。</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*9eTjcpNOWtE7pEWXpiPivA.png" alt=""  /></p>
+<ol start="3">
+<li>Error message should be specific to the situation</li>
+</ol>
+<p>大部分網站對所有驗證狀態只會給給予一種錯誤訊息，然而MailChimp官方網站中填寫email欄位時會有3種不同的錯誤訊息，這種客製化的錯誤訊息我覺得最完美，但是也非常費工，我覺得在使用者最容易犯錯的欄位進行這種優化即可。</p>
+<p><img src="https://cdn-images-1.medium.com/max/1000/1*cbmeYu8zkwhuw-I6fxn5gQ.png" alt=""  /></p>
+<p>以上提到撰寫錯誤訊息的建議是從<a class="link" href="https://uxplanet.org/how-to-write-a-perfect-error-message-da1ca65a8f36"  target="_blank" rel="noopener"
+    >How to Write a Perfect Error Message</a>這篇文章取出最重要的三點，其他說明可以點進去看看。</p>
+<p>參考資料：</p>
+<ul>
+<li><a class="link" href="https://youtu.be/YXbIxa5CCDY"  target="_blank" rel="noopener"
+    >[Youtube] What is Microcopy</a></li>
+<li><a class="link" href="https://intersection.tw/microcopy-%E7%B0%A1%E7%9F%AD%E7%9A%84%E5%B0%8F%E6%8F%90%E9%86%92%E9%80%A0%E6%88%90%E5%B7%A8%E5%A4%A7%E7%9A%84%E5%BD%B1%E9%9F%BF-41bb0047b605"  target="_blank" rel="noopener"
+    >Microcopy: 簡短的小提醒造成巨大的影響</a></li>
+<li><a class="link" href="https://uxplanet.org/how-to-write-a-perfect-error-message-da1ca65a8f36"  target="_blank" rel="noopener"
+    >How to Write a Perfect Error Message</a></li>
+<li><a class="link" href="https://www.hongkiat.com/blog/form-ux-design-tips/"  target="_blank" rel="noopener"
+    >4 Form Design UX Tips You Should Know</a> - 有提到Microcopy，在章節 Example: Expressive Tooltips</li>
+<li><a class="link" href="http://uxmovement.com/forms/the-best-place-for-error-messages-on-forms/"  target="_blank" rel="noopener"
+    >The Best Place for Error Messages on Forms</a> - 錯誤訊息放在欄位右方或下方比較好</li>
+</ul>
+<blockquote>
+<p>What is Microcopy: The small bits of text/copy that help instruct and alleviate(減緩) the concerns of your users.</p>
+</blockquote>
+<blockquote>
+<p>By definition, the microcopy of a website consists of small chunks of text used in different elements – labels, buttons, error messages, tooltips, etc.</p>
+</blockquote>
+<hr>
+<h1 id="ui-頁面狀態空白狀態empty-state">UI 頁面狀態：空白狀態（empty state）</h1>
+<p>當你第一次使用系統時，有很多頁面都沒使用過，例如使用相片編輯軟體，但是沒建立任何檔案，此時畫面會是空白的一片，這就是所謂的空白狀態（empty state），請看 <a class="link" href="https://designtongue.me/%E8%A8%AD%E8%A8%88%E5%B8%AB%E6%9C%80%E5%B8%B8%E5%BF%BD%E7%95%A5%E7%9A%84_ui_%E9%A0%81%E9%9D%A2%E7%8B%80%E6%85%8B_empty_state/"  target="_blank" rel="noopener"
+    >設計師最常忽略的 UI 頁面狀態：空白狀態（empty state）</a>，將會告訴你如何將空白狀態（empty state）處理的更完善。</p>
+<hr>
+<h1 id="a-idlabel-placementlabel-placementa"><!-- raw HTML omitted -->Label Placement<!-- raw HTML omitted --></h1>
+<p>Label與Field的關係也是一門學問，擺放的位置主要分成以下三種</p>
+<p><!-- raw HTML omitted --></p>
+<h2 id="label-在-field-正上方">Label 在 Field 正上方</h2>
+<p>普遍的狀況下最實用的一種排版方式，它方便觀看，如果把Label放在Field左側，眼睛注視表單時就必須在Label與Field之間左右來回移動，增加負荷，另一點是表單如果支援多國語系，label長度會不同，尤其法文的長度大致是英文的兩倍長。</p>
+<p>優點</p>
+<ul>
+<li>Label與Field靠得很近，方便觀看，降低負荷</li>
+<li>Label在多國語系下長度不同，也不會影響排版</li>
+<li>在行動裝置上更方便觀看，如果Label跟Field分成左右兩邊的話，畫面會很擠</li>
+</ul>
+<p>缺點</p>
+<ul>
+<li>表單會變的很長，而且無法一次觀看到所有的Label。</li>
+</ul>
+<p><img src="https://static.lukew.com/forms_vertical.gif" alt=""  /></p>
+<h2 id="label-在-field-左側">Label 在 Field 左側</h2>
+<p>優點</p>
+<ul>
+<li>整張表單的高度可以縮減，Form不會太長</li>
+<li>可以一次觀看到所有的Label，快速跳到你想填的欄位</li>
+</ul>
+<p>缺點</p>
+<ul>
+<li>在填表時，眼睛必須左右來回觀看Label與Field，增加負荷</li>
+<li>Label在多國語系下長度不同，容易影響到排版</li>
+<li>在行動裝置上排版會很擠，不方便觀看</li>
+</ul>
+<h3 id="label-在-field-左側---靠右對齊的-label">Label 在 Field 左側 - 靠右對齊的 Label</h3>
+<p>如果要把Label放在Field左側，至少用向右對齊的版本</p>
+<p><img src="https://static.lukew.com/forms_right.gif" alt=""  /></p>
+<h3 id="label-在-field-左側---靠左對齊的-label">Label 在 Field 左側 - 靠左對齊的 Label</h3>
+<p>效果最差，眼睛要左看右看，負荷很大，應該算是最要不得的排版，雖然有人說在掃描整個Label時，因為靠左對齊的關係，比較好看，但整體起來還是不好用的。
+<img src="https://static.lukew.com/forms_left.gif" alt=""  /></p>
+<h2 id="結論">結論</h2>
+<p>在一般使用者填表的時候，我覺得盡量都用「Label在Field正上方」，但是在管理或是設定頁面時，有時候欄位很多（像是管理介面），想設定的欄位只有特定一兩個，並不需要從頭到尾每個欄位都填過，或許用「Label在Field左側 - 靠右對齊的Label」也是一種很好的選擇。若想使用「Label 在 Field 左側 - 靠左對齊的 Label」的方法，用有框線的表格更能幫助閱讀。</p>
+<p>參考資料</p>
+<ul>
+<li><a class="link" href="https://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php"  target="_blank" rel="noopener"
+    >Label Placement in Forms</a></li>
+<li><a class="link" href="http://www.effortmark.co.uk/label-placement-forms-whats-best/"  target="_blank" rel="noopener"
+    >Label placement in forms: what’s best?</a></li>
+<li><a class="link" href="https://www.lukew.com/ff/entry.asp?504"  target="_blank" rel="noopener"
+    >Top, Right or Left Aligned Form Labels</a></li>
+<li><a class="link" href="https://www.lukew.com/ff/entry.asp?1502"  target="_blank" rel="noopener"
+    >Web Application Form Design</a></li>
+</ul>
+<hr>
+<h1 id="a-idformforma"><!-- raw HTML omitted -->Form<!-- raw HTML omitted --></h1>
+<h2 id="按鈕命名">按鈕命名</h2>
+<p>避免使用&quot;送出&quot;之類的通用詞語來按鈕表示行為，因為它們給人的印象太通用了。相反地，請說明按鈕在點擊時執行的行為，例如&quot;創立我的帳戶&quot;或&quot;訂閱每週優惠&quot;。</p>
+<p><!-- raw HTML omitted --></p>
+<hr>
+<h2 id="按鈕位置">按鈕位置</h2>
+<p>按鈕位置雖然查到了一些研究與解釋，但似乎沒有個定案，以下大家參考看看就好。</p>
+<p>在Dialog中，按鈕會被擺在右下角，因為放在右邊的東西有下一步的感覺，也符合閱讀的順序，而如果有Cancel與OK的多個按鈕，主按鈕應該放在最右側，也就是OK按鈕。</p>
+<p>↓ 符合閱讀順序
+<img src="https://i.imgur.com/AFyGzK9.png" alt=""  /></p>
+<p>↓ User會看完所有按鈕再決定按哪個，所以主按鈕在左側會讓眼神多飄移一次
+<img src="https://i.imgur.com/9dext6I.png" alt=""  /></p>
+<p>但是在整頁的大型的表單中(非Dialog)，lukew的文章中建議把按鈕放左側是較好的方案，我覺得按鈕對齊按鈕input欄位應該是關鍵，因為user可能會回頭查看表單input的資料，再往下找按鈕的時候，也能較快速定位到按鈕。所以放左邊跟中間的按鈕較多，但在表單中把按鈕放右邊比較少。</p>
+<p>↓ Airbnb
+<!-- raw HTML omitted --></p>
+<p>↓ Github
+<!-- raw HTML omitted --></p>
+<p>參考資料</p>
+<ul>
+<li><a class="link" href="https://ux.stackexchange.com/questions/8569/submit-buttons-on-the-left-or-the-right?utm_medium=organic&amp;utm_source=google_rich_qa&amp;utm_campaign=google_rich_qa"  target="_blank" rel="noopener"
+    >Submit Buttons on the Left or the Right?</a></li>
+<li><a class="link" href="https://www.lukew.com/ff/entry.asp?571"  target="_blank" rel="noopener"
+    >Primary &amp; Secondary Actions in Web Forms</a></li>
+</ul>
+<hr>
+<h2 id="別太輕易送出表單">別太輕易送出表單</h2>
+<p>在登入頁面的帳密輸入框與搜尋引擎的搜尋Bar中常會實作按下Enter鍵就送出表單的功能，其他地方可以用這招嗎？我個人的看法是如果這方法不會改變資料的話就無所謂，但如果是新建或是刪除資料的表單最好還是不用比較好，雖然FB的發文就是按下Enter就送出，所以這方便大家就參考看看吧！</p>
+<hr>
+<h2 id="表單驗證時機">表單驗證時機</h2>
+<p>驗證分成兩類，而inline validation又再分兩類</p>
+<ul>
+<li>After Submit Validation</li>
+<li>Inline Validation
+<ul>
+<li>Validate during the data entry</li>
+<li>Validate after the data entry</li>
+</ul>
+</li>
+</ul>
+<h3 id="after-submit-validation">After Submit Validation</h3>
+<p>有一派說法是贊成After Submit Validation，他們認為在user輸入資料時一直驗證會打斷user思考，user在填飽的時候會進入「填表模式」，當送出資料後，會轉換成「修改模式」去修正剛剛沒打對的地方，所以他們認為不應該打斷填表模式。</p>
+<h3 id="inline-validation">Inline Validation：</h3>
+<p>在使用者輸入某個欄位時，就進行驗證，不等到最後送出後才驗證，首先先來看兩種inline validation的驗證方式。</p>
+<ul>
+<li>
+<p>Validate during the data entry：
+輸入資料的同時就會一邊即時驗證。</p>
+</li>
+<li>
+<p>Validate after the data entry：
+在輸入完資料後，離開這個輸入欄位或是當已經輸入到此欄位長度的最大值，才開始驗證。</p>
+</li>
+</ul>
+<hr>
+<p>在「<a class="link" href="https://baymard.com/blog/inline-form-validation"  target="_blank" rel="noopener"
+    >Usability Testing of Inline Form Validation</a>」文中提到如何做出最好的inline validation，我把結論整理在下方，</p>
+<h3 id="常見錯誤1-倉促的驗證">常見錯誤1: 倉促的驗證</h3>
+<p>如果直接使用「Validate during the data entry」，使用者在點擊欄位或是才剛輸入第一個字元時就會看到錯誤訊息，user會覺得自己明明還沒打完，為什麼要被這樣糾正，體驗並不好。</p>
+<p>解法：在第一次輸入的時候，記得使用「Validate after the data entry」，在使用者確實輸入完資料再驗證，體驗會較佳，如此便能解決常見錯誤1。</p>
+<h3 id="常見錯誤2-過時的驗證">常見錯誤2: 過時的驗證</h3>
+<p>在「Validate after the data entry」後發現資料驗證錯誤，顯示錯誤訊息，而user回頭進行修改的時候，修改完後離開欄位(onblur event)，系統會再度驗證，但是當我們修改資料時，可能已經通過驗證了，在等到離開欄位後再認證顯得不夠即時，這也就是常見錯誤2。</p>
+<p>解法：修改錯誤資料時，使用「Validate during the data entry」，每輸入一個字元就驗證一次，一發現通過驗證就馬上隱藏錯誤訊息，如此一來就能達到良好的驗證效果。</p>
+<h3 id="例外">例外：</h3>
+<p>某些狀況下，可以在資料尚未輸入完之前就驗證並給予警吿</p>
+<ul>
+<li>在數字欄位中輸入英文字母</li>
+<li>在複雜的驗證機制輸入不該出現的字元，像是不符合規範的信用卡號</li>
+<li>太長的輸入（例如15位電話號碼）</li>
+</ul>
+<h3 id="良好範例">良好範例</h3>
+<ul>
+<li><a href="https://ant.design/components/form/?#components-form-demo-register">https://ant.design/components/form/?#components-form-demo-register</a></li>
+</ul>
+<p>參考資料</p>
+<ul>
+<li><a class="link" href="https://baymard.com/blog/inline-form-validation"  target="_blank" rel="noopener"
+    >Usability Testing of Inline Form Validation: 40% Don’t Have It, 20% Get It Wrong</a></li>
+<li><a class="link" href="http://uxmovement.com/forms/why-users-make-more-errors-with-instant-inline-validation/"  target="_blank" rel="noopener"
+    >Why Users Make More Errors with Instant Inline Validation</a> - After Submit Validation</li>
+<li><a class="link" href="https://medium.com/simple-human/inline-validation-is-problematic-399dd01d436f"  target="_blank" rel="noopener"
+    >Inline validation is problematic</a> - After Submit Validation</li>
+<li><a class="link" href="https://alistapart.com/article/inline-validation-in-web-forms"  target="_blank" rel="noopener"
+    >Inline Validation in Web Forms</a></li>
+<li><a class="link" href="https://www.formisimo.com/blog/is-inline-validation-in-insurance-forms-worth-it/"  target="_blank" rel="noopener"
+    >Is Inline Validation Worth It?</a></li>
+<li><a class="link" href="https://medium.com/@andrew.burton/form-validation-best-practices-8e3bec7d0549"  target="_blank" rel="noopener"
+    >Form validation best practices</a></li>
+<li><a class="link" href="https://conversionxl.com/blog/form-validation/"  target="_blank" rel="noopener"
+    >How to Get Form Validation Right</a></li>
+</ul>
+<hr>
+<h2 id="以下是留著之後消化的資料但應該會消化不良">以下是留著之後消化的資料，但應該會消化不良</h2>
+<ul>
+<li><a class="link" href="https://designtongue.me/perfect-loading-%E5%8A%A0%E8%BC%89/"  target="_blank" rel="noopener"
+    >利用心理學與科學，完美克服介面上“內容加載”的等待感</a></li>
+<li><a class="link" href="https://designtongue.me/%E5%B0%8D%E8%A9%B1%E6%A1%86-%E8%A8%AD%E8%A8%88%E5%A4%A7%E6%9C%89%E5%AD%B8%E5%95%8F/"  target="_blank" rel="noopener"
+    >對話框的學問－探討按鈕上的用字方法</a></li>
+<li><a href="https://designtongue.me/ux-design-for-internationalization/">https://designtongue.me/ux-design-for-internationalization/</a></li>
+<li><a class="link" href="https://hk.saowen.com/a/c202fdc1296e3b9d5502da3b1f48bcbed8551b1a081228b46c6793883fd238de"  target="_blank" rel="noopener"
+    >使用 Skeleton Screen 提升用户感知體驗</a></li>
+<li><a class="link" href="https://zhuanlan.zhihu.com/c_87416856"  target="_blank" rel="noopener"
+    >這個控件叫什麼？</a> - 逐一介紹popover, tooltip等元件</li>
+<li><a class="link" href="https://medium.com/@chunchuanlin/%E9%81%B8%E5%8F%96%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%99%82%E6%A9%9F%E8%88%87%E9%99%90%E5%88%B6-fd0114c8ce12"  target="_blank" rel="noopener"
+    >選取控件的使用時機與限制</a></li>
+<li><a class="link" href="http://babich.biz/author/nick/"  target="_blank" rel="noopener"
+    >Nick Babich寫的ＵＸ文章</a>
+<a class="link" href="https://medium.com/@y3vu060312/%E5%88%A9%E7%94%A8%E5%8D%81%E5%A4%A7%E7%B6%93%E9%A9%97%E6%B3%95%E5%89%87%E8%88%87%E5%85%AB%E5%A4%A7%E9%BB%83%E9%87%91%E5%BE%8B%E5%81%9A%E5%A5%BD%E5%9F%BA%E7%A4%8E%E6%98%93%E7%94%A8%E6%80%A7%E6%AA%A2%E6%B8%AC-ux-notes-c454f96b12e6"  target="_blank" rel="noopener"
+    >利用十大經驗法則與八大黃金律做好基礎易用性檢測—UX Notes</a></li>
+<li><a class="link" href="http://garywlee.blogspot.tw/2009/02/blog-post.html"  target="_blank" rel="noopener"
+    >八個互動介面設計的黃金法則</a></li>
+<li><a class="link" href="http://uxmovement.com/category/buttons/"  target="_blank" rel="noopener"
+    >UX-moment: Buttons</a></li>
+<li><a class="link" href="https://www.uxmatters.com/mt/archives/2018/05/how-to-create-good-error-messages.php"  target="_blank" rel="noopener"
+    >How to Create Good Error Messages</a></li>
+<li><a class="link" href="https://medium.com/as-a-product-designer/%E9%87%8D%E6%96%B0%E8%A8%AD%E8%A8%88-pinkoi-%E8%A8%BB%E5%86%8A%E7%99%BB%E5%85%A5%E9%A0%81-cda29ddffc93"  target="_blank" rel="noopener"
+    >pinkoi redesign</a></li>
+<li><a class="link" href="https://blog.akanelee.me/posts/208661-icon-category/"  target="_blank" rel="noopener"
+    >獵人用的 icon 分類法</a></li>
+<li><a class="link" href="https://medium.com/@kathrynwang/%E7%82%BA%E4%BD%BF%E7%94%A8%E8%80%85%E8%A8%AD%E8%A8%88%E4%B8%80%E5%80%8B%E9%AB%94%E8%B2%BC%E7%9A%84%E8%A8%BB%E5%86%8A%E7%99%BB%E5%85%A5%E9%A0%81-65b04f45da66"  target="_blank" rel="noopener"
+    >為使用者設計一個體貼的註冊登入頁</a></li>
+<li><a class="link" href="https://medium.com/@DcardLab/%E9%80%8F%E9%81%8E%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E6%8F%90%E5%8D%87-500-%E7%9A%84%E8%A8%BB%E5%86%8A%E8%A1%A8%E7%8F%BE-4ba8fcbce81e"  target="_blank" rel="noopener"
+    >透過量化研究提升 500% 的註冊表現</a></li>
+<li><a class="link" href="https://conversionxl.com/blog/14-steps-to-building-sign-up-forms-that-convert/"  target="_blank" rel="noopener"
+    >14 Steps to Building Sign-up Forms That Convert</a></li>
+<li><a class="link" href="https://zhuanlan.zhihu.com/p/26442372"  target="_blank" rel="noopener"
+    >Toast的濫用，可以用其他方代替解決</a></li>
+<li><a class="link" href="https://uxdesign.cc/design-better-data-tables-4ecc99d23356"  target="_blank" rel="noopener"
+    >關於Table</a></li>
+<li><a class="link" href="https://uxdesign.cc/designing-tables-for-reusability-490a3760533"  target="_blank" rel="noopener"
+    >Designing Tables for Reusability</a></li>
+<li><a class="link" href="https://medium.com/@imran_parvez/designing-settings-b2a96878961b"  target="_blank" rel="noopener"
+    >Designing Settings</a> - 設定頁面製作指南</li>
+<li><a class="link" href="https://uxdesign.cc/design-better-forms-96fadca0f49c"  target="_blank" rel="noopener"
+    >Design Better Forms</a> - 蠻不錯的文章</li>
+<li><a class="link" href="https://uxdesign.cc/form-field-required-vs-optional-9b4d7cdbf400"  target="_blank" rel="noopener"
+    >Form fields — Required vs Optional</a> - 不要用＊ 使用optional</li>
+<li><a class="link" href="https://ux.stackexchange.com/questions/48214/best-layout-for-a-settings-page?utm_medium=organic&amp;utm_source=google_rich_qa&amp;utm_campaign=google_rich_qa"  target="_blank" rel="noopener"
+    >Best layout for a settings page</a></li>
+<li><a class="link" href="https://medium.com/as-a-product-designer/%E8%A4%87%E9%9B%9C%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%E7%9A%84%E8%A1%A8%E6%A0%BC%E8%A8%AD%E8%A8%88-f5479d11a5b7"  target="_blank" rel="noopener"
+    >複雜應用程式的表格設計</a></li>
+<li><a class="link" href="https://www.uxmatters.com/mt/archives/2017/05/designing-ux-forms.php"  target="_blank" rel="noopener"
+    >Designing UX: Forms</a></li>
+<li><a class="link" href="https://theblog.adobe.com/designing-more-efficient-forms-structure-inputs-labels-and-actions/"  target="_blank" rel="noopener"
+    >Designing More Efficient Forms: Structure, Inputs, Labels And Actions</a> - 表單 all in one</li>
+<li><a class="link" href="https://medium.com/swlh/the-nine-states-of-design-5bfe9b3d6d85"  target="_blank" rel="noopener"
+    >The Nine States of Design</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ui/ux/">UI/UX</a>
+        
+            <a href="/tags/%E7%AD%86%E8%A8%98/">筆記</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title"></h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">關於電子商務網站 ＵＩＵＸ 二三事</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/posts/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">關於電子商務網站 ＵＩＵＸ 二三事</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">關於電子商務網站 ＵＩＵＸ 二三事</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/posts/ui/ux/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">UI/UX 設計指南分享</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">&copy; 2020 流光隨烒</section>
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.1.0">Stack</a></b> designed by
+        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<link rel="stylesheet" href="/css/highlight/light.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/css/highlight/dark.min.css" media="(prefers-color-scheme: dark)">
+
+    </body>
+</html>

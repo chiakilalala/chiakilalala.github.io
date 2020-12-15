@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=' 使用香草 js,製作一個簡單的 tab'><title>使用原生 Javascript 寫 tab 切換效果</title>
+
+<link rel='canonical' href='https://chiakilalala.github.io/p/javascrip/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='使用原生 Javascript 寫 tab 切換效果'>
+<meta property='og:description' content=' 使用香草 js,製作一個簡單的 tab'>
+<meta property='og:url' content='https://chiakilalala.github.io/p/javascrip/'>
+<meta property='og:site_name' content='流光隨烒'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Javascript' /><meta property='article:tag' content='es6' /><meta property='article:published_time' content='2019-05-11T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2019-05-11T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="使用原生 Javascript 寫 tab 切換效果">
+<meta name="twitter:description" content=" 使用香草 js,製作一個簡單的 tab">
+    </head>
+    <body class="">
+        <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+
+                
+                    
+                    <img src="/img/avatar_hu975e4e1b0bb33c9135cf06fb13c55fd2_150253_300x300_resize_box_2.png" width="300"
+                        height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                <span class="emoji">🍥</span>
+            </figure>
+        
+        <h1 class="site-name"><a href="https://chiakilalala.github.io/">流光隨烒</a></h1>
+        <h2 class="site-description">是個宅宅</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/link'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Link</span>
+            </a>
+        </li>
+        
+    </ol>
+</aside>
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://chiakilalala.github.io/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/javascrip/">使用原生 Javascript 寫 tab 切換效果</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+         使用香草 js,製作一個簡單的 tab
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Nov 27, 7070</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="javascript-es6">Javascript ES6</h1>
+<h2 id="es6-繼承">ES6 繼承</h2>
+<ol>
+<li>學會定義子類別。(extends 關鍵字)</li>
+<li>學會使用 super 關鍵字呼叫父類別建構式。</li>
+<li>學會利用已經定義好的子類別物件。</li>
+</ol>
+<p>class 子類別名稱 extends 父類別名稱</p>
+<p>建立子類別物件: new 子類別名稱()</p>
+<p>定義子類別建構式:
+constructor{
+super(); //呼叫父類別建構式
+}</p>
+<p>子類別物件 同樣擁有 父類別 中定義的屬性和方法</p>
+<p>在 子類別 中定義方法，會覆蓋 / 取代 父類別 中的同名方法
+car.run(); 子類別物件可以呼叫父類別的方法</p>
+<p>定義靜態方法: 在 類別 中定義</p>
+<ul>
+<li>static 方法名稱(參數) { 程式碼 }</li>
+</ul>
+<p>呼叫靜態方法: 使用 類別名稱 呼叫</p>
+<ul>
+<li>類別名稱.方法名稱(參數)</li>
+</ul>
+<p>取得原型物件: Object.getPrototypeOf(物件)</p>
+<p>null是Object的原型物件</p>
+<p>class Car{
+constructor(color){this.color=color;}
+run(){}
+}
+//
+let car =new Car(&ldquo;green&rdquo;);</p>
+<p>let carProto=Object.getPrototype(car);
+console.log(carProto);//Car 原型物件
+let objProto=Object.getPrototype(carProto); //Object  原型物件
+console.log(objProto);
+let lastOne=Object.getPrototype(objProto);
+console.log(lastOne);//原形練的終點 null</p>
+<h3 id="練習">練習</h3>
+<pre><code>// 定義子類別
+class 子類別 extends 父類別{
+   constructor(參數){
+      super(參數); // 呼叫父類別的建構式
+   }
+   sleep(){
+    
+   }// 子類別的其他方法定義
+}
+
+
+// 這是 Animal 類別，請不要更動
+class Animal{
+    constructor(name){
+        this.name=name;
+    }
+    sleep(){ //定義sleep 方法
+        console.log(this.name+&quot;睡覺&quot;);
+    }
+}
+/* 
+練習一：
+    定義一個 Cat 子類別，繼承 Animal 類別。
+    並滿足下方程式碼的操作需求
+*/
+class Cat extends Animal{
+    constructor(name);
+    super(name);
+ 
+}
+  speak(){
+      console.log(&quot;喵!喵!&quot;);
+    }
+// 以下 Cat 子類別的操作
+let cat=new Cat(&quot;小花&quot;);
+cat.sleep(); // 印出：&quot;小花睡覺&quot;
+cat.speak(); // 印出：&quot;喵!喵!&quot;
+
+/*
+練習二：
+    定義一個 Dog 子類別，繼承 Animal 類別。
+    並滿足下方程式碼的操作需求
+*/
+class Dog extends Animal{
+     constructor(name);
+      super(name);// 請在這裡完成 Dog 子類別的定義
+}
+sleep(hours){
+  console.log(this.name+&quot;睡了&quot;+hours+&quot;小時&quot;)
+}
+// 以下 Dog 子類別的操作
+let dog=new Dog(&quot;小黑&quot;);
+dog.sleep(3); // 印出：&quot;小黑睡了3小時&quot;
+</code></pre><p>// 定義靜態方法
+class 類別名稱{
+static 靜態方法名稱(參數列表){
+靜態方法中的程式碼
+}
+}
+// 使用靜態方法
+類別名稱.靜態方法名稱(參數資料);</p>
+<pre><code>// Geometry 類別提供平面座標系統的數學運算功能
+class Geometry{
+    // 在這裡定義靜態方法
+    static distance(x1,y1,x2,y2){
+    let length=Math.sqrt(Math.pow(x2-x1, 2)+Math.pow(y2-y1, 2));
+        console.log(length);
+    }
+}
+// 計算座標 (1,1) 和 (4,4) 的直線距離：大約 4.24
+Geometry.distance(1,1,4,4);
+// 計算線段 (1,2) ~ (3,4) 的斜率：1
+Geometry.slope(1,2,3,4);
+
+/*
+    以上簡易的幾何計算，使用 JS 內建的 Math 物件，以及公式：
+        直線距離：開根號(平方(x2-x1)+平方(y2-y1))
+        斜率：(y2-y1)/(x2-x1)
+
+    由於這是程式課程，非數學課程
+    若只能寫出靜態方法的骨架，印出訊息，也算過關
+*/
+</code></pre>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/javascript/">javascript</a>
+        
+            <a href="/tags/es6/">es6</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title"></h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/posts/javascrip/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Javascript ES6 繼承</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">&copy; 2020 流光隨烒</section>
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.1.0">Stack</a></b> designed by
+        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<link rel="stylesheet" href="/css/highlight/light.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/css/highlight/dark.min.css" media="(prefers-color-scheme: dark)">
+
+    </body>
+</html>

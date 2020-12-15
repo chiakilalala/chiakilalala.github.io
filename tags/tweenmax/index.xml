@@ -9,6 +9,26 @@
     <lastBuildDate>Wed, 26 Aug 2020 00:14:56 +0800</lastBuildDate><atom:link href="https://chiakilalala.github.io/tags/tweenmax/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TweenMax 入門筆記</title>
+      <link>https://chiakilalala.github.io/p/preview202008/</link>
+      <pubDate>Wed, 26 Aug 2020 00:14:56 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/p/preview202008/</guid>
+      <description>TweenMax GASP入門介紹 TweenMax是一個好用的動畫工具， 我覺得比jQuery更直覺，這系列筆記是根據 mike 成智遠老師 的TweenMax動態特效課程
+先備知識： css animation 概念
+javascript 基本概念 如：else if / Function / for
+1.物件id ＝&amp;gt;#box移動的物件
+2.多少秒數執行完成 =&amp;gt;動作的屬性
+3.x:&amp;ldquo;700px&amp;rdquo; 屬性 ＝&amp;gt; 水平位移 700px
+TweenMax.to(&amp;quot;#box&amp;quot;,1,{x:&amp;quot;500px&amp;quot;}) 注意點  似jQuery 的id命名方式  在網頁的世界裡面，(x,y) 起點是從左上角開始  第三個參數 是用物件包著{}  demo
+由左向右移動的車子（圖片為已完成行動時） Scale 比例縮放 效果出現對話框
+目的：如何使用 TweenMax 把東西縮放？
+第一步 針對物件對話 做變化
+transftom:scale(0,0) 是縮到最小到看不到
+#dialogBox{ position: absolute; top: -20px; left: -30px; width: 259px; height: 196px; transform: scale(0, 0);//對話框縮到做小 background-image: url(&amp;quot;https://upload.cc/i1/2020/08/25/rBMF6j.png&amp;quot;) } 我們就針對這個來做變化</description>
+    </item>
+    
+    <item>
+      <title>TweenMax 入門筆記</title>
       <link>https://chiakilalala.github.io/posts/-preview202008/</link>
       <pubDate>Wed, 26 Aug 2020 00:14:56 +0800</pubDate>
       

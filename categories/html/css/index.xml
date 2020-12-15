@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML/CSS on 流光隨烒</title>
+    <link>https://chiakilalala.github.io/categories/html/css/</link>
+    <description>Recent content in HTML/CSS on 流光隨烒</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language><atom:link href="https://chiakilalala.github.io/categories/html/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端基礎面試題(HTML&#43;CSS部分&#43;JS)</title>
+      <link>https://chiakilalala.github.io/p/f2e/</link>
+      <pubDate>Wed, 17 Jul 2019 14:26:00 +0800</pubDate>
+      
+      <guid>https://chiakilalala.github.io/p/f2e/</guid>
+      <description>前端基礎面試題(HTML+CSS部分+JS) 1.行內元素和塊級元素?img算什麼?行內元素怎麼轉化為塊級元素? 行內元素：和有他元素都在一行上，高度、行高及外邊距和內邊距都不可改變，文字圖片的寬度不可改變，只能容納文本或者其他行內元素；其中img是行元素 塊級元素：總是在新行上開始，高度、行高及外邊距和內邊距都可控制，可以容納內斂元素和其他元素； 行元素轉換為塊級元素方式：display：block；
+2.將多個元素設置為同一行?清除浮動有幾種方式? 將多個元素設置為同一行：float，inline-block 清除浮動的方式：
+ 方法一：添加新的元素、應用clear：both； 方法二：父級div定義overflow: hidden； 方法三：利用:after和:before來在元素內部插入兩個元素塊，從面達到清除浮動的效果。  .clear{zoom:1;} .clear:after {content:””;clear:both; display:block; height:0; overflow:hidden; visibility:hidden; } 3.CSS hack 
+  (1)圖片間隙 在div中插入圖片，圖片會將div下方撐大3px。hack1：將與寫在同一行。hack2：給添加display：block； dt li中的圖片間隙。hack：給添加display：block；
+  默認高度，IE6以下版本中，部分塊元素，擁有默認高度（低於18px） hack1：給元素添加：font-size：0； hack2：聲明： overflow：hidden；
+  表單行高不一致 hack1：給表單添加聲明：float：left；height： ；border： 0；
+  鼠標指針 hack：若統一某一元素鼠標指針為手型：cursor：pointer； 當li內的a轉化塊元素時，給a設置float，IE裡面會出現階梯狀 hack1：給a加display：inline-block； hack2：給li加float：left；```
+  </description>
+    </item>
+    
+  </channel>
+</rss>

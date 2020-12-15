@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='how to use TweenMax'><title>TweenMax 入門筆記</title>
+
+<link rel='canonical' href='https://chiakilalala.github.io/p/preview202008/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='TweenMax 入門筆記'>
+<meta property='og:description' content='how to use TweenMax'>
+<meta property='og:url' content='https://chiakilalala.github.io/p/preview202008/'>
+<meta property='og:site_name' content='流光隨烒'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='TweenMax' /><meta property='article:tag' content='javascript' /><meta property='article:tag' content='animation' /><meta property='article:published_time' content='2020-08-26T00:14:56&#43;08:00'/><meta property='article:modified_time' content='2020-08-26T00:14:56&#43;08:00'/>
+<meta name="twitter:title" content="TweenMax 入門筆記">
+<meta name="twitter:description" content="how to use TweenMax">
+    </head>
+    <body class="">
+        <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+
+                
+                    
+                    <img src="/img/avatar_hu975e4e1b0bb33c9135cf06fb13c55fd2_150253_300x300_resize_box_2.png" width="300"
+                        height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                <span class="emoji">🍥</span>
+            </figure>
+        
+        <h1 class="site-name"><a href="https://chiakilalala.github.io/">流光隨烒</a></h1>
+        <h2 class="site-description">是個宅宅</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/link'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Link</span>
+            </a>
+        </li>
+        
+    </ol>
+</aside>
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://chiakilalala.github.io/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/preview202008/">TweenMax 入門筆記</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        how to use TweenMax
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Nov 826, 26260</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="tweenmax--gasp入門介紹">TweenMax  GASP入門介紹</h1>
+<p>TweenMax是一個好用的動畫工具，
+我覺得比jQuery更直覺，這系列筆記是根據 mike 成智遠老師 的TweenMax動態特效課程</p>
+<h3 id="先備知識">先備知識：</h3>
+<p>css animation 概念</p>
+<p>javascript 基本概念 如：else if / Function / for</p>
+<p><img src="https://i.imgur.com/CKqbiAs.png" alt=""  /></p>
+<p>1.物件id ＝&gt;#box移動的物件</p>
+<p>2.多少秒數執行完成 =&gt;動作的屬性</p>
+<p>3.x:&ldquo;700px&rdquo; 屬性 ＝&gt; 水平位移 700px</p>
+<pre><code class="language-javascript=" data-lang="javascript=">
+TweenMax.to(&quot;#box&quot;,1,{x:&quot;500px&quot;})
+
+
+
+</code></pre><h3 id="注意點">注意點</h3>
+<ul>
+<li>似jQuery 的id命名方式</li>
+<li></li>
+<li>在網頁的世界裡面，(x,y) 起點是從左上角開始</li>
+<li></li>
+<li>第三個參數 是用物件包著{}</li>
+</ul>
+<p><a class="link" href="https://codepen.io/chiakilalala/pen/MWypJjV"  target="_blank" rel="noopener"
+    > demo</a></p>
+<p>由左向右移動的車子（圖片為已完成行動時）
+<img src="https://i.imgur.com/MKnlC87.png" alt=""  /></p>
+<h2 id="scale-比例縮放">Scale 比例縮放</h2>
+<p>效果出現對話框</p>
+<p><img src="https://i.imgur.com/laCjmdm.png" alt=""  /></p>
+<p>目的：如何使用 TweenMax 把東西縮放？</p>
+<h3 id="第一步">第一步</h3>
+<p>針對物件對話 做變化</p>
+<p>transftom:scale(0,0) 是縮到最小到看不到</p>
+<pre><code class="language-javascript=" data-lang="javascript=">    #dialogBox{
+        position: absolute;
+        top: -20px;
+        left: -30px;
+        width: 259px;
+        height: 196px;
+        transform: scale(0, 0);//對話框縮到做小
+        background-image: url(&quot;https://upload.cc/i1/2020/08/25/rBMF6j.png&quot;)
+
+    }
+</code></pre><p>我們就針對這個來做變化</p>
+<blockquote>
+<p>在很多程式的概念裡面，0是為小，1為最大。</p>
+</blockquote>
+<pre><code class="language-javascript=" data-lang="javascript=">TweenMax.to(&quot;#dialogBox&quot;,1,
+            {
+  scaleX:1 ,//控制x方向大小
+  scaleY:1 ,//控制Y方向大小
+
+})
+</code></pre><h3 id="第二步-動畫物件位置">第二步 動畫物件位置</h3>
+<p>我們希望對話框可以從右下角跳出來，所以從
+transform-Origin 變動位置，那記得一開始所說的物件最開始都是（0,0）左上角</p>
+<p><img src="https://i.imgur.com/L3DXYSb.png" alt=""  /></p>
+<p>中間為（50,50） 右下方為（100,100）</p>
+<pre><code class="language-javascript=" data-lang="javascript=">TweenMax.to(&quot;#dialogBox&quot;,1,
+            {
+  scaleX:1 ,//控制x方向大小
+  scaleY:1 ,//控制Y方向大小
+  transformOrigin:&quot;100% 100%&quot;,//動畫縮放中心點位置,希望從右下角開始
+
+})
+</code></pre><h3 id="第三步-速率變化">第三步 速率變化</h3>
+<p><a href="https://greensock.com/ease-visualizer">https://greensock.com/ease-visualizer</a></p>
+<p>ease 是 TweenMax 針對動畫速率的屬性，我們可以根據上面網址知道各個效果是如何的？</p>
+<p><img src="https://i.imgur.com/OX2ltEN.png" alt=""  /></p>
+<p>根據面板下面紅色框起來 複製下來放到 ease:&ldquo;bounce.inOut&rdquo;
+測試你想要的動畫速率屬性。</p>
+<pre><code class="language-javascript=" data-lang="javascript=">TweenMax.to(&quot;#dialogBox&quot;,1,
+            {
+  scaleX:1 ,//控制x方向大小
+  scaleY:1 ,//控制Y方向大小
+  transformOrigin:&quot;100% 100%&quot;,//動畫縮放中心點位置 印為希望從右下角開始
+  ease: &quot;bounce.inOut&quot;//控制動畫速率的部分  https://greensock.com/ease-visualizer
+})
+</code></pre><p><a class="link" href="https://codepen.io/chiakilalala/pen/qBZrrRa?editors=0110"  target="_blank" rel="noopener"
+    >demo</a></p>
+<h2 id="css-屬性控制">CSS 屬性控制</h2>
+<p>用TweenMax 來操作css部分來產生動畫</p>
+<p>效果：頁面載入時，畫面由左到右 畫面寬度由 0% 到100%</p>
+<pre><code class="language-javascript=" data-lang="javascript="> #box{
+    width: 0%; /*畫面設定為寬度0%*/
+    height: 100%;
+    background-color: cadetblue;
+    background-size:cover;
+    background-image: url(&quot;https://upload.cc/i1/2020/08/25/cz9MS1.jpg&quot;);
+}
+</code></pre><pre><code class="language-javascript=" data-lang="javascript="> TweenMax.to(&quot;#box&quot;, 3,
+    {
+        width:&quot;100%&quot;,
+        ease: Bounce.easeOut//加上動畫速率使為生動
+    }
+);
+</code></pre><p><a class="link" href="https://codepen.io/chiakilalala/pen/dyMvWRq?editors=1010"  target="_blank" rel="noopener"
+    >demo</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/tweenmax/">TweenMax</a>
+        
+            <a href="/tags/javascript/">javascript</a>
+        
+            <a href="/tags/animation/">animation</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title"></h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/posts/-preview202008/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">TweenMax 入門筆記</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">&copy; 2020 流光隨烒</section>
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.1.0">Stack</a></b> designed by
+        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<link rel="stylesheet" href="/css/highlight/light.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/css/highlight/dark.min.css" media="(prefers-color-scheme: dark)">
+
+    </body>
+</html>
