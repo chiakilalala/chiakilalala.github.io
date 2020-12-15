@@ -1,23 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 無盡光芒</title>
+    <title>Posts on 流光隨烒</title>
     <link>https://chiakilalala.github.io/posts/</link>
-    <description>Recent content in Posts on 無盡光芒</description>
+    <description>Recent content in Posts on 流光隨烒</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Wed, 26 Aug 2020 00:14:56 +0800</lastBuildDate>
-    
-	<atom:link href="https://chiakilalala.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 26 Aug 2020 00:14:56 +0800</lastBuildDate><atom:link href="https://chiakilalala.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TweenMax 入門筆記</title>
       <link>https://chiakilalala.github.io/posts/-preview202008/</link>
       <pubDate>Wed, 26 Aug 2020 00:14:56 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/-preview202008/</guid>
-      <description>TweenMax GASP入門介紹 TweenMax是一個好用的動畫工具， 我覺得比jQuery更直覺，這系列筆記是根據 mike 成智遠老師 的TweenMax動態特效課程 先備知識： css animation 概念 javascript 基本概念 如：else if / Function / for 1.物件</description>
+      <description>TweenMax GASP入門介紹 TweenMax是一個好用的動畫工具， 我覺得比jQuery更直覺，這系列筆記是根據 mike 成智遠老師 的TweenMax動態特效課程
+先備知識： css animation 概念
+javascript 基本概念 如：else if / Function / for
+1.物件id ＝&amp;gt;#box移動的物件
+2.多少秒數執行完成 =&amp;gt;動作的屬性
+3.x:&amp;ldquo;700px&amp;rdquo; 屬性 ＝&amp;gt; 水平位移 700px
+TweenMax.to(&amp;quot;#box&amp;quot;,1,{x:&amp;quot;500px&amp;quot;}) 注意點  似jQuery 的id命名方式  在網頁的世界裡面，(x,y) 起點是從左上角開始  第三個參數 是用物件包著{}  demo
+由左向右移動的車子（圖片為已完成行動時） Scale 比例縮放 效果出現對話框
+目的：如何使用 TweenMax 把東西縮放？
+第一步 針對物件對話 做變化
+transftom:scale(0,0) 是縮到最小到看不到
+#dialogBox{ position: absolute; top: -20px; left: -30px; width: 259px; height: 196px; transform: scale(0, 0);//對話框縮到做小 background-image: url(&amp;quot;https://upload.cc/i1/2020/08/25/rBMF6j.png&amp;quot;) } 我們就針對這個來做變化</description>
     </item>
     
     <item>
@@ -26,7 +33,13 @@
       <pubDate>Sun, 01 Mar 2020 10:40:16 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/javascrip006/</guid>
-      <description>前言： 最近在研究串接資料，剛好學習到了一個ES6的新用法，先來記錄說明一下。 在此之前我們還要了解什麼是同步與非同步 同步（synchronous）：發一個請求，就要等待服務器的響應結束，然後才能發第二請</description>
+      <description>前言： 最近在研究串接資料，剛好學習到了一個ES6的新用法，先來記錄說明一下。
+在此之前我們還要了解什麼是同步與非同步
+同步（synchronous）：發一個請求，就要等待服務器的響應結束，然後才能發第二請求！中間這段時間就是 londing ；刷新的是整個頁面。
+異步（asynchronous）：發一個請求後，無需等待服務器的響應，然後就可以發第二個請求！可以使用 Javascript 接受服務器的響應，然後使用 Javascript 來局部刷新。
+來個比較如下：
+   Async sync     one at a time more one at a time   執行了就馬上換下一個指令 第一個執行完才執行下一個    Async Actions  click, AJAX, SetInterval 解決方法， callback , promises, async await (這一次不討論，因為他是promises 的簡寫)  先說說callback，就是在function裡面再執行一個function 這是目前傳統用法來解決同步非同步的事情。
+var btn ＝document.querySelector(&#39;#btn&#39;); var doIt = function() { alert(&amp;quot;you triggered &amp;quot; + this.id); }; btn.addEventListener(&amp;quot;click&amp;quot;, doIt); 我們可以說 doIt 就是一個 callback 函式，</description>
     </item>
     
     <item>
@@ -35,7 +48,18 @@
       <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/javascrip/</guid>
-      <description>思考流程 資料 (model) &amp;gt; 事件 (event) &amp;gt; 介面 (View) demo 網址 使用之前該理解的 Jacascript for(迴圈) / function （函式）/ this / if...else / classList.remove /classList.add 來源： JavaScript 教學 畫面效果如下： 點擊一個按鈕（電子發票） 另外一個按鈕的畫面 不會出現。 tab 點擊 面板 HTML 畫面 &amp;lt;div class=&amp;quot;btn-group checkout-btn&amp;quot; role=&amp;quot;group&amp;quot; id=&amp;quot;tabs&amp;quot;&amp;gt; &amp;lt;a</description>
+      <description>思考流程
+資料 (model) &amp;gt; 事件 (event) &amp;gt; 介面 (View)
+demo 網址
+使用之前該理解的 Jacascript
+for(迴圈) / function （函式）/ this / if&amp;hellip;else / classList.remove /classList.add
+來源：
+JavaScript 教學
+畫面效果如下： 點擊一個按鈕（電子發票） 另外一個按鈕的畫面 不會出現。
+  tab 點擊   面板
+   HTML 畫面  &amp;lt;div class=&amp;quot;btn-group checkout-btn&amp;quot; role=&amp;quot;group&amp;quot; id=&amp;quot;tabs&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;btn active&amp;quot; &amp;gt;電子發票&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;btn&amp;quot; &amp;gt;郵寄發票&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; window.onload = function (){ // do something } 在網頁中的所有的元素(包括元素的所有關聯檔案：圖片、音視訊、flash等)都完全載入到瀏覽器之後才執行。
+指定dom
+let tabLink = document.</description>
     </item>
     
     <item>
@@ -44,7 +68,7 @@
       <pubDate>Thu, 18 Jul 2019 14:26:00 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/-/</guid>
-      <description>12 Awkward Web Design Problems and How to Fix Them 12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17) (Web design has evolved tremendously from what it used to be, shedding off ineffective practices and replacing them with more efficient methods. Often what is currently known as a best practice or most revered design style, will shift out of vogue or be replaced with a more suitable approach. What’s left behind can quickly become</description>
+      <description>12 Awkward Web Design Problems and How to Fix Them 12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17) (Web design has evolved tremendously from what it used to be, shedding off ineffective practices and replacing them with more efficient methods. Often what is currently known as a best practice or most revered design style, will shift out of vogue or be replaced with a more suitable approach. What’s left behind can quickly become out of place and leave an awkward feeling with your users.</description>
     </item>
     
     <item>
@@ -53,7 +77,14 @@
       <pubDate>Wed, 17 Jul 2019 14:26:00 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/f2e/</guid>
-      <description>前端基礎面試題(HTML+CSS部分+JS) 1.行內元素和塊級元素?img算什麼?行內元素怎麼轉化為塊級元素? 行內元素：和有他元素都在一行上，高度、行高及外邊距和內邊距都不可改變，文字圖片的寬度不可改</description>
+      <description>前端基礎面試題(HTML+CSS部分+JS) 1.行內元素和塊級元素?img算什麼?行內元素怎麼轉化為塊級元素? 行內元素：和有他元素都在一行上，高度、行高及外邊距和內邊距都不可改變，文字圖片的寬度不可改變，只能容納文本或者其他行內元素；其中img是行元素 塊級元素：總是在新行上開始，高度、行高及外邊距和內邊距都可控制，可以容納內斂元素和其他元素； 行元素轉換為塊級元素方式：display：block；
+2.將多個元素設置為同一行?清除浮動有幾種方式? 將多個元素設置為同一行：float，inline-block 清除浮動的方式：
+ 方法一：添加新的元素、應用clear：both； 方法二：父級div定義overflow: hidden； 方法三：利用:after和:before來在元素內部插入兩個元素塊，從面達到清除浮動的效果。  .clear{zoom:1;} .clear:after {content:””;clear:both; display:block; height:0; overflow:hidden; visibility:hidden; } 3.CSS hack 
+  (1)圖片間隙 在div中插入圖片，圖片會將div下方撐大3px。hack1：將與寫在同一行。hack2：給添加display：block； dt li中的圖片間隙。hack：給添加display：block；
+  默認高度，IE6以下版本中，部分塊元素，擁有默認高度（低於18px） hack1：給元素添加：font-size：0； hack2：聲明： overflow：hidden；
+  表單行高不一致 hack1：給表單添加聲明：float：left；height： ；border： 0；
+  鼠標指針 hack：若統一某一元素鼠標指針為手型：cursor：pointer； 當li內的a轉化塊元素時，給a設置float，IE裡面會出現階梯狀 hack1：給a加display：inline-block； hack2：給li加float：left；```
+  </description>
     </item>
     
     <item>
@@ -62,7 +93,17 @@
       <pubDate>Sat, 29 Jun 2019 14:26:00 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/ui/ux%E4%BD%BF%E7%94%A8%E8%80%85%E7%B6%93%E9%A9%97/</guid>
-      <description>以行動裝置為第一優先 無論工程師或是設計師 千萬不能陷入專家陷阱，因為每個人的心智模式不一樣， 只須記住一件事情，以使用者意見為中心，來評估優化事項 主要點擊區範圍應擴大 手機menu可以滿版 商品照片一定要用清</description>
+      <description>以行動裝置為第一優先 無論工程師或是設計師 千萬不能陷入專家陷阱，因為每個人的心智模式不一樣， 只須記住一件事情，以使用者意見為中心，來評估優化事項
+ 主要點擊區範圍應擴大 手機menu可以滿版 商品照片一定要用清晰的畫素 無連結地方可以不用做滑鼠效果 首頁的商品建議加入價錢 得到的反饋是：不一定 如果網站是走高價位，顯示價錢無意義  社群連結不用太大按鈕 可透過ga分析 是否有些區塊 很少人點擊 根據數據統計，僅有0.2％的顧客會願意分享，但增加分享按鈕卻會降低您的頁面速度，在現在使用者普遍耐心不足的狀態下，或許省略分享按鈕是個更棒的選擇。
+排版簡單 清晰  視覺表現應統一 選單顏色太多 視覺雜亂 手機模式 點擊部分需要多點空間 顏色選單建議可控制在三個顏色以內 一旦將網站的顏色框定在簡單的配色方案之中，那麼就會留給內容更大的發揮空間。  讓客戶分心的地方不要太多  彈出窗口的必要性 找不到自己的位置 跟商品無關的blog/連結必要性  在介面上整合相似的功能，避免版面破碎化  設計師常因無心而設計出多欄位卻又相似的元素或功能，在頁面上就會顯得多餘甚至混淆影響使用者的操作。  讓社群來證明您的價值，而非老王賣瓜  利用社群的力量來幫助你說服客戶是相當聰明的策略，且可有效的提高轉換率。用戶看到別人的認可，或是討論你的產品服務時，會加強他們想要了解或使用的動機，所以試著把使用者的推薦文或是數據證明放在網站上吧!  讓可點擊和可選擇之元件的樣式有所差異，避免混淆 應用視覺元素之手法可以幫助使用者了解介面上的功能與結構，例如顏色、深度與對比度等。同時為了與你的使用者精準的溝通，需點擊的行為(如連結或按鈕)與需選擇的元件(如選單)設計上要有所區別，同時上方的文字必須描述清楚，才有利使用者辨別。
+別讓使用者填太多表單 人類天生不喜歡麻煩的事物，就如同大家不喜歡在網站上填寫太多的表單。每新增一項必填欄位，訪客放棄填寫的風險就越高。此外，並非所有人打字都相當快，而且在移動裝置上輸入簡直就是件苦差事。所以盡可能的只留必要欄位，不那麼重要的就不要讓使用者填了。但如果你真的有非常多必填欄位，可以試看看將第二重要的資訊在提交第一重要的資訊後，出現於單獨的頁面上，請使用者繼續填寫。
+避免讓使用者產生已經滾到 “網頁最底部” 的錯覺 沒錯，長型的滾動頁面的設計相當符合人性，但要小心訪客可能會因為設計不良而產生“已經滾到最底部”的錯覺，這會大大的降低轉換率。
+你可以透過視覺化的圖標或是小動畫，來告知或暗示使用者：網頁還沒置底，你們還可以繼續往下閱讀。另外，設計時也需小心各主題之間留白區域的尺寸，因為過大也會讓人產生底下無資訊的想法。
+以聚焦手法吸引使用者的目光，效果大於頁面上滿滿的連結 我們常會在頁面上留下許多”連結”，目的在於可以滿足使用者可能的所有需求(例如可了解更多)。不過，假如你的目的是讓使用者捲到頁面底部時，採取你期待他們做的動作，那你必須思考上述的做法是否恰當。因為在中間安插任何連結都可能導致使用者分心而忽視了你最希望他們做的事情，所以放置連結，其數量與位置都要取得平衡。怎麼取得平衡必須仰賴大家的經驗，不過至少我們知道減少多餘的連結，可增加使用者注意到你”最重要動作 (可能是按鈕)”的機會。
+直接操作比多階層下拉式選單 (contextless menus) 來的直覺 針對介面上的元素直接操作有時比整合的操作工具列還要來的方便直覺。如下圖，若各項目皆有一些可以讓使用者操作的功能，我們可以藉由點擊或鼠標覆蓋的方式來呈現一些功能或進行操作(如刪除或重新命名等)。另外還有一種常見的操作方式，就是點擊項目後，該項目會轉變為可編輯的狀態。
+然而，多階層下拉式選單(context of button)十分常見，但過多的階層可能會增加操作的步驟，所以下次設計時不妨考慮減少階層或直接操作的方法。
+當下就可以操作，何必再多開分頁 當頁面上有一些我們期望使用者做，並會帶來價值的功能時(例如留下聯絡方式)，最好可將實際的表單或欄位放置於本頁上。如下圖，欄位若能與頁面整合在同一層，其帶來的好處大於還要連結至別頁輸入的方式。
+那我們該怎麼做呢?首先，必須精簡流程的步驟，盡可能的讓使用者花最少的時間。接著，將精簡化的表單或欄位放置於該頁面上，除了可讓使用者直接操作外，使用者也可藉此預估完成所需的時間，這樣他們進行操作的意願會更高。</description>
     </item>
     
     <item>
@@ -71,7 +112,8 @@
       <pubDate>Tue, 21 May 2019 14:26:00 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/api-/</guid>
-      <description>Ajax api 串接 API 基本概念 將 Client 與 Server 分開。 每個 Request 間都不應該保持 State (狀態)，意指 Request 不會攜帶 State、Data 使用 HTTP 方法 主要的 HTTP 動作 GET POST PUT DELETE HTTP Status Code 對 Server 請求成功的 Request，Server 會用 Response 回覆你結果。 Response 主要</description>
+      <description>Ajax api 串接 API 基本概念  將 Client 與 Server 分開。 每個 Request 間都不應該保持 State (狀態)，意指 Request 不會攜帶 State、Data 使用 HTTP 方法  主要的 HTTP 動作  GET POST PUT DELETE  HTTP Status Code 對 Server 請求成功的 Request，Server 會用 Response 回覆你結果。 Response 主要會由三個數字組成，通常都是 1、2、3、4、5 開頭：
+ 1xx：Server 正在處理你的請求 2xx：Okay 3xx：Server 能完成你想要他做的事情，但是他必須先做其他事 4xx：代表可能你可能發生錯誤 5xx：Server 發生錯誤，無法成功回覆你  </description>
     </item>
     
     <item>
@@ -80,7 +122,13 @@
       <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/theme-preview/</guid>
-      <description>Hugo + github 個人blog 建立 之前是使用免費的網域 用wordpress 建立blog 想找個容易的模板 建立blog Mac 安装 Hugo 可以使用 HomeBrew 安裝 https://brew.sh/ 下載 brew install hugo 一個 Hugo 項目就是一個網站，創建命令如下 hugo new site [project-name] 例如我的網站名稱是 b</description>
+      <description>Hugo + github 個人blog 建立 之前是使用免費的網域 用wordpress 建立blog 想找個容易的模板 建立blog
+ Mac 安装 Hugo 可以使用 HomeBrew 安裝 https://brew.sh/ 下載
+brew install hugo 一個 Hugo 項目就是一個網站，創建命令如下
+hugo new site [project-name] 例如我的網站名稱是 blog,創建命令如下：
+hugo new site blog 創建完成後，在 blog 資料夾下會生成以下檔結構：
+ ├── archetypes ├── assets ├── config ├── content ├── data ├── layouts ├── static └── themes 添加主題 (theme) 此處以 zozo 為例 為了快速搭建博客，可以使用主題。使用主題後，只需要向 content 資料夾添加 Markdown 檔即可。
+cd blog git clone https://github.com/olOwOlo/hugo-theme-even themes/zozo 你也可以選其他主題，進到該主題的 GitHub repo，將上面的網址改成 repo的網址、themes/zozo 改成 themes/你的主題名稱。</description>
     </item>
     
     <item>
@@ -89,7 +137,17 @@
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/javascrip/</guid>
-      <description>Javascript ES6 ES6 繼承 學會定義子類別。(extends 關鍵字) 學會使用 super 關鍵字呼叫父類別建構式。 學會利用已經定義好的子類別物件。 class 子類別名稱 extends 父類別名稱 建立子類別物件: new 子類別名稱() 定義子類別建構式: constructor{ super(); //呼</description>
+      <description>Javascript ES6 ES6 繼承  學會定義子類別。(extends 關鍵字) 學會使用 super 關鍵字呼叫父類別建構式。 學會利用已經定義好的子類別物件。  class 子類別名稱 extends 父類別名稱
+建立子類別物件: new 子類別名稱()
+定義子類別建構式: constructor{ super(); //呼叫父類別建構式 }
+子類別物件 同樣擁有 父類別 中定義的屬性和方法
+在 子類別 中定義方法，會覆蓋 / 取代 父類別 中的同名方法 car.run(); 子類別物件可以呼叫父類別的方法
+定義靜態方法: 在 類別 中定義
+ static 方法名稱(參數) { 程式碼 }  呼叫靜態方法: 使用 類別名稱 呼叫
+ 類別名稱.方法名稱(參數)  取得原型物件: Object.getPrototypeOf(物件)
+null是Object的原型物件
+class Car{ constructor(color){this.color=color;} run(){} } // let car =new Car(&amp;ldquo;green&amp;rdquo;);
+let carProto=Object.getPrototype(car); console.</description>
     </item>
     
     <item>
@@ -98,7 +156,12 @@
       <pubDate>Fri, 10 May 2019 06:53:46 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/my-first-post/</guid>
-      <description>#Javascript ES6 常數 筆記 const 常數名稱 let 宣告變數 // var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope for(var i=0;i&amp;lt;3;i++){ console.log(&amp;quot;i:&amp;quot;+i); } console.log(&amp;quot;outside i:&amp;quot;+i); // 請將上方的變數 i 換用 let 宣告，比較輸出的差異。 // var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope for(let i=0;i&amp;lt;3;i++){ console.log(&amp;quot;i:&amp;quot;+i); } console.log(&amp;quot;outside i:&amp;quot;+i); let const var</description>
+      <description>#Javascript ES6 常數 筆記
+const 常數名稱 let 宣告變數
+// var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope for(var i=0;i&amp;lt;3;i++){ console.log(&amp;quot;i:&amp;quot;+i); } console.log(&amp;quot;outside i:&amp;quot;+i); // 請將上方的變數 i 換用 let 宣告，比較輸出的差異。
+// var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope
+for(let i=0;i&amp;lt;3;i++){ console.log(&amp;quot;i:&amp;quot;+i); } console.log(&amp;quot;outside i:&amp;quot;+i); let const var 差別
+ var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope scope 可用範圍 let 可用範圍以程式區塊 ( 大括號 ) 為分界線 let 以變數scope for(let i=0; i&amp;lt;5;i++){ console.log(i); } const 宣告常數 常數資料不能變動  使用 =&amp;gt; 建立函式 ① (參數列表)=&amp;gt;(回傳值) ② (參數列表)=&amp;gt;{函式內部程式}</description>
     </item>
     
     <item>
@@ -107,7 +170,12 @@
       <pubDate>Tue, 07 May 2019 07:43:32 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/first-post/</guid>
-      <description>JS 30day Day2 JS and CSS Clock 筆記 demo 目的 學會 js Time 和 用js 操作css 還有基本的ES6語法 步驟 利用css 製作 分針 時針 秒針 取時間的函數 製作js 函數 setＤate 取出現在的時間 const now = new Date(); // const seconds = now.getSeconds(); const mins = now.getMinutes(); const hour = now.getHours(); 3.利用時間</description>
+      <description>JS 30day Day2 JS and CSS Clock 筆記 demo
+目的 學會 js Time 和 用js 操作css 還有基本的ES6語法
+步驟  利用css 製作 分針 時針 秒針 取時間的函數 製作js 函數 setＤate 取出現在的時間  const now = new Date(); // const seconds = now.getSeconds(); const mins = now.getMinutes(); const hour = now.getHours(); 3.利用時間取得對應角度
+const secondsDegrees = ((seconds / 60) * 360) + 90; 零點角度 rotate。秒針轉一圈 60s，每一秒對應角度為 (&amp;hellip;s / 60s) * 360°。
+4.用得到角度 給值html在style的transform屬性上
+const seconds = now.</description>
     </item>
     
     <item>
@@ -116,7 +184,11 @@
       <pubDate>Thu, 11 Apr 2019 14:26:00 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/ui/ux/</guid>
-      <description>UI/UX 設計指南分享 在這邊整理一些網路上整理下來的UI設計的一些小知識，在設計介面與流程時可以參考。 關於UI Element的使用建議參考看看即可，因為UI的世界瞬息萬變，大家使用的方法也不盡相同，不過我覺得</description>
+      <description>UI/UX 設計指南分享 在這邊整理一些網路上整理下來的UI設計的一些小知識，在設計介面與流程時可以參考。
+關於UI Element的使用建議參考看看即可，因為UI的世界瞬息萬變，大家使用的方法也不盡相同，不過我覺得比較重要，也希望大家可以放在心上的概念是Microcopy，我認為這是不管在什麼地方都受用的觀念。
+文件大綱：
+ Dropdowns(下拉式選單) Switch/Toggle(開關按鈕) Placeholder Microcopy(小提示) - 一段簡短的文字，但能幫助使用者操作系統時更流暢 Label Placement - 表單中的Label到底要放在Field上面還是左邊啊？ Form(表單)   Dropdowns(下拉式選單)  下拉選單使用時機是選項介於 7 ~ 15 項 少於 7 項的話，建議使用Radio button，可以直接看到所有的選項 超過 15 個選項的話，建議搭配文字搜尋欄位，如下圖   但是當選項中有預設選項，像是字體大小選擇一般“適中”，使用Dropdowns即可  列出所有選項會造成使用者分心 並不鼓勵使用者去更改預設選項.     參考資料：
+ 7 Rules of Using Radio Buttons vs Drop-Down Menus   In case you have less than 7 options you should consider using radio buttons.</description>
     </item>
     
     <item>
@@ -125,7 +197,10 @@
       <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/javascript/</guid>
-      <description>Whack A Mole Game JS 30day 步驟 function randomTime(min, max) { return Math.round(Math.random() * (max - min) + min); } //隨機老鼠上洞的時間 2 隨機決定哪個洞有老鼠跳來跳去 function randomHole(holes) { const idx = Math.floor(Math.random() * holes.length); //亂數洞 const hole = holes[idx]; if (hole === lastHole) { console.log(&amp;quot;Ah that is the same one bud&amp;quot;); return randomHole(holes); } lastHole = hole; return hole; } 3.因為要避免亂數洞裏同時出</description>
+      <description>Whack A Mole Game JS 30day  步驟
+function randomTime(min, max) { return Math.round(Math.random() * (max - min) + min); } //隨機老鼠上洞的時間 2 隨機決定哪個洞有老鼠跳來跳去
+function randomHole(holes) { const idx = Math.floor(Math.random() * holes.length); //亂數洞 const hole = holes[idx]; if (hole === lastHole) { console.log(&amp;quot;Ah that is the same one bud&amp;quot;); return randomHole(holes); } lastHole = hole; return hole; }  3.因為要避免亂數洞裏同時出現老鼠兩次
+if (hole === lastHole) { console.log(&amp;quot;Ah that is the same one bud&amp;quot;); return randomHole(holes); } lastHole = hole;  4.</description>
     </item>
     
   </channel>

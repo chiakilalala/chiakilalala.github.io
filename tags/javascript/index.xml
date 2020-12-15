@@ -1,23 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on 無盡光芒</title>
+    <title>javascript on 流光隨烒</title>
     <link>https://chiakilalala.github.io/tags/javascript/</link>
-    <description>Recent content in Javascript on 無盡光芒</description>
+    <description>Recent content in javascript on 流光隨烒</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Wed, 26 Aug 2020 00:14:56 +0800</lastBuildDate>
-    
-	<atom:link href="https://chiakilalala.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 26 Aug 2020 00:14:56 +0800</lastBuildDate><atom:link href="https://chiakilalala.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TweenMax 入門筆記</title>
       <link>https://chiakilalala.github.io/posts/-preview202008/</link>
       <pubDate>Wed, 26 Aug 2020 00:14:56 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/-preview202008/</guid>
-      <description>TweenMax GASP入門介紹 TweenMax是一個好用的動畫工具， 我覺得比jQuery更直覺，這系列筆記是根據 mike 成智遠老師 的TweenMax動態特效課程 先備知識： css animation 概念 javascript 基本概念 如：else if / Function / for 1.物件</description>
+      <description>TweenMax GASP入門介紹 TweenMax是一個好用的動畫工具， 我覺得比jQuery更直覺，這系列筆記是根據 mike 成智遠老師 的TweenMax動態特效課程
+先備知識： css animation 概念
+javascript 基本概念 如：else if / Function / for
+1.物件id ＝&amp;gt;#box移動的物件
+2.多少秒數執行完成 =&amp;gt;動作的屬性
+3.x:&amp;ldquo;700px&amp;rdquo; 屬性 ＝&amp;gt; 水平位移 700px
+TweenMax.to(&amp;quot;#box&amp;quot;,1,{x:&amp;quot;500px&amp;quot;}) 注意點  似jQuery 的id命名方式  在網頁的世界裡面，(x,y) 起點是從左上角開始  第三個參數 是用物件包著{}  demo
+由左向右移動的車子（圖片為已完成行動時） Scale 比例縮放 效果出現對話框
+目的：如何使用 TweenMax 把東西縮放？
+第一步 針對物件對話 做變化
+transftom:scale(0,0) 是縮到最小到看不到
+#dialogBox{ position: absolute; top: -20px; left: -30px; width: 259px; height: 196px; transform: scale(0, 0);//對話框縮到做小 background-image: url(&amp;quot;https://upload.cc/i1/2020/08/25/rBMF6j.png&amp;quot;) } 我們就針對這個來做變化</description>
     </item>
     
     <item>
@@ -26,25 +33,13 @@
       <pubDate>Sun, 01 Mar 2020 10:40:16 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/javascrip006/</guid>
-      <description>前言： 最近在研究串接資料，剛好學習到了一個ES6的新用法，先來記錄說明一下。 在此之前我們還要了解什麼是同步與非同步 同步（synchronous）：發一個請求，就要等待服務器的響應結束，然後才能發第二請</description>
-    </item>
-    
-    <item>
-      <title>用淺顯方式說明 Javascript 的 Promise</title>
-      <link>https://chiakilalala.github.io/posts/javascrip006/</link>
-      <pubDate>Sun, 01 Mar 2020 10:40:16 +0800</pubDate>
-      
-      <guid>https://chiakilalala.github.io/posts/javascrip006/</guid>
-      <description>前言： 最近在研究串接資料，剛好學習到了一個ES6的新用法，先來記錄說明一下。 在此之前我們還要了解什麼是同步與非同步 同步（synchronous）：發一個請求，就要等待服務器的響應結束，然後才能發第二請</description>
-    </item>
-    
-    <item>
-      <title>使用原生 Javascript 寫 tab 切換效果</title>
-      <link>https://chiakilalala.github.io/posts/javascrip/</link>
-      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://chiakilalala.github.io/posts/javascrip/</guid>
-      <description>思考流程 資料 (model) &amp;gt; 事件 (event) &amp;gt; 介面 (View) demo 網址 使用之前該理解的 Jacascript for(迴圈) / function （函式）/ this / if...else / classList.remove /classList.add 來源： JavaScript 教學 畫面效果如下： 點擊一個按鈕（電子發票） 另外一個按鈕的畫面 不會出現。 tab 點擊 面板 HTML 畫面 &amp;lt;div class=&amp;quot;btn-group checkout-btn&amp;quot; role=&amp;quot;group&amp;quot; id=&amp;quot;tabs&amp;quot;&amp;gt; &amp;lt;a</description>
+      <description>前言： 最近在研究串接資料，剛好學習到了一個ES6的新用法，先來記錄說明一下。
+在此之前我們還要了解什麼是同步與非同步
+同步（synchronous）：發一個請求，就要等待服務器的響應結束，然後才能發第二請求！中間這段時間就是 londing ；刷新的是整個頁面。
+異步（asynchronous）：發一個請求後，無需等待服務器的響應，然後就可以發第二個請求！可以使用 Javascript 接受服務器的響應，然後使用 Javascript 來局部刷新。
+來個比較如下：
+   Async sync     one at a time more one at a time   執行了就馬上換下一個指令 第一個執行完才執行下一個    Async Actions  click, AJAX, SetInterval 解決方法， callback , promises, async await (這一次不討論，因為他是promises 的簡寫)  先說說callback，就是在function裡面再執行一個function 這是目前傳統用法來解決同步非同步的事情。
+var btn ＝document.querySelector(&#39;#btn&#39;); var doIt = function() { alert(&amp;quot;you triggered &amp;quot; + this.id); }; btn.addEventListener(&amp;quot;click&amp;quot;, doIt); 我們可以說 doIt 就是一個 callback 函式，</description>
     </item>
     
     <item>
@@ -53,7 +48,18 @@
       <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/javascrip/</guid>
-      <description>思考流程 資料 (model) &amp;gt; 事件 (event) &amp;gt; 介面 (View) demo 網址 使用之前該理解的 Jacascript for(迴圈) / function （函式）/ this / if...else / classList.remove /classList.add 來源： JavaScript 教學 畫面效果如下： 點擊一個按鈕（電子發票） 另外一個按鈕的畫面 不會出現。 tab 點擊 面板 HTML 畫面 &amp;lt;div class=&amp;quot;btn-group checkout-btn&amp;quot; role=&amp;quot;group&amp;quot; id=&amp;quot;tabs&amp;quot;&amp;gt; &amp;lt;a</description>
+      <description>思考流程
+資料 (model) &amp;gt; 事件 (event) &amp;gt; 介面 (View)
+demo 網址
+使用之前該理解的 Jacascript
+for(迴圈) / function （函式）/ this / if&amp;hellip;else / classList.remove /classList.add
+來源：
+JavaScript 教學
+畫面效果如下： 點擊一個按鈕（電子發票） 另外一個按鈕的畫面 不會出現。
+  tab 點擊   面板
+   HTML 畫面  &amp;lt;div class=&amp;quot;btn-group checkout-btn&amp;quot; role=&amp;quot;group&amp;quot; id=&amp;quot;tabs&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;btn active&amp;quot; &amp;gt;電子發票&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;#&amp;quot; class=&amp;quot;btn&amp;quot; &amp;gt;郵寄發票&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; window.onload = function (){ // do something } 在網頁中的所有的元素(包括元素的所有關聯檔案：圖片、音視訊、flash等)都完全載入到瀏覽器之後才執行。
+指定dom
+let tabLink = document.</description>
     </item>
     
     <item>
@@ -62,7 +68,17 @@
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/javascrip/</guid>
-      <description>Javascript ES6 ES6 繼承 學會定義子類別。(extends 關鍵字) 學會使用 super 關鍵字呼叫父類別建構式。 學會利用已經定義好的子類別物件。 class 子類別名稱 extends 父類別名稱 建立子類別物件: new 子類別名稱() 定義子類別建構式: constructor{ super(); //呼</description>
+      <description>Javascript ES6 ES6 繼承  學會定義子類別。(extends 關鍵字) 學會使用 super 關鍵字呼叫父類別建構式。 學會利用已經定義好的子類別物件。  class 子類別名稱 extends 父類別名稱
+建立子類別物件: new 子類別名稱()
+定義子類別建構式: constructor{ super(); //呼叫父類別建構式 }
+子類別物件 同樣擁有 父類別 中定義的屬性和方法
+在 子類別 中定義方法，會覆蓋 / 取代 父類別 中的同名方法 car.run(); 子類別物件可以呼叫父類別的方法
+定義靜態方法: 在 類別 中定義
+ static 方法名稱(參數) { 程式碼 }  呼叫靜態方法: 使用 類別名稱 呼叫
+ 類別名稱.方法名稱(參數)  取得原型物件: Object.getPrototypeOf(物件)
+null是Object的原型物件
+class Car{ constructor(color){this.color=color;} run(){} } // let car =new Car(&amp;ldquo;green&amp;rdquo;);
+let carProto=Object.getPrototype(car); console.</description>
     </item>
     
     <item>
@@ -71,7 +87,10 @@
       <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/javascript/</guid>
-      <description>Whack A Mole Game JS 30day 步驟 function randomTime(min, max) { return Math.round(Math.random() * (max - min) + min); } //隨機老鼠上洞的時間 2 隨機決定哪個洞有老鼠跳來跳去 function randomHole(holes) { const idx = Math.floor(Math.random() * holes.length); //亂數洞 const hole = holes[idx]; if (hole === lastHole) { console.log(&amp;quot;Ah that is the same one bud&amp;quot;); return randomHole(holes); } lastHole = hole; return hole; } 3.因為要避免亂數洞裏同時出</description>
+      <description>Whack A Mole Game JS 30day  步驟
+function randomTime(min, max) { return Math.round(Math.random() * (max - min) + min); } //隨機老鼠上洞的時間 2 隨機決定哪個洞有老鼠跳來跳去
+function randomHole(holes) { const idx = Math.floor(Math.random() * holes.length); //亂數洞 const hole = holes[idx]; if (hole === lastHole) { console.log(&amp;quot;Ah that is the same one bud&amp;quot;); return randomHole(holes); } lastHole = hole; return hole; }  3.因為要避免亂數洞裏同時出現老鼠兩次
+if (hole === lastHole) { console.log(&amp;quot;Ah that is the same one bud&amp;quot;); return randomHole(holes); } lastHole = hole;  4.</description>
     </item>
     
   </channel>

@@ -1,148 +1,193 @@
 <!DOCTYPE html>
-<html lang="zh-tw" >
-<head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='#Javascript ES6 常數 筆記
+const 常數名稱 let 宣告變數
+// var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope for(var i=0;i&amp;lt;3;i&#43;&#43;){ console.log(&amp;quot;i:&amp;quot;&#43;i); } console.log(&amp;quot;outside i:&amp;quot;&#43;i); // 請將上方的變數 i 換用 let 宣告，比較輸出的差異。
+// var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope
+for(let i=0;i&amp;lt;3;i&#43;&#43;){ console.log(&amp;quot;i:&amp;quot;&#43;i); } console.log(&amp;quot;outside i:&amp;quot;&#43;i); let const var 差別
+ var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope scope 可用範圍 let 可用範圍以程式區塊 ( 大括號 ) 為分界線 let 以變數scope for(let i=0; i&amp;lt;5;i&#43;&#43;){ console.log(i); } const 宣告常數 常數資料不能變動  使用 =&amp;gt; 建立函式 ① (參數列表)=&amp;gt;(回傳值) ② (參數列表)=&amp;gt;{函式內部程式}'><title>Javascript  常數 ES6 筆記</title>
 
-  
-  <meta name="author"
-        content="Zeuk"/>
+<link rel='canonical' href='https://chiakilalala.github.io/posts/my-first-post/'>
 
-  
-  <meta name="description" content="#Javascript ES6 常數 筆記 const 常數名稱 let 宣告變數 // var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope for(var i=0;i&amp;lt;3;i&#43;&#43;){ console.log(&amp;quot;i:&amp;quot;&#43;i); } console.log(&amp;quot;outside i:&amp;quot;&#43;i); // 請將上方的變數 i 換用 let 宣告，比較輸出的差異。 // var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope for(let i=0;i&amp;lt;3;i&#43;&#43;){ console.log(&amp;quot;i:&amp;quot;&#43;i); } console.log(&amp;quot;outside i:&amp;quot;&#43;i); let const var"/>
-  
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Javascript  常數 ES6 筆記'>
+<meta property='og:description' content='#Javascript ES6 常數 筆記
+const 常數名稱 let 宣告變數
+// var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope for(var i=0;i&amp;lt;3;i&#43;&#43;){ console.log(&amp;quot;i:&amp;quot;&#43;i); } console.log(&amp;quot;outside i:&amp;quot;&#43;i); // 請將上方的變數 i 換用 let 宣告，比較輸出的差異。
+// var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope
+for(let i=0;i&amp;lt;3;i&#43;&#43;){ console.log(&amp;quot;i:&amp;quot;&#43;i); } console.log(&amp;quot;outside i:&amp;quot;&#43;i); let const var 差別
+ var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope scope 可用範圍 let 可用範圍以程式區塊 ( 大括號 ) 為分界線 let 以變數scope for(let i=0; i&amp;lt;5;i&#43;&#43;){ console.log(i); } const 宣告常數 常數資料不能變動  使用 =&amp;gt; 建立函式 ① (參數列表)=&amp;gt;(回傳值) ② (參數列表)=&amp;gt;{函式內部程式}'>
+<meta property='og:url' content='https://chiakilalala.github.io/posts/my-first-post/'>
+<meta property='og:site_name' content='流光隨烒'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:published_time' content='2019-05-10T06:53:46&#43;08:00'/><meta property='article:modified_time' content='2019-05-10T06:53:46&#43;08:00'/>
+<meta name="twitter:title" content="Javascript  常數 ES6 筆記">
+<meta name="twitter:description" content="#Javascript ES6 常數 筆記
+const 常數名稱 let 宣告變數
+// var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope for(var i=0;i&amp;lt;3;i&#43;&#43;){ console.log(&amp;quot;i:&amp;quot;&#43;i); } console.log(&amp;quot;outside i:&amp;quot;&#43;i); // 請將上方的變數 i 換用 let 宣告，比較輸出的差異。
+// var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope
+for(let i=0;i&amp;lt;3;i&#43;&#43;){ console.log(&amp;quot;i:&amp;quot;&#43;i); } console.log(&amp;quot;outside i:&amp;quot;&#43;i); let const var 差別
+ var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope scope 可用範圍 let 可用範圍以程式區塊 ( 大括號 ) 為分界線 let 以變數scope for(let i=0; i&amp;lt;5;i&#43;&#43;){ console.log(i); } const 宣告常數 常數資料不能變動  使用 =&amp;gt; 建立函式 ① (參數列表)=&amp;gt;(回傳值) ② (參數列表)=&amp;gt;{函式內部程式}">
+    </head>
+    <body class="article-page keep-sidebar">
+        <div class="container flex on-phone--column align-items--flex-start extended ">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
 
-  
-  
-  <meta name="keywords" content="Hugo, theme, zozo, UIUX, F2E"/>
-  
-
-  
-  <link rel="canonical" href="https://chiakilalala.github.io/posts/my-first-post/"/>
-
-  
-
-  <title>Javascript  常數 ES6 筆記 &middot; 無盡光芒</title>
-
-  <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
-  <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
-  <link rel="stylesheet" href="https://chiakilalala.github.io/css/remixicon.css"/>
-  <link rel="stylesheet" href="https://chiakilalala.github.io/css/zozo.css"/>
-  <link rel="stylesheet" href="https://chiakilalala.github.io/css/highlight.css"/>
-
-  
-  
-</head>
-
-<body>
-<div class="main animated">
-  <div class="nav_container animated fadeInDown">
-  <div class="site_nav" id="site_nav">
-    <ul>
-      
-      <li>
-        <a href="/">首頁</a>
-      </li>
-      
-      <li>
-        <a href="/posts/">歸檔</a>
-      </li>
-      
-      <li>
-        <a href="/tags/">標籤</a>
-      </li>
-      
-      <li>
-        <a href="/about/">關於</a>
-      </li>
-      
-    </ul>
-  </div>
-  <div class="menu_icon">
-    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
-  </div>
-</div>
-
-  <div class="header animated fadeInDown">
-  <div class="site_title_container">
-    <div class="site_title">
-      <h1>
-        <a href="https://chiakilalala.github.io/">
-          <span>無盡光芒</span>
-          <img src="https://chiakilalala.github.io/images/logo.svg"/>
-        </a>
-      </h1>
-    </div>
-    <div class="description">
-      <p class="sub_title">前端UIUX 使用驚見私房筆記</p>
-      <div class="my_socials">
+    <header class="site-info">
         
+            <figure class="site-avatar">
+                
+
+                
+                    
+                    <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x300_resize_box_2.png" width="300"
+                        height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                <span class="emoji">🍥</span>
+            </figure>
         
-        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        <h1 class="site-name"><a href="https://chiakilalala.github.io/">流光隨烒</a></h1>
+        <h2 class="site-description">是個宅宅</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
         
         
         
-        <a href="https://www.instagram.com/satsukajiyoi/%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
-        
-        
-        
-        <a href="https://twitter.com/chiaki205102%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
-        
-        
-        <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
 
-  <div class="content">
-    <div class="post_page">
-      <div class="post animated fadeInDown">
-        <div class="post_title post_detail_title">
-          <h2><a href='/posts/my-first-post/'>Javascript  常數 ES6 筆記</a></h2>
-          <span class="date">2019.05.10</span>
-        </div>
-        <div class="post_content markdown">
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
 
-<p>#Javascript ES6 常數 筆記</p>
 
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+    </ol>
+</aside>
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/posts/my-first-post/">Javascript  常數 ES6 筆記</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Nov 510, 10100</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p>#Javascript ES6 常數 筆記</p>
 <p>const 常數名稱
 let 宣告變數</p>
-
 <pre><code>// var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope
 for(var i=0;i&lt;3;i++){
 	console.log(&quot;i:&quot;+i);
 }
 console.log(&quot;outside i:&quot;+i);
-</code></pre>
-
-<p>// 請將上方的變數 i 換用 let 宣告，比較輸出的差異。</p>
-
+</code></pre><p>// 請將上方的變數 i 換用 let 宣告，比較輸出的差異。</p>
 <p>// var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope</p>
-
 <pre><code>for(let i=0;i&lt;3;i++){
 	console.log(&quot;i:&quot;+i);
 }
 console.log(&quot;outside i:&quot;+i);
 
-</code></pre>
-
-<p>let const var 差別
-- var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope
-scope 可用範圍
-- let  可用範圍以程式區塊 ( 大括號 ) 為分界線
+</code></pre><p>let const var 差別</p>
+<ul>
+<li>var 變數的 scope 以函式為界線，迴圈內外屬於同一個 scope
+scope 可用範圍</li>
+<li>let  可用範圍以程式區塊 ( 大括號 ) 為分界線
 let 以變數scope
 for(let i=0; i&lt;5;i++){
 console.log(i);
-}
-- const 宣告常數 常數資料不能變動</p>
-
-<h2 id="使用-建立函式">使用 =&gt; 建立函式</h2>
-
+}</li>
+<li>const 宣告常數 常數資料不能變動</li>
+</ul>
+<h2 id="使用--建立函式">使用 =&gt; 建立函式</h2>
 <p>① (參數列表)=&gt;(回傳值)
 ② (參數列表)=&gt;{函式內部程式}</p>
-
 <pre><code>//傳統寫法
 setTimeout(function(){
 console.log(&quot;過了一秒&quot;);
@@ -202,15 +247,12 @@ setTimeout(()=&gt;{
 // 以下呼叫上方的函式，不用做任何更動
 showMessage(&quot;Hello&quot;);
 sum(50); // 得到回傳值 1275``
-</code></pre>
-
-<p>// 傳統的寫法一
+</code></pre><p>// 傳統的寫法一
 function add(n1, n2){函式主體}
 // 傳統的寫法二
 let add=function(n1, n2){函式主體}
 // 傳統的匿名函式
 function(n1, n2){函式主體}</p>
-
 <p>// 箭頭函式一
 let add=(n1, n2)=&gt;(回傳值)
 // 箭頭函式二
@@ -218,88 +260,73 @@ let add=(n1, n2)=&gt;{函式主體}
 // 箭頭函式撰寫匿名函式
 (n1, n2)=&gt;(回傳值)
 (n1, n2)=&gt;{函式主體}</p>
-
 <h3 id="函式參數預設值">函式參數預設值</h3>
-
 <p>(name 1=預設值1 name2 =預設值2)</p>
-
-<p>let show=(message=&quot;預設值&quot;)＝&gt;{alert(message);};
-show(&quot;hello&quot;);
+<p>let show=(message=&ldquo;預設值&rdquo;)＝&gt;{alert(message);};
+show(&ldquo;hello&rdquo;);
 show();</p>
-
 <p>-範例1
 function multiply(n1,n2=1){
 return n1*n2;
 }
 multiply(3,4);
 multiply(5);</p>
-
 <p>-範例2
 function multiply(n1,n2=1)=&gt;(n1*n2);
 multiply(3,4);
 multiply(5);</p>
-
 <p>後方的參數可以使用前面參數的名稱
-function combine(first=&quot;Jedi&quot;,last=&quot;Wang&quot;,name=first+&quot;&quot;+last){
+function combine(first=&ldquo;Jedi&rdquo;,last=&ldquo;Wang&rdquo;,name=first+&quot;&quot;+last){
 alert(name);
 }
-combine(&quot;Helen&quot;,&quot;Li&quot;);
-combine(&quot;Helen&quot;);
+combine(&ldquo;Helen&rdquo;,&ldquo;Li&rdquo;);
+combine(&ldquo;Helen&rdquo;);
 combine();//</p>
-
 <p>/ 傳統函式寫法
 function t1(n1=5){}
 let t2=function(n1,n2=4){}
 // 箭頭函式寫法
 let t3=(x=4,y=5)=&gt;();
-let t4=(message=&quot;若沒有資料，就用這個資料&quot;)=&gt;{}</p>
-
+let t4=(message=&ldquo;若沒有資料，就用這個資料&rdquo;)=&gt;{}</p>
 <p>/* 以下是等差級數的加法，做 1+2+..+max 的總和 若呼叫時沒給定參數資料，則輸出：不做事 請修改函式內部的程式碼，以滿足呼叫時的預期結果 */
 function sum(max=0){
-    if(max==0){
-        console.log(&quot;不做事&quot;);
-    }else{
-        let result=0;
-        let n=1;
-        while(n&lt;=max){
-            result+=n;
-            n++;
-        }
-        console.log(&quot;1+2+..+&quot;+max+&quot;=&quot;+result);
-    }
+if(max==0){
+console.log(&ldquo;不做事&rdquo;);
+}else{
+let result=0;
+let n=1;
+while(n&lt;=max){
+result+=n;
+n++;
+}
+console.log(&ldquo;1+2+..+&quot;+max+&quot;=&quot;+result);
+}
 }
 // 修改後的函式，必須滿足以下的輸出結果
 sum(); // 輸出：不做事
-sum(100); // 輸出：1+2+...+100=5050</p>
-
+sum(100); // 輸出：1+2+&hellip;+100=5050</p>
 <p>function add(n1=1, n2=0){
-    console.log(n1+n2);
+console.log(n1+n2);
 }
 // 修改後的函式，必須滿足以下的輸出結果
 add(3, 4); // 輸出：7
 add(5); // 輸出：5
 add(); // 輸出：1</p>
-
 <p>類別：設計圖</p>
-
 <p>物件：根據設計圖製造出來的實體</p>
-
 <p>一個「類別」設計可以用來產生無數個「物件實體」</p>
-
 <p>類別: class constructor</p>
-
 <p>產生物件實體關鍵字：new</p>
-
 <p>定義類別：class 類別名稱{ }
 ex: class Car{ }
 建立物件：new 類別名稱()
 ex: let car1 = new Car</p>
-
-<p>Constructor 建構式
-- 建構物件用的函式
-- 建立新物件時會被呼叫的函式
-- JavaScript 會內建一個空白建構式(即便你沒寫建構式)</p>
-
+<p>Constructor 建構式</p>
+<ul>
+<li>建構物件用的函式</li>
+<li>建立新物件時會被呼叫的函式</li>
+<li>JavaScript 會內建一個空白建構式(即便你沒寫建構式)</li>
+</ul>
 <pre><code>class Car {
 constructor(){
    console.log(&quot;THIS IS CALLED&quot;);
@@ -307,10 +334,7 @@ constructor(){
 }
 
 let car1 =new Car();
-</code></pre>
-
-<p>屬性：用來描述物件的個別差異</p>
-
+</code></pre><p>屬性：用來描述物件的個別差異</p>
 <pre><code>constructor(參數列表) {
 this.屬性名稱 = 初始資料
 }
@@ -332,43 +356,34 @@ this.color=color
 //利用已經定義好的類別產生新物件
 let car1 = new Car(&quot;blue&quot;);
 let car2 = new Car(&quot;green&quot;);
-</code></pre>
-
-<p>this代表 正要產生的新物件 obj</p>
-
+</code></pre><p>this代表 正要產生的新物件 obj</p>
 <p>物件.屬性名稱
 物件.屬性名稱 ＝新資料</p>
-
-<h2 id="方法-與物件綁定的function">方法:與物件綁定的function</h2>
-
-<p>method 方法
-- 用來描述物件可以做的事
-- 與物件綁定的函式</p>
-
+<h2 id="方法與物件綁定的function">方法:與物件綁定的function</h2>
+<p>method 方法</p>
+<ul>
+<li>用來描述物件可以做的事</li>
+<li>與物件綁定的函式</li>
+</ul>
 <p>呼叫物件方法：
 物件.方法名稱(參數資料)</p>
-
 <p>在物件方法中使用 this 代表綁定物件</p>
-
 <p>run(){
-console.log(&quot;Car &quot; + this.color+&quot;Running&quot;);
+console.log(&ldquo;Car &quot; + this.color+&ldquo;Running&rdquo;);
 }
-let car1 = new Car(&quot;blue&quot;);
-car1.run(); // &quot;Car blue Running&quot;</p>
-
+let car1 = new Car(&ldquo;blue&rdquo;);
+car1.run(); // &ldquo;Car blue Running&rdquo;</p>
 <p>class Animal{
 constructor(name){
-   this.name=name;
-    }    // 撰寫建構式，以滿足下方的輸出要求
+this.name=name;
+}    // 撰寫建構式，以滿足下方的輸出要求
 sleep(){
-console.log(this.name+&quot;is Sleeping&quot;);
+console.log(this.name+&ldquo;is Sleeping&rdquo;);
 }   // 撰寫方法，以滿足下方的輸出要求
-... }</p>
-
-<p>let a=new Animal(&quot;Mini&quot;);
-console.log(a.name); // 印出 &quot;Mini&quot;
-a.sleep(); // 印出 &quot;Mini is Sleeping&quot;</p>
-
+&hellip; }</p>
+<p>let a=new Animal(&ldquo;Mini&rdquo;);
+console.log(a.name); // 印出 &ldquo;Mini&rdquo;
+a.sleep(); // 印出 &ldquo;Mini is Sleeping&rdquo;</p>
 <pre><code>// 建立物件
 new 類別名稱(參數資料)
 // 存取屬性
@@ -411,77 +426,156 @@ console.log(a.name+&quot;: &quot;+a.kg+&quot; 公斤&quot;); // 印出 &quot;Min
 a.eat(0.1); // 印出 &quot;Mini 吃飯，增加 0.1 公斤，現在 2.1 公斤&quot;
 a.defecate(0.08); // 印出 &quot;Mini 大號，減少 0.08 公斤，現在 2.02 公斤&quot;
 </code></pre>
-</div>
-        <div class="post_footer">
-          
-        </div>
-      </div>
-      
-      
-    </div>
-  </div>
-  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
-</div>
-<footer class="footer">
-  <div class="powered_by">
-    <a href="https://zeuk.me">Designed by Zeuk,</a>
-    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
-  </div>
+</section>
 
-  <div class="footer_slogan">
-    <span></span>
-  </div>
-</footer>
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
 
 
 
-<script src="https://chiakilalala.github.io/js/jquery-3.3.1.min.js"></script>
-<script src="https://chiakilalala.github.io/js/zozo.js"></script>
-<script src="https://chiakilalala.github.io/js/highlight.pack.js"></script>
-<link  href="https://chiakilalala.github.io/css/fancybox.min.css" rel="stylesheet">
-<script src="https://chiakilalala.github.io/js/fancybox.min.js"></script>
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
 
-<script>hljs.initHighlightingOnLoad()</script>
+    
+</article>
 
-
-  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[\[','\]\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
-
-MathJax.Hub.Queue(function() {
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
     
     
     
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 
 <style>
-code.has-jax {
-    font: inherit;
-    font-size: 100%;
-    background: inherit;
-    border: inherit;
-    color: #515151;
-}
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
 </style>
 
 
+    
 
+    <footer class="site-footer">
+    <section class="copyright">&copy; 2020 流光隨烒</section>
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.1.0">Stack</a></b> designed by
+        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
 
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
 
+    
+    <div class="pswp__bg"></div>
 
-</body>
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<link rel="stylesheet" href="/css/highlight/light.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/css/highlight/dark.min.css" media="(prefers-color-scheme: dark)">
+
+    </body>
 </html>

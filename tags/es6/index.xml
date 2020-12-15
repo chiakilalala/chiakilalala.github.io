@@ -1,23 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>es6 on 無盡光芒</title>
+    <title>es6 on 流光隨烒</title>
     <link>https://chiakilalala.github.io/tags/es6/</link>
-    <description>Recent content in es6 on 無盡光芒</description>
+    <description>Recent content in es6 on 流光隨烒</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://chiakilalala.github.io/tags/es6/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 11 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://chiakilalala.github.io/tags/es6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Javascript ES6 繼承</title>
       <link>https://chiakilalala.github.io/posts/javascrip/</link>
       <pubDate>Sat, 11 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://chiakilalala.github.io/posts/javascrip/</guid>
-      <description>Javascript ES6 ES6 繼承 學會定義子類別。(extends 關鍵字) 學會使用 super 關鍵字呼叫父類別建構式。 學會利用已經定義好的子類別物件。 class 子類別名稱 extends 父類別名稱 建立子類別物件: new 子類別名稱() 定義子類別建構式: constructor{ super(); //呼</description>
+      <description>Javascript ES6 ES6 繼承  學會定義子類別。(extends 關鍵字) 學會使用 super 關鍵字呼叫父類別建構式。 學會利用已經定義好的子類別物件。  class 子類別名稱 extends 父類別名稱
+建立子類別物件: new 子類別名稱()
+定義子類別建構式: constructor{ super(); //呼叫父類別建構式 }
+子類別物件 同樣擁有 父類別 中定義的屬性和方法
+在 子類別 中定義方法，會覆蓋 / 取代 父類別 中的同名方法 car.run(); 子類別物件可以呼叫父類別的方法
+定義靜態方法: 在 類別 中定義
+ static 方法名稱(參數) { 程式碼 }  呼叫靜態方法: 使用 類別名稱 呼叫
+ 類別名稱.方法名稱(參數)  取得原型物件: Object.getPrototypeOf(物件)
+null是Object的原型物件
+class Car{ constructor(color){this.color=color;} run(){} } // let car =new Car(&amp;ldquo;green&amp;rdquo;);
+let carProto=Object.getPrototype(car); console.</description>
     </item>
     
   </channel>

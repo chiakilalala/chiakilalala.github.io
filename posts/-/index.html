@@ -1,248 +1,341 @@
 <!DOCTYPE html>
-<html lang="zh-tw" >
-<head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='12 Awkward Web Design Problems and How to Fix Them'><title>12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17)</title>
 
-  
-  <meta name="author"
-        content="Zeuk"/>
+<link rel='canonical' href='https://chiakilalala.github.io/posts/-/'>
 
-  
-  <meta name="description" content="12 Awkward Web Design Problems and How to Fix Them"/>
-  
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17)'>
+<meta property='og:description' content='12 Awkward Web Design Problems and How to Fix Them'>
+<meta property='og:url' content='https://chiakilalala.github.io/posts/-/'>
+<meta property='og:site_name' content='流光隨烒'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='UI/UX' /><meta property='article:tag' content='網頁設計' /><meta property='article:published_time' content='2019-07-18T14:26:00&#43;08:00'/><meta property='article:modified_time' content='2019-07-18T14:26:00&#43;08:00'/>
+<meta name="twitter:title" content="12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17)">
+<meta name="twitter:description" content="12 Awkward Web Design Problems and How to Fix Them">
+    </head>
+    <body class="article-page keep-sidebar">
+        <div class="container flex on-phone--column align-items--flex-start extended ">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
 
-  
-  
-  <meta name="keywords" content="Hugo, theme, zozo, UIUX, F2E"/>
-  
-
-  
-  <link rel="canonical" href="https://chiakilalala.github.io/posts/-/"/>
-
-  
-
-  <title>12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17) &middot; 無盡光芒</title>
-
-  <link rel="shortcut icon" href="https://chiakilalala.github.io/images/favicon.ico"/>
-  <link rel="stylesheet" href="https://chiakilalala.github.io/css/animate.min.css"/>
-  <link rel="stylesheet" href="https://chiakilalala.github.io/css/remixicon.css"/>
-  <link rel="stylesheet" href="https://chiakilalala.github.io/css/zozo.css"/>
-  <link rel="stylesheet" href="https://chiakilalala.github.io/css/highlight.css"/>
-
-  
-  
-</head>
-
-<body>
-<div class="main animated">
-  <div class="nav_container animated fadeInDown">
-  <div class="site_nav" id="site_nav">
-    <ul>
-      
-      <li>
-        <a href="/">首頁</a>
-      </li>
-      
-      <li>
-        <a href="/posts/">歸檔</a>
-      </li>
-      
-      <li>
-        <a href="/tags/">標籤</a>
-      </li>
-      
-      <li>
-        <a href="/about/">關於</a>
-      </li>
-      
-    </ul>
-  </div>
-  <div class="menu_icon">
-    <a id="menu_icon"><i class="remixicon-links-line"></i></a>
-  </div>
-</div>
-
-  <div class="header animated fadeInDown">
-  <div class="site_title_container">
-    <div class="site_title">
-      <h1>
-        <a href="https://chiakilalala.github.io/">
-          <span>無盡光芒</span>
-          <img src="https://chiakilalala.github.io/images/logo.svg"/>
-        </a>
-      </h1>
-    </div>
-    <div class="description">
-      <p class="sub_title">前端UIUX 使用驚見私房筆記</p>
-      <div class="my_socials">
+    <header class="site-info">
         
+            <figure class="site-avatar">
+                
+
+                
+                    
+                    <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x300_resize_box_2.png" width="300"
+                        height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                <span class="emoji">🍥</span>
+            </figure>
         
-        <a href="%20" title="github" target="_blank"><i class="remixicon-github-fill"></i></a>
+        <h1 class="site-name"><a href="https://chiakilalala.github.io/">流光隨烒</a></h1>
+        <h2 class="site-description">是個宅宅</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
         
         
         
-        <a href="https://www.instagram.com/satsukajiyoi/%20" title="instagram" target="_blank"><i class="remixicon-instagram-fill"></i></a>
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
         
         
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
         
-        <a href="https://twitter.com/chiaki205102%20" title="twitter" target="_blank"><i class="remixicon-twitter-fill"></i></a>
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
         
         
-        <a href="https://chiakilalala.github.io/index.xml" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
 
-  <div class="content">
-    <div class="post_page">
-      <div class="post animated fadeInDown">
-        <div class="post_title post_detail_title">
-          <h2><a href='/posts/-/'>12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17)</a></h2>
-          <span class="date">2019.07.18</span>
-        </div>
-        <div class="post_content markdown">
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
 
-<h1 id="12-awkward-web-design-problems-and-how-to-fix-them">12 Awkward Web Design Problems and How to Fix Them</h1>
 
-<h1 id="12個尷尬的網頁設計問題以及如何解決這些問題-翻譯7-17">12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17)</h1>
 
-<p>(<img src="https://d3ui957tjb5bqd.cloudfront.net/uploads/images/3/34/34840.pic.jpg?1462201989" alt="banner" /></p>
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+    </ol>
+</aside>
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
 
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/posts/-/">12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17)</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        12 Awkward Web Design Problems and How to Fix Them
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Nov 718, 18180</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="12-awkward-web-design-problems-and-how-to-fix-them">12 Awkward Web Design Problems and How to Fix Them</h1>
+<h1 id="12個尷尬的網頁設計問題以及如何解決這些問題-翻譯717">12個尷尬的網頁設計問題以及如何解決這些問題 (翻譯7/17)</h1>
+<p>(<img src="https://d3ui957tjb5bqd.cloudfront.net/uploads/images/3/34/34840.pic.jpg?1462201989" alt="banner"  /></p>
 <p>Web design has evolved tremendously from what it used to be, shedding off ineffective practices and replacing them with more efficient methods. Often what is currently known as a best practice or most revered design style, will shift out of vogue or be replaced with a more suitable approach. What’s left behind can quickly become out of place and leave an awkward feeling with your users.</p>
-
 <p>網頁設計 已經從過去使用產生極大發展 ，擺脫無效的做法，並用更有效的方法來取代,通常被稱為最佳做法或最受尊崇的設計風格,將脫離流行或被更合適的方法取代。留下的東西很快就會變得不合適，給用戶留下尷尬的感覺。</p>
-
 <p>Websites need to evolve and adapt to better serve its own goals and the goals of its users. This doesn’t mean that web designs should be restricted to only what is in style at that moment, but that web designers need to take into account what lessons have been learned by decades of use.</p>
-
 <p>網站需要發展和適應以更好地服務於自身的目標和目標客戶,網頁設計師需要考慮這幾十年來的使用經驗。</p>
-
 <p>Here are a few awkward web design problems that can stick out on your website, pivoting your designs in the past, and restricting your audience.</p>
-
 <p>以下是一些尷尬的網頁設計問題，這些問題可能會在您的網站上出現，過去轉動您的設計，並限制您的受眾群體。</p>
-
 <h2 id="1-where-do-i-look">1. Where Do I look!</h2>
-
 <h3 id="the-problem">The Problem</h3>
-
 <p>Your site has no structure to its content. This could be the result of poor planning from the onset, or even the mismanaged growth of content within larger websites over time, but whatever the reason, give your user clear visual instructions - don’t leave them guessing.</p>
-
 <h2 id="1-我應該看哪裡">1. 我應該看哪裡！</h2>
-
 <p>你的網站沒有內容架構， 這可能是從一開始規劃不周所造成的，或是隨著時間的推移，大型網站內容的管理不當 但無論什麼原因，給你的用戶清晰的視覺指示 - 不要讓他們猜測。</p>
-
 <h3 id="the-fix">The Fix</h3>
-
-<p>Define your content's hierarchy with your website's goals in mind. If you are building a landing page with the sole goal of capturing e-mails, then make your design reflect this goal, build a visual hierarchy that leads your user to your call-to-action.</p>
-
+<p>Define your content&rsquo;s hierarchy with your website&rsquo;s goals in mind. If you are building a landing page with the sole goal of capturing e-mails, then make your design reflect this goal, build a visual hierarchy that leads your user to your call-to-action.</p>
 <p>根據網站的目標，定義網站的內容結構，如果你建立一個著路頁的目的是為了獲取電子郵件，那你的設計就是要反映這目標，建立視覺化的結層，帶領你的用戶 <strong>行動呼籲</strong></p>
-
-<h3 id="甚麼是行動呼籲-https-blog-gogopartners-com-e5-a5-bd-e7-9a-84-cta-call-to-action-e8-a1-8c-e5-8b-95-e5-91-bc-e7-b1-b2-e8-a8-ad-e8-a8-88-e7-82-ba-e4-bd-a0-e5-89-b5-e9-80-a0-e6-9b-b4-e5-a5-bd-e7-9a-84-e7-b6-b2-e8-b7-af-e8-a1-8c-e9-8a-b7-e6-95-88-e7-9b-8a"><a href="https://blog.gogopartners.com/%E5%A5%BD%E7%9A%84-cta-call-to-action-%E8%A1%8C%E5%8B%95%E5%91%BC%E7%B1%B2%E8%A8%AD%E8%A8%88%E7%82%BA%E4%BD%A0%E5%89%B5%E9%80%A0%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%B6%B2%E8%B7%AF%E8%A1%8C%E9%8A%B7%E6%95%88%E7%9B%8A">&gt;&gt;甚麼是行動呼籲 </a></h3>
-
+<h3 id="甚麼是行動呼籲-httpsbloggogopartnerscome5a5bde79a84-cta-call-to-action-e8a18ce58b95e591bce7b1b2e8a8ade8a888e782bae4bda0e589b5e980a0e69bb4e5a5bde79a84e7b6b2e8b7afe8a18ce98ab7e69588e79b8a"><a class="link" href="https://blog.gogopartners.com/%E5%A5%BD%E7%9A%84-cta-call-to-action-%E8%A1%8C%E5%8B%95%E5%91%BC%E7%B1%B2%E8%A8%AD%E8%A8%88%E7%82%BA%E4%BD%A0%E5%89%B5%E9%80%A0%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%B6%B2%E8%B7%AF%E8%A1%8C%E9%8A%B7%E6%95%88%E7%9B%8A"  target="_blank" rel="noopener"
+    >&raquo;甚麼是行動呼籲 </a></h3>
 <h2 id="2-wait-how-do-i-get-there">2. Wait, how do I get there?</h2>
-
 <h2 id="等一下-我該如何到哪裡-ss-s">等一下 我該如何到哪裡 ss s</h2>
-
 <h3 id="the-problem-1">The Problem</h3>
-
-<p>Bad and misguided navigation can plague a website's pageviews. Standards in web navigation design are emerging, and the misuse of these is confusing for your users.
+<p>Bad and misguided navigation can plague a website&rsquo;s pageviews. Standards in web navigation design are emerging, and the misuse of these is confusing for your users.
 不良和誤導的導覽 會導致網站的觀看量災難，Web導覽設計的標準制定正在進行中，濫用這些標準會讓用戶感到困惑。</p>
-
 <h3 id="the-fix-1">The Fix</h3>
-
-<p>Don’t reinvent the wheel. There is a reason that road sign iconography is fairly universally standardized, it primes users for what to expect and controls their reactions. This same idea should be applied in a website's navigation design.</p>
-
+<p>Don’t reinvent the wheel. There is a reason that road sign iconography is fairly universally standardized, it primes users for what to expect and controls their reactions. This same idea should be applied in a website&rsquo;s navigation design.</p>
 <p>不要多此一舉，這也是一個原因 道路標誌算是全球比較普遍化的標準了，期待而且可控制用戶們的反應，同樣理由適用網站的導覽列</p>
-
 <p>Think about what the user is expecting and apply your design skills to execute a well-crafted interactive element. Avoid completely reinventing the wheel if you are expecting mass ease of access, boundaries can be pushed but always be aware of the relationship between deviant design ideas, and mass usability.</p>
-
 <p>考慮如何讓用戶期待應用你精心設計功能於交互元素，假設你期待大量的瀏覽量 但是又要避免一樣的功能，這界線可能要了解非正規的設計與可用性之前的關係</p>
-</div>
-        <div class="post_footer">
-          
-          <div class="meta">
-            <div class="info">
-              <span class="field tags">
-                <i class="remixicon-stack-line"></i>
-                
-                <a href="https://chiakilalala.github.io/tags/ui/ux/">UI/UX</a>
-                
-                <a href="https://chiakilalala.github.io/tags/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88/">網頁設計</a>
-                
-              </span>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      
-      
-    </div>
-  </div>
-  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
-</div>
-<footer class="footer">
-  <div class="powered_by">
-    <a href="https://zeuk.me">Designed by Zeuk,</a>
-    <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
-  </div>
 
-  <div class="footer_slogan">
-    <span></span>
-  </div>
-</footer>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ui/ux/">UI/UX</a>
+        
+            <a href="/tags/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88/">網頁設計</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
 
 
 
-<script src="https://chiakilalala.github.io/js/jquery-3.3.1.min.js"></script>
-<script src="https://chiakilalala.github.io/js/zozo.js"></script>
-<script src="https://chiakilalala.github.io/js/highlight.pack.js"></script>
-<link  href="https://chiakilalala.github.io/css/fancybox.min.css" rel="stylesheet">
-<script src="https://chiakilalala.github.io/js/fancybox.min.js"></script>
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
 
-<script>hljs.initHighlightingOnLoad()</script>
+    
+</article>
 
-
-  <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[\[','\]\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
-
-MathJax.Hub.Queue(function() {
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
     
     
     
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 
 <style>
-code.has-jax {
-    font: inherit;
-    font-size: 100%;
-    background: inherit;
-    border: inherit;
-    color: #515151;
-}
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
 </style>
 
 
+    
 
+    <footer class="site-footer">
+    <section class="copyright">&copy; 2020 流光隨烒</section>
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.1.0">Stack</a></b> designed by
+        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
 
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
 
+    
+    <div class="pswp__bg"></div>
 
-</body>
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<link rel="stylesheet" href="/css/highlight/light.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/css/highlight/dark.min.css" media="(prefers-color-scheme: dark)">
+
+    </body>
 </html>
